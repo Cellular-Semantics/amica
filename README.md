@@ -57,6 +57,34 @@ from amica import bootstrap
 bootstrap()
 ```
 
+### CXG Annotation Workflow
+
+The CXG pipeline expects local input/output folders (defaulting to `resources/cxg`). You can either export `CXG_RESOURCES_DIR=/abs/path/to/resources/cxg` or pass `--resources-dir` to the CLI. A minimal local layout looks like:
+
+```bash
+mkdir -p resources/cxg/{input,output,cache,expansions,publications}
+# Copy your CXG TSV files into resources/cxg/input
+```
+
+Run the workflow with the bundled script:
+
+```bash
+scripts/cxg_annotate.py \
+  --resources-dir resources/cxg \
+  --batch-size 4 \
+  --test-mode \
+  --test-annotations-count 10
+```
+
+Environment overrides:
+
+- `CXG_RESOURCES_DIR`: base directory containing `input`, `output`, `cache`, `expansions`, `publications`
+- `CXG_ANNOTATIONS_BATCH_SIZE`: batch size shared by expansion + grounding services
+- `CXG_TEST_MODE`: `"1"`/`"true"` to truncate workloads for dry runs
+- `CXG_TEST_ANNOTATIONS_COUNT`: number of annotations to keep when test mode is active
+
+The CLI loads these automatically (via `amica.config.load_cxg_configuration()`), so you can mix command-line flags with env vars as needed.
+
 ## 📚 Documentation
 
 Documentation lives in `docs/` and is built with Sphinx + MyST. Run `python scripts/check-docs.py` to build with warnings-as-errors before each commit. Publish the rendered HTML via GitHub Pages or your preferred static host.

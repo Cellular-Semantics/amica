@@ -18,8 +18,8 @@ cell_logger.addHandler(console)
 
 cell_logger.propagate = False
 
-from amica.utils.cell_tools import search_cl
 from .annotator_config import AnnotatorDependencies
+from .annotator_tools import search_cl
 
 ANNOTATOR_SYSTEM_PROMPT_NEW = """
     Your primary goal is to map text from the "name", "full_name", "paper_synonyms" fields of each JSON object to terms from the cell ontology.
