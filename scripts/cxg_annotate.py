@@ -11,9 +11,12 @@ from pathlib import Path
 from typing import Optional
 
 from amica import bootstrap
-from amica.config import load_cxg_configuration
 from amica.graphs import run_cxg_workflow
-from amica.utils.cxg import CxgPipelineSettings, CxgResourceLayout
+from amica.utils.cxg import (
+    CxgPipelineSettings,
+    CxgResourceLayout,
+    load_cxg_configuration,
+)
 
 
 def parse_args(argv: Optional[list[str]] = None) -> argparse.Namespace:

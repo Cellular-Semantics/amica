@@ -5,7 +5,7 @@ from __future__ import annotations
 import os
 from dataclasses import dataclass, field
 from pathlib import Path
-from typing import Any, Dict, List, Optional, Union
+from typing import Any, Dict, List, Optional, Tuple, Union
 
 from amica.agents.paper_celltype.paper_celltype_agent import CellTypeEntry
 
@@ -139,10 +139,16 @@ def normalise_identifier(value: str) -> str:
     return value.replace("/", "_").replace(":", "_").replace(".", "_")
 
 
+def load_cxg_configuration() -> Tuple[CxgPipelineSettings, CxgResourceLayout]:
+    """Helper used by CLIs/tests to pull settings/layout from the environment."""
+    return CxgPipelineSettings.from_env(), CxgResourceLayout.from_env()
+
+
 __all__ = [
     "CxgPipelineSettings",
     "CxgResourceLayout",
     "AnnotationRecord",
     "PreparedAnnotationBundle",
     "normalise_identifier",
+    "load_cxg_configuration",
 ]
