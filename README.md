@@ -89,6 +89,25 @@ The CLI performs three orchestrated stages:
 
 All intermediate results are cached so reruns skip unchanged work.
 
+#### Programmatic Invocation
+
+If you need to embed the pipeline inside another script or notebook:
+
+```python
+from amica import bootstrap
+from amica.graphs import run_cxg_workflow
+from amica.utils.cxg import CxgPipelineSettings, CxgResourceLayout
+
+bootstrap()
+settings = CxgPipelineSettings.from_env()
+layout = CxgResourceLayout.from_env()
+
+bundle = asyncio.run(run_cxg_workflow(settings=settings, layout=layout))
+print(f"Processed {len(bundle.annotations)} annotations across {len(bundle.dataset_names)} datasets.")
+```
+
+You can tweak `settings` (batch size, test mode) or `layout` (resource folders) before calling the workflow.
+
 ---
 
 ## 5. Architecture Snapshot
