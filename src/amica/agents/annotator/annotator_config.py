@@ -5,7 +5,7 @@ from dataclasses import dataclass, field
 import os
 from typing import List, Optional
 
-from aurelian.dependencies.workdir import HasWorkdir, WorkDir
+from amica.utils.workdir import HasWorkdir, WorkDir
 
 
 @dataclass

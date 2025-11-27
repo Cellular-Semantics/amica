@@ -6,7 +6,7 @@ import os
 from dataclasses import dataclass, field
 from typing import Optional
 
-from aurelian.dependencies.workdir import HasWorkdir, WorkDir
+from amica.utils.workdir import HasWorkdir, WorkDir
 
 @dataclass
 class PaperCTDependencies(HasWorkdir):

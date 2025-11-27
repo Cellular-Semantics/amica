@@ -7,7 +7,6 @@ from typing import List, Optional, Any
 
 import gradio as gr
 
-from aurelian.utils.async_utils import run_sync
 from .annotator_agent import annotator_agent
 from .annotator_config import AnnotatorDependencies, get_config
 

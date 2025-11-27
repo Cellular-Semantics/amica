@@ -7,7 +7,6 @@ from typing import List, Optional, Any
 
 import gradio as gr
 
-from aurelian.utils.async_utils import run_sync
 from .paper_celltype_agent import celltype_agent
 from .paper_celltype_config import PaperCTDependencies, get_config
 
