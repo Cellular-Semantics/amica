@@ -140,7 +140,7 @@ annotator_agent = Agent(
     # model="openai:gpt-4o",
     # model="openai:gpt-4o-2024-11-20",
     deps_type=AnnotatorDependencies,
-    result_type=TextAnnotationResult,
+    output_type=TextAnnotationResult,
     system_prompt=ANNOTATOR_SYSTEM_PROMPT_NEW,
     defer_model_check=True,
 )

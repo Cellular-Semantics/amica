@@ -63,7 +63,7 @@ celltype_agent = Agent(
     # model="openai:gpt-4.1",
     # model="openai:gpt-4o-2024-11-20",
     deps_type=PaperCTDependencies,
-    result_type=BiocurationOutput,
+    output_type=BiocurationOutput,
     system_prompt=SYSTEM_PROMPT,
     defer_model_check=True,
 )
