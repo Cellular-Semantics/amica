@@ -11,6 +11,10 @@ dependencies = [
     "jsonschema>=4.22.0",
     "cellsem-llm-client @ git+https://github.com/Cellular-Semantics/cellsem_llm_client.git@main",
     "deep-research-client @ git+https://github.com/monarch-initiative/deep-research-client.git@main",
+    "beautifulsoup4>=4.14.2",
+    "markitdown>=0.1.3",
+    "requests-cache>=1.2.1",
+    "oaklib>=0.6.23",
 ]
 
 [project.optional-dependencies]
