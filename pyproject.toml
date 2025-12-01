@@ -64,15 +64,3 @@ source = ["src/amica"]
 
 [tool.uv]
 managed = true
-
-[tool.uv.dependency-groups]
-dev = { dependencies = [
-    "pytest>=8.0.0",
-    "pytest-cov>=4.1.0",
-    "ruff>=0.5.0",
-    "mypy>=1.10.0",
-    "sphinx>=7.3.0",
-    "sphinx-autodoc-typehints>=1.25.0",
-    "myst-parser>=2.0.0",
-    "pre-commit>=3.7.0",
-] }
