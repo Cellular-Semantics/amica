@@ -175,7 +175,7 @@ class ExpansionService:
             )
             record = by_name.get(entry.name)
             if record:
-                record.enrichment = entry.model_copy()
+                record.enrichment = entry.model_dump()
 
         cache_file.write_text(
             json.dumps([entry.model_dump() for entry in annotations], indent=2),
