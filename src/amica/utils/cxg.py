@@ -83,6 +83,7 @@ class CxgResourceLayout:
     def ensure_directories(self) -> None:
         """Create the directory structure if it does not already exist."""
         for path in (
+            self.input_dir,
             self.cache_dir,
             self.expansions_dir,
             self.publications_dir,
