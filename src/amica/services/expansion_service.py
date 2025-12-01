@@ -4,7 +4,6 @@ from __future__ import annotations
 
 import json
 import logging
-from typing import Dict, List
 
 from amica.agents.paper_celltype.paper_celltype_agent import (
     CellTypeEntry,
@@ -91,7 +90,7 @@ class ExpansionService:
         self,
         dataset_name: str,
         article_id: str,
-        annotations: List[AnnotationRecord],
+        annotations: list[AnnotationRecord],
         dataset_cache_dir,
     ) -> None:
         logger.info("[%s] Expanding entries for article %s", dataset_name, article_id)
@@ -133,8 +132,8 @@ class ExpansionService:
 
     def _hydrate_from_cache(
         self,
-        batch: List[AnnotationRecord],
-        cached_entries: List[dict],
+        batch: list[AnnotationRecord],
+        cached_entries: list[dict],
     ) -> None:
         by_name = {record.annotation_text: record for record in batch}
         for entry in cached_entries:
@@ -147,7 +146,7 @@ class ExpansionService:
         self,
         dataset_name: str,
         article_id: str,
-        batch: List[AnnotationRecord],
+        batch: list[AnnotationRecord],
         article_text: str,
         cache_file,
     ) -> None:
@@ -184,8 +183,8 @@ class ExpansionService:
 
     def _group_by_dataset_and_article(
         self, bundle: PreparedAnnotationBundle
-    ) -> Dict[str, Dict[str, List[AnnotationRecord]]]:
-        dataset_map: Dict[str, Dict[str, List[AnnotationRecord]]] = {}
+    ) -> dict[str, dict[str, list[AnnotationRecord]]]:
+        dataset_map: dict[str, dict[str, list[AnnotationRecord]]] = {}
         for doi, annotations in bundle.article_to_annotations.items():
             for record in annotations:
                 dataset_articles = dataset_map.setdefault(record.dataset_name, {})

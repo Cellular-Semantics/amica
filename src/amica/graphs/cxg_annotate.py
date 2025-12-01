@@ -2,8 +2,8 @@
 
 from __future__ import annotations
 
+from collections.abc import Awaitable, Callable
 from dataclasses import dataclass, field
-from typing import Awaitable, Callable, Dict, Optional
 
 from amica.services import (
     DatasetLoader,
@@ -89,7 +89,7 @@ class CxgGraphDependencies(GraphDependencies):
         )
 
 
-NodeHandler = Callable[[CxgGraphDependencies], Awaitable[Optional[str]]]
+NodeHandler = Callable[[CxgGraphDependencies], Awaitable[str | None]]
 
 
 async def run_cxg_workflow(
@@ -159,7 +159,7 @@ def _require_bundle(deps: CxgGraphDependencies) -> PreparedAnnotationBundle:
     return deps.bundle
 
 
-_SERVICE_HANDLERS: Dict[str, NodeHandler] = {
+_SERVICE_HANDLERS: dict[str, NodeHandler] = {
     "cxg.prepare_data": _handle_prepare_data,
     "cxg.expand_full_names": _handle_expand_full_names,
     "cxg.ground_annotations": _handle_ground_annotations,

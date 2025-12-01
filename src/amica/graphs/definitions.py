@@ -2,8 +2,6 @@
 
 from __future__ import annotations
 
-from typing import List
-
 from pydantic import BaseModel, ConfigDict, Field
 
 
@@ -15,7 +13,7 @@ class GraphNode(BaseModel):
     id: str
     description: str
     service: str
-    next_nodes: List[str] = Field(default_factory=list, alias="next")
+    next_nodes: list[str] = Field(default_factory=list, alias="next")
 
 
 class WorkflowGraph(BaseModel):
@@ -23,7 +21,7 @@ class WorkflowGraph(BaseModel):
 
     name: str
     entrypoint: str
-    nodes: List[GraphNode]
+    nodes: list[GraphNode]
 
     def route(self, node_id: str) -> GraphNode:
         """Return the node configuration for the given identifier."""

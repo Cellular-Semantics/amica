@@ -2,11 +2,10 @@
 Configuration for the Cell agent.
 """
 import os
-
 from dataclasses import dataclass, field
-from typing import Optional
 
 from amica.utils.workdir import HasWorkdir, WorkDir
+
 
 @dataclass
 class PaperCTDependencies(HasWorkdir):
@@ -29,7 +28,7 @@ class PaperCTDependencies(HasWorkdir):
         metadata={"description": "Temperature for LLM generation. Default is 0.1."}
     )
 
-    workdir: Optional[WorkDir] = None
+    workdir: WorkDir | None = None
 
     def __post_init__(self):
         """Initialize the config with default values."""

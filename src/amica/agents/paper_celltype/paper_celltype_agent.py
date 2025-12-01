@@ -3,6 +3,7 @@ Agent for Cell Ontology.
 """
 
 import logging
+
 from pydantic_ai import Agent
 
 cell_logger = logging.getLogger(__name__)
@@ -16,7 +17,6 @@ cell_logger.addHandler(console)
 cell_logger.propagate = False
 
 from .paper_celltype_config import PaperCTDependencies
-from .paper_celltype_tools import get_full_text, read_json
 
 SYSTEM_PROMPT = """
     You are a Biocuration Assistant. Your primary task is to extract precise cell type information
@@ -33,27 +33,27 @@ SYSTEM_PROMPT = """
     - Use the provided tools to read the JSON and PDF data.
 """
 
+
 from pydantic import BaseModel, Field
-from typing import List, Optional
 
 
 class CellTypeEntry(BaseModel):
     name: str = Field(..., description="The exact cc.label from the input JSON.")
-    full_name: Optional[str] = Field(
+    full_name: str | None = Field(
         None,
         description="The expanded or reconstructed full name of the cell type as defined in the paper.",
     )
-    paper_synonyms: Optional[str] = Field(
+    paper_synonyms: str | None = Field(
         None, description="Synonyms mentioned in the paper, separated by semicolons."
     )
-    tissue_context: Optional[str] = Field(
+    tissue_context: str | None = Field(
         None,
         description="Exact quoted tissue(s) or anatomical terms from the paper where the cell type was identified.",
     )
 
 
 class BiocurationOutput(BaseModel):
-    cell_type_annotations: List[CellTypeEntry] = Field(
+    cell_type_annotations: list[CellTypeEntry] = Field(
         ..., description="A list of extracted cell type annotations."
     )
 

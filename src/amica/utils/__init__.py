@@ -2,14 +2,15 @@
 
 from __future__ import annotations
 
+from collections.abc import Iterable
 from dataclasses import dataclass
-from typing import Iterable, List
+from typing import List
 
 
-def chunk_items(items: Iterable[str], size: int = 10) -> List[List[str]]:
+def chunk_items(items: Iterable[str], size: int = 10) -> list[list[str]]:
     """Simple batching helper for splitting sequences in tooling scripts."""
-    batch: List[str] = []
-    result: List[List[str]] = []
+    batch: list[str] = []
+    result: list[list[str]] = []
     for item in items:
         batch.append(item)
         if len(batch) >= size:

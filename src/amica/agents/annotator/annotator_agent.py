@@ -3,7 +3,6 @@ Ontology based Annotator Agent.
 """
 
 import logging
-from typing import List, Optional
 
 from pydantic import BaseModel
 from pydantic_ai import Agent
@@ -126,12 +125,12 @@ class TextAnnotation(BaseModel):
 
     input_name: str
     text: str
-    cl_id: Optional[str] = None
-    cl_label: Optional[str] = None
+    cl_id: str | None = None
+    cl_label: str | None = None
 
 
 class TextAnnotationResult(BaseModel):
-    annotations: List[TextAnnotation]
+    annotations: list[TextAnnotation]
 
 
 annotator_agent = Agent(

@@ -1,11 +1,9 @@
 """
 Tools for the Paper Cell Type Agent.
 """
-import os
-import logging
 import json
-from pathlib import Path
-from typing import Dict, Any, List
+import logging
+from typing import Any
 
 import fitz
 from pydantic_ai import RunContext
@@ -27,7 +25,7 @@ def get_full_text(ctx: RunContext[str], pdf_path: str) -> str:
     text = "\n".join(page.get_text("text") for page in doc)
     return text
 
-def read_json(ctx: RunContext[str], file_path: str) -> List[Dict[str, Any]]:
+def read_json(ctx: RunContext[str], file_path: str) -> list[dict[str, Any]]:
     """
     Reads and parses a JSON file from the given file path.
 
@@ -39,7 +37,7 @@ def read_json(ctx: RunContext[str], file_path: str) -> List[Dict[str, Any]]:
         Assumes the JSON contains a list of dictionaries under a 'data' key for 'cc.label'.
     """
     try:
-        with open(file_path, 'r', encoding='utf-8-sig') as f:
+        with open(file_path, encoding='utf-8-sig') as f:
             data = json.load(f)
         if isinstance(data, list) and all(
                 isinstance(item, dict) and "cc.label" in item for item in data):

@@ -10,7 +10,6 @@ from amica.graphs import run_cxg_workflow
 from amica.utils.cxg import (
     CxgPipelineSettings,
     CxgResourceLayout,
-    normalise_identifier,
 )
 
 REQUIRED_ENV_VARS = ("OPENAI_API_KEY", "ANTHROPIC_API_KEY")

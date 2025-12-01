@@ -1,13 +1,12 @@
 from __future__ import annotations
 
-import os
 from pathlib import Path
 
 import pytest
 
 from amica import bootstrap
-from amica.agents.annotator.annotator_config import AnnotatorDependencies, get_config as get_annotator_config
-from amica.agents.paper_celltype.paper_celltype_config import PaperCTDependencies, get_config as get_paper_ct_config
+from amica.agents.annotator.annotator_config import get_config as get_annotator_config
+from amica.agents.paper_celltype.paper_celltype_config import get_config as get_paper_ct_config
 from amica.utils.cxg import (
     CxgPipelineSettings,
     CxgResourceLayout,

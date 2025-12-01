@@ -9,7 +9,13 @@ import pytest
 
 from amica.agents.paper_celltype.paper_celltype_agent import CellTypeEntry
 from amica.services import ExpansionService
-from amica.utils.cxg import AnnotationRecord, CxgPipelineSettings, CxgResourceLayout, PreparedAnnotationBundle, normalise_identifier
+from amica.utils.cxg import (
+    AnnotationRecord,
+    CxgPipelineSettings,
+    CxgResourceLayout,
+    PreparedAnnotationBundle,
+    normalise_identifier,
+)
 
 
 class DummyExpansionAgent:

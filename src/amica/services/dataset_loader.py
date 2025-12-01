@@ -4,7 +4,6 @@ from __future__ import annotations
 
 import logging
 from pathlib import Path
-from typing import List
 
 import pandas as pd
 
@@ -63,7 +62,7 @@ class DatasetLoader:
 
         return bundle
 
-    def _discover_input_files(self) -> List[Path]:
+    def _discover_input_files(self) -> list[Path]:
         if not self.layout.input_dir.exists():
             logger.warning(
                 "Input directory %s does not exist; no datasets discovered.",

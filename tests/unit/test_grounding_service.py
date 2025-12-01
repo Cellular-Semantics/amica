@@ -5,12 +5,16 @@ import json
 from pathlib import Path
 from types import SimpleNamespace
 
-import pandas as pd
 import pytest
 
 from amica.agents.annotator.annotator_agent import TextAnnotation
 from amica.services import GroundingService
-from amica.utils.cxg import AnnotationRecord, CxgPipelineSettings, CxgResourceLayout, PreparedAnnotationBundle
+from amica.utils.cxg import (
+    AnnotationRecord,
+    CxgPipelineSettings,
+    CxgResourceLayout,
+    PreparedAnnotationBundle,
+)
 
 
 class DummyGroundingAgent:

@@ -3,7 +3,6 @@
 from __future__ import annotations
 
 import logging
-from typing import List, Tuple
 
 from oaklib import get_adapter
 from pydantic_ai import RunContext
@@ -11,7 +10,7 @@ from pydantic_ai import RunContext
 logger = logging.getLogger(__name__)
 
 
-def search_cl(ctx: RunContext[str], term: str) -> List[Tuple[str, str]]:
+def search_cl(ctx: RunContext[str], term: str) -> list[tuple[str, str]]:
     """
     Search the Cell Ontology for a term and return CL identifier/label pairs.
 

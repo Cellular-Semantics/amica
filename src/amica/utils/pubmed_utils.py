@@ -1,7 +1,6 @@
 # Source repo: https://github.com/Cellular-Semantics/agentic-pipeline-testdata/blob/main/src/utils/pubmed_utils.py
 
 import re
-from typing import Optional
 from xml.etree import ElementTree
 
 import requests
@@ -20,7 +19,7 @@ DOI_PATTERN = r"/(10\.\d{4,9}/[\w\-.]+)"
 doi_fetcher = DOIFetcher("ub2@sanger.ac.uk")
 
 
-def extract_doi_from_url(url: str) -> Optional[str]:
+def extract_doi_from_url(url: str) -> str | None:
     """Extracts the DOI from a given journal URL.
 
     Args:
@@ -34,7 +33,7 @@ def extract_doi_from_url(url: str) -> Optional[str]:
     return doi_match.group(1) if doi_match else None
 
 
-def doi_to_pmid(doi: str) -> Optional[str]:
+def doi_to_pmid(doi: str) -> str | None:
     url = "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi"
     params = {
         "db": "pubmed",
@@ -88,7 +87,7 @@ def get_doi_text(doi: str) -> str:
     return ""
 
 
-def _crossref_published_doi(preprint_doi: str) -> Optional[str]:
+def _crossref_published_doi(preprint_doi: str) -> str | None:
     """Return the journal-article DOI linked to this preprint via Crossref."""
     try:
         resp = requests.get(CROSSREF_API.format(preprint_doi=preprint_doi), timeout=5)
@@ -216,7 +215,7 @@ def get_pmid_text(pmid: str) -> str:
     return text
 
 
-def pmid_to_doi(pmid: str) -> Optional[str]:
+def pmid_to_doi(pmid: str) -> str | None:
     if ":" in pmid:
         pmid = pmid.split(":")[1]
     url = f"https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?db=pubmed&id={pmid}&retmode=json"

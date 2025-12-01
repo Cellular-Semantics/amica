@@ -1,9 +1,8 @@
 """
 Configuration for the Ontology Mapper agent.
 """
-from dataclasses import dataclass, field
 import os
-from typing import List, Optional
+from dataclasses import dataclass
 
 from amica.utils.workdir import HasWorkdir, WorkDir
 
@@ -24,7 +23,7 @@ class AnnotatorDependencies(HasWorkdir):
             self.workdir = WorkDir()
 
 
-def get_config(ontologies: Optional[List[str]] = None) -> AnnotatorDependencies:
+def get_config(ontologies: list[str] | None = None) -> AnnotatorDependencies:
     """Get the Ontology Mapper configuration from environment variables or defaults."""
     workdir_path = os.environ.get("AURELIAN_WORKDIR", None)
     workdir = WorkDir(location=workdir_path) if workdir_path else None

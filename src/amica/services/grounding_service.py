@@ -4,8 +4,8 @@ from __future__ import annotations
 
 import json
 import logging
+from collections.abc import Sequence
 from pathlib import Path
-from typing import Dict, List, Sequence
 
 import pandas as pd
 
@@ -86,7 +86,7 @@ class GroundingService:
     async def _process_dataset(
         self,
         dataset_name: str,
-        annotations: List[AnnotationRecord],
+        annotations: list[AnnotationRecord],
         cache_dir: Path,
     ) -> None:
         batch_size = self.settings.annotations_batch_size
@@ -94,7 +94,7 @@ class GroundingService:
             batch = annotations[start : start + batch_size]
             cache_file = cache_dir / f"batch_{batch_index}.json"
 
-            batch_groundings: List[TextAnnotation]
+            batch_groundings: list[TextAnnotation]
             if cache_file.exists():
                 batch_groundings = self._load_groundings_from_cache(cache_file, batch)
             else:
@@ -113,7 +113,7 @@ class GroundingService:
         self,
         cache_file: Path,
         batch: Sequence[AnnotationRecord],
-    ) -> List[TextAnnotation]:
+    ) -> list[TextAnnotation]:
         cached_payload = json.loads(cache_file.read_text(encoding="utf-8"))
         expected_inputs = [record.annotation_text or "" for record in batch]
         cached_inputs = [entry.get("input_name", "") for entry in cached_payload]
@@ -130,7 +130,7 @@ class GroundingService:
 
     async def _run_grounding_agent(
         self, dataset_name: str, batch: Sequence[AnnotationRecord]
-    ) -> List[TextAnnotation]:
+    ) -> list[TextAnnotation]:
         logger.info(
             "[%s] Grounding batch of %s annotations",
             dataset_name,
@@ -201,8 +201,8 @@ class GroundingService:
 
     def _group_by_dataset(
         self, annotations: Sequence[AnnotationRecord]
-    ) -> Dict[str, List[AnnotationRecord]]:
-        grouped: Dict[str, List[AnnotationRecord]] = {}
+    ) -> dict[str, list[AnnotationRecord]]:
+        grouped: dict[str, list[AnnotationRecord]] = {}
         for record in annotations:
             grouped.setdefault(record.dataset_name, []).append(record)
         return grouped
