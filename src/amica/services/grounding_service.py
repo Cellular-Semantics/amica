@@ -40,6 +40,11 @@ class GroundingService:
         self.agent = agent
 
     async def ground_annotations(self, bundle: PreparedAnnotationBundle) -> None:
+        """Ground enriched annotations against the Cell Ontology and persist reports.
+
+        Args:
+            bundle: Prepared annotation bundle mutated in-place with CL grounding.
+        """
         annotations = list(bundle.annotations)
         logger.info("Grounding %s annotations", len(annotations))
         self._normalise_enrichment_state(annotations)

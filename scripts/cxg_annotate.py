@@ -20,6 +20,14 @@ from amica.utils.cxg import (
 
 
 def parse_args(argv: Optional[list[str]] = None) -> argparse.Namespace:
+    """Parse CLI arguments for the CXG annotation workflow.
+
+    Args:
+        argv: Override for argument list, primarily used in tests.
+
+    Returns:
+        Parsed :class:`argparse.Namespace` populated with CLI options.
+    """
     parser = argparse.ArgumentParser(
         description="Run the CXG annotation workflow against local datasets."
     )
@@ -53,6 +61,11 @@ def parse_args(argv: Optional[list[str]] = None) -> argparse.Namespace:
 
 
 def configure_logging(level: str) -> None:
+    """Configure root logging for the CLI.
+
+    Args:
+        level: Logging level name provided on the CLI.
+    """
     logging.basicConfig(
         level=getattr(logging, level.upper(), logging.INFO),
         format="%(asctime)s [%(levelname)s] %(name)s: %(message)s",
@@ -60,6 +73,11 @@ def configure_logging(level: str) -> None:
 
 
 async def _async_main(args: argparse.Namespace) -> None:
+    """Async entrypoint that wires CLI args into the CXG workflow.
+
+    Args:
+        args: Parsed CLI arguments produced by :func:`parse_args`.
+    """
     bootstrap()
     settings, layout = load_cxg_configuration()
     if args.batch_size is not None:
@@ -75,6 +93,7 @@ async def _async_main(args: argparse.Namespace) -> None:
 
 
 def main() -> None:
+    """CLI entrypoint that executes the CXG workflow."""
     args = parse_args()
     configure_logging(args.log_level)
     try:

@@ -140,7 +140,11 @@ def normalise_identifier(value: str) -> str:
 
 
 def load_cxg_configuration() -> Tuple[CxgPipelineSettings, CxgResourceLayout]:
-    """Helper used by CLIs/tests to pull settings/layout from the environment."""
+    """Return CXG runtime settings and resource layout derived from env vars.
+
+    Returns:
+        Tuple of (:class:`CxgPipelineSettings`, :class:`CxgResourceLayout`).
+    """
     return CxgPipelineSettings.from_env(), CxgResourceLayout.from_env()
 
 

@@ -18,7 +18,14 @@ class PublicationFetcher:
         self.layout = layout
 
     def ensure_text_assets(self, dois: Iterable[str]) -> Set[str]:
-        """Fetch publication text files for the given DOIs if missing."""
+        """Fetch publication text files for the given DOIs if missing.
+
+        Args:
+            dois: Iterable of DOI strings that require cached text content.
+
+        Returns:
+            Set of DOIs successfully downloaded or already present.
+        """
         self.layout.publications_dir.mkdir(parents=True, exist_ok=True)
         downloaded: Set[str] = set()
 

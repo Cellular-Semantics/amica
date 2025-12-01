@@ -30,7 +30,12 @@ class DatasetLoader:
         self.settings = settings or CxgPipelineSettings()
 
     def load(self) -> PreparedAnnotationBundle:
-        """Load annotations from every TSV under the configured input directory."""
+        """Load annotations from every TSV under the configured input directory.
+
+        Returns:
+            A populated :class:`PreparedAnnotationBundle` ready for downstream
+            expansion/grounding services.
+        """
         tsv_files = self._discover_input_files()
         if not tsv_files:
             raise FileNotFoundError(

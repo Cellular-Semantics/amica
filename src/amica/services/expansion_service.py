@@ -66,6 +66,11 @@ class ExpansionService:
         self.agent = agent
 
     async def expand_annotations(self, bundle: PreparedAnnotationBundle) -> None:
+        """Populate enrichment metadata for each annotation in the bundle.
+
+        Args:
+            bundle: Prepared annotations grouped by dataset/article.
+        """
         dataset_map = self._group_by_dataset_and_article(bundle)
         for dataset_name in bundle.dataset_names:
             dataset_articles = dataset_map.get(dataset_name, {})
