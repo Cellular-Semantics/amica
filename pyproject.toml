@@ -11,11 +11,6 @@ dependencies = [
     "jsonschema>=4.22.0",
     "cellsem-llm-client @ git+https://github.com/Cellular-Semantics/cellsem_llm_client.git@main",
     "deep-research-client @ git+https://github.com/monarch-initiative/deep-research-client.git@main",
-    "beautifulsoup4>=4.14.2",
-    "markitdown>=0.1.3",
-    "requests-cache>=1.2.1",
-    "oaklib>=0.6.23",
-    "pymupdf>=1.26.6",
 ]
 
 [project.optional-dependencies]
@@ -69,3 +64,15 @@ source = ["src/amica"]
 
 [tool.uv]
 managed = true
+
+[tool.uv.dependency-groups]
+dev = [
+    "pytest>=8.0.0",
+    "pytest-cov>=4.1.0",
+    "ruff>=0.5.0",
+    "mypy>=1.10.0",
+    "sphinx>=7.3.0",
+    "sphinx-autodoc-typehints>=1.25.0",
+    "myst-parser>=2.0.0",
+    "pre-commit>=3.7.0",
+]
