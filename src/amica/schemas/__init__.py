@@ -4,7 +4,7 @@ from __future__ import annotations
 
 from importlib import resources
 from json import loads
-from typing import Any, Dict
+from typing import Any
 
 
 def load_schema(name: str) -> dict[str, Any]:

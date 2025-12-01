@@ -3,7 +3,6 @@
 from __future__ import annotations
 
 import tempfile
-from abc import ABC
 from dataclasses import dataclass, field
 from pathlib import Path
 
@@ -98,15 +97,11 @@ class WorkDir:
             :attr:`location`.
         """
         self._ensure_location()
-        return [
-            entry.name
-            for entry in Path(self.location).iterdir()
-            if entry.is_file()
-        ]
+        return [entry.name for entry in Path(self.location).iterdir() if entry.is_file()]
 
 
 @dataclass
-class HasWorkdir(ABC):
+class HasWorkdir:
     """Mixin to provide a :class:`WorkDir` attribute to dependency objects."""
 
     workdir: WorkDir | None = field(default=None)

@@ -58,7 +58,11 @@ def test_expansion_service_populates_enrichment(tmp_path: Path) -> None:
 
     bundle = _build_bundle("demo", doi)
     agent = DummyExpansionAgent()
-    service = ExpansionService(layout, settings=CxgPipelineSettings(annotations_batch_size=1), agent=agent)
+    service = ExpansionService(
+        layout,
+        settings=CxgPipelineSettings(annotations_batch_size=1),
+        agent=agent,
+    )
 
     asyncio.run(service.expand_annotations(bundle))
 
@@ -96,7 +100,11 @@ def test_expansion_service_uses_cached_results(tmp_path: Path) -> None:
     )
 
     agent = DummyExpansionAgent()
-    service = ExpansionService(layout, settings=CxgPipelineSettings(annotations_batch_size=1), agent=agent)
+    service = ExpansionService(
+        layout,
+        settings=CxgPipelineSettings(annotations_batch_size=1),
+        agent=agent,
+    )
     asyncio.run(service.expand_annotations(bundle))
 
     record = bundle.annotations[0]

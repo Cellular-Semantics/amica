@@ -1,10 +1,14 @@
+# ruff: noqa: E501
 """
 Agent for Cell Ontology.
 """
 
 import logging
 
+from pydantic import BaseModel, Field
 from pydantic_ai import Agent
+
+from .paper_celltype_config import PaperCTDependencies
 
 cell_logger = logging.getLogger(__name__)
 cell_logger.setLevel(logging.INFO)
@@ -16,25 +20,22 @@ cell_logger.addHandler(console)
 
 cell_logger.propagate = False
 
-from .paper_celltype_config import PaperCTDependencies
-
 SYSTEM_PROMPT = """
     You are a Biocuration Assistant. Your primary task is to extract precise cell type information
-    from provided academic paper content, its supplementary materials and an associated JSON file, and then format this
-    information into a structured TSV-compatible output.
+    from provided academic paper content, its supplementary materials and an associated JSON file, 
+    and then format this information into a structured TSV-compatible output.
 
     Your core objective is to process each 'cc.label' from the JSON file according to the
     detailed instructions provided in the task prompt.
 
     IMPORTANT CONSTRAINTS:
-    - Do not use external knowledge. All information must be derived *only* from the provided paper and supplementary material content.
-    - Do not infer, invent, or hallucinate any information. If information is not explicitly found, leave the field blank.
+    - Do not use external knowledge. All information must be derived *only* from the provided paper 
+    and supplementary material content.
+    - Do not infer, invent, or hallucinate any information. If information is not explicitly found, 
+    leave the field blank.
     - Strictly adhere to the output format (TSV-compatible list of dictionaries).
     - Use the provided tools to read the JSON and PDF data.
 """
-
-
-from pydantic import BaseModel, Field
 
 
 class CellTypeEntry(BaseModel):

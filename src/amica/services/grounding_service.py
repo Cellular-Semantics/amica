@@ -5,6 +5,7 @@ from __future__ import annotations
 import json
 import logging
 from collections.abc import Sequence
+from contextlib import suppress
 from pathlib import Path
 
 import pandas as pd
@@ -118,13 +119,9 @@ class GroundingService:
         expected_inputs = [record.annotation_text or "" for record in batch]
         cached_inputs = [entry.get("input_name", "") for entry in cached_payload]
         if cached_inputs != expected_inputs:
-            logger.warning(
-                "Cache mismatch detected at %s, regenerating batch.", cache_file
-            )
-            try:
+            logger.warning("Cache mismatch detected at %s, regenerating batch.", cache_file)
+            with suppress(FileNotFoundError):
                 cache_file.unlink()
-            except FileNotFoundError:
-                pass
             return []
         return [TextAnnotation(**entry) for entry in cached_payload]
 
@@ -138,9 +135,11 @@ class GroundingService:
         )
         expansions_json = json.dumps(
             [
-                record.enrichment.model_dump()
-                if isinstance(record.enrichment, CellTypeEntry)
-                else record.enrichment
+                (
+                    record.enrichment.model_dump()
+                    if isinstance(record.enrichment, CellTypeEntry)
+                    else record.enrichment
+                )
                 for record in batch
             ],
             indent=2,
@@ -188,9 +187,11 @@ class GroundingService:
             df_filtered = df_all[df_all["grounding_cl_id"].notna()].copy()
             if df_filtered.empty:
                 continue
-            df_filtered["result"] = df_filtered["cl_id"].eq(
-                df_filtered["grounding_cl_id"]
-            ).map({True: "TRUE", False: "FALSE"})
+            df_filtered["result"] = (
+                df_filtered["cl_id"]
+                .eq(df_filtered["grounding_cl_id"])
+                .map({True: "TRUE", False: "FALSE"})
+            )
             groundings_path = dataset_dir / "groundings.tsv"
             df_filtered.to_csv(groundings_path, sep="\t", index=False)
             logger.info(

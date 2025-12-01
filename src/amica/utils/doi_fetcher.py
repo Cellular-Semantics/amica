@@ -3,6 +3,7 @@
 import logging
 import os
 import re
+from contextlib import suppress
 from dataclasses import dataclass, field
 from tempfile import NamedTemporaryFile
 from typing import Any
@@ -50,9 +51,7 @@ class DOIFetcher:
             "Accept": "application/json",
         }
         # fallback URL prefixes
-        self.url_prefixes = url_prefixes or os.getenv("DOI_FULL_TEXT_URLS", "").split(
-            ","
-        )
+        self.url_prefixes = url_prefixes or os.getenv("DOI_FULL_TEXT_URLS", "").split(",")
 
     def clean_text(self, text: str) -> str:
         """Clean extracted text by removing extra whitespace and normalized characters.
@@ -81,18 +80,16 @@ class DOIFetcher:
         """
         base_url = "https://api.crossref.org/works/"
         try:
-            resp = requests.get(f"{base_url}{doi}", headers=self.headers)
+            resp = requests.get(f"{base_url}{doi}", headers=self.headers, timeout=30)
             resp.raise_for_status()
             return resp.json().get("message")
-        except Exception as e:
+        except Exception as err:  # noqa: BLE001
             if strict:
                 raise
-            logger.warning(f"Error fetching metadata: {e}")
+            logger.warning("Error fetching metadata: %s", err)
             return None
 
-    def get_unpaywall_info(
-        self, doi: str, strict: bool = False
-    ) -> dict[str, Any] | None:
+    def get_unpaywall_info(self, doi: str, strict: bool = False) -> dict[str, Any] | None:
         """Check Unpaywall for open access versions.
 
         Example:
@@ -113,13 +110,13 @@ class DOIFetcher:
         """
         base_url = f"https://api.unpaywall.org/v2/{doi}?email={self.email}"
         try:
-            resp = requests.get(base_url)
+            resp = requests.get(base_url, timeout=30)
             resp.raise_for_status()
             return resp.json()
-        except Exception as e:
+        except Exception as err:  # noqa: BLE001
             if strict:
                 raise
-            logger.warning(f"Error fetching Unpaywall data: {e}")
+            logger.warning("Error fetching Unpaywall data: %s", err)
             return None
 
     def get_full_text_info(self, doi: str) -> FullTextInfo | None:
@@ -158,7 +155,7 @@ class DOIFetcher:
         for prefix in self.url_prefixes:
             url = f"{prefix.rstrip('/')}/{doi}"
             try:
-                resp = requests.get(url)
+                resp = requests.get(url, timeout=30)
                 if resp.status_code == 200:
                     soup = BeautifulSoup(resp.text, "html.parser")
                     embed = soup.find("embed", id="pdf")
@@ -168,13 +165,11 @@ class DOIFetcher:
                         return FullTextInfo(
                             text=None, pdf_url=pdf_url, source=url, metadata=metadata
                         )
-            except:
+            except Exception:  # noqa: BLE001
                 continue
         return None
 
-    def text_from_pdf_url(
-        self, pdf_url: str, raise_for_status: bool = False
-    ) -> str | None:
+    def text_from_pdf_url(self, pdf_url: str, raise_for_status: bool = False) -> str | None:
         """Extract text from a PDF URL.
 
         Example:
@@ -228,27 +223,24 @@ class DOIFetcher:
             out = md.convert(path).text_content
 
             # clean up
-            try:
+            with suppress(OSError):
                 os.remove(path)
-            except OSError:
-                pass
 
             return out
 
-        except Exception:
-            # you might want to log e here
+        except Exception:  # noqa: BLE001
+            # you might want to log this exception here if needed
             return None
 
-    def get_full_text(
-        self, doi: str, fallback_to_abstract: bool = True
-    ) -> str | bytes | None:
+    def get_full_text(self, doi: str, fallback_to_abstract: bool = True) -> str | bytes | None:
         """
         Retrieve full text (HTML or PDF binary) of a paper by DOI.
 
         Returns:
             - Cleaned full text string if available
             - Raw PDF content (bytes) if full text not available but PDF is fetched
-            - Abstract string (with fallback note) if fallback is enabled and full text is unavailable
+            - Abstract string (with fallback note) if fallback is enabled and full text
+              is unavailable
             - None if nothing could be retrieved
         """
         info = self.get_full_text_info(doi)

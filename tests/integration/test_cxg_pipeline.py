@@ -41,7 +41,5 @@ def test_cxg_pipeline_smoke(tmp_path: Path) -> None:
     result = asyncio.run(run_cxg_workflow(settings=settings, layout=layout))
     subset_name = SUBSET_DATASET.stem
     assert result.dataset_names == [subset_name]
-    output_file = (
-        layout.output_dir / subset_name / "cell_type_annotations_un_filtered.tsv"
-    )
+    output_file = layout.output_dir / subset_name / "cell_type_annotations_un_filtered.tsv"
     assert output_file.exists()

@@ -1,6 +1,7 @@
 """
 Configuration for the Ontology Mapper agent.
 """
+
 import os
 from dataclasses import dataclass
 

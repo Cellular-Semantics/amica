@@ -129,9 +129,7 @@ class PreparedAnnotationBundle:
     """Outputs from the dataset loading/preparation stage."""
 
     annotations: list[AnnotationRecord] = field(default_factory=list)
-    article_to_annotations: dict[str, list[AnnotationRecord]] = field(
-        default_factory=dict
-    )
+    article_to_annotations: dict[str, list[AnnotationRecord]] = field(default_factory=dict)
     dataset_names: list[str] = field(default_factory=list)
 
 

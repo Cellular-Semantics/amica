@@ -4,7 +4,6 @@ from __future__ import annotations
 
 from collections.abc import Iterable
 from dataclasses import dataclass
-from typing import List
 
 
 def chunk_items(items: Iterable[str], size: int = 10) -> list[list[str]]:
@@ -27,4 +26,3 @@ class ToolingContext:
 
     workspace: str
     dry_run: bool = False
-

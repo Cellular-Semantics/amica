@@ -1,6 +1,7 @@
 """
 Configuration for the Cell agent.
 """
+
 import os
 from dataclasses import dataclass, field
 
@@ -9,23 +10,25 @@ from amica.utils.workdir import HasWorkdir, WorkDir
 
 @dataclass
 class PaperCTDependencies(HasWorkdir):
-
     llm: str = field(
         default="gpt-4.1-2025-04-14",
         metadata={
-            "description": "LLM to use for queries and answer generation. Default is gpt-4.1-2025-04-14."}
+            "description": (
+                "LLM to use for queries and answer generation. Default is gpt-4.1-2025-04-14."
+            )
+        },
     )
     summary_llm: str = field(
         default="gpt-4.1-2025-04-14",
-        metadata={"description": "LLM to use for summarization. Default is gpt-4.1-2025-04-14."}
+        metadata={"description": ("LLM to use for summarization. Default is gpt-4.1-2025-04-14.")},
     )
     embedding: str = field(
         default="text-embedding-3-small",
-        metadata={"description": "Embedding model to use. Default is text-embedding-3-small."}
+        metadata={"description": "Embedding model to use. Default is text-embedding-3-small."},
     )
     temperature: float = field(
         default=0.1,
-        metadata={"description": "Temperature for LLM generation. Default is 0.1."}
+        metadata={"description": "Temperature for LLM generation. Default is 0.1."},
     )
 
     workdir: WorkDir | None = None
