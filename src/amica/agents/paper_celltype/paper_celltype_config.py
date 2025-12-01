@@ -33,7 +33,7 @@ class PaperCTDependencies(HasWorkdir):
 
     workdir: WorkDir | None = None
 
-    def __post_init__(self):
+    def __post_init__(self) -> None:
         """Initialize the config with default values."""
         if self.workdir is None:
             self.workdir = WorkDir()

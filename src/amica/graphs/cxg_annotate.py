@@ -106,7 +106,7 @@ async def run_cxg_workflow(
     else:
         deps.graph = graph
 
-    node_id = graph.entrypoint
+    node_id: str | None = graph.entrypoint
     while node_id:
         node = deps.graph.route(node_id)
         handler = _SERVICE_HANDLERS.get(node.service)

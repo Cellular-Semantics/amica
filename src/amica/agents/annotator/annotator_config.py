@@ -17,7 +17,7 @@ class AnnotatorDependencies(HasWorkdir):
     this can easily be changed e.g. in command line
     """
 
-    def __post_init__(self):
+    def __post_init__(self) -> None:
         """Initialize the config with default values."""
         # HasWorkdir doesn't have a __post_init__ method, so we don't call super()
         if self.workdir is None:

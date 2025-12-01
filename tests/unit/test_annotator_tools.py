@@ -21,5 +21,5 @@ def test_search_cl_returns_label(monkeypatch) -> None:
         "amica.agents.annotator.annotator_tools.get_adapter",
         lambda name: DummyAdapter(),
     )
-    matches = search_cl(ctx=None, term="astrocyte")
+    matches = search_cl(None, "astrocyte")
     assert matches == [("CL:0000127", "astrocyte")]

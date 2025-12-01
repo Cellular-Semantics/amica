@@ -105,9 +105,9 @@ class AnnotationRecord:
     grounding_cl_id: str | None = None
     grounding_cl_label: str | None = None
 
-    def as_dict(self) -> dict[str, str | None]:
+    def as_dict(self) -> dict[str, Any]:
         """Return a serialisable form for pandas/DataFrame consumers."""
-        payload: dict[str, str | None] = {
+        payload: dict[str, Any] = {
             "dataset_name": self.dataset_name,
             "annotation_text": self.annotation_text,
             "article_id_doi": self.article_id_doi,

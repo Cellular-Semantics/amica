@@ -160,7 +160,10 @@ class DOIFetcher:
                     soup = BeautifulSoup(resp.text, "html.parser")
                     embed = soup.find("embed", id="pdf")
                     if embed and embed.get("src"):
-                        src = embed["src"].split("#")[0]
+                        raw_src = embed.get("src")
+                        if not isinstance(raw_src, str):
+                            continue
+                        src = raw_src.split("#")[0]
                         pdf_url = src if src.startswith("http") else f"https:{src}"
                         return FullTextInfo(
                             text=None, pdf_url=pdf_url, source=url, metadata=metadata

@@ -9,12 +9,14 @@ from contextlib import suppress
 from pathlib import Path
 
 import pandas as pd
+from pydantic_ai import Agent
 
 from amica.agents.annotator.annotator_agent import (
     TextAnnotation,
     TextAnnotationResult,
     annotator_agent,
 )
+from amica.agents.annotator.annotator_config import AnnotatorDependencies
 from amica.agents.paper_celltype.paper_celltype_agent import CellTypeEntry
 from amica.utils.cxg import (
     AnnotationRecord,
@@ -34,7 +36,7 @@ class GroundingService:
         self,
         layout: CxgResourceLayout,
         settings: CxgPipelineSettings | None = None,
-        agent=annotator_agent,
+        agent: Agent[AnnotatorDependencies, TextAnnotationResult] = annotator_agent,
     ) -> None:
         self.layout = layout
         self.settings = settings or CxgPipelineSettings()
@@ -63,7 +65,7 @@ class GroundingService:
 
         self._write_reports(bundle)
 
-    def _normalise_enrichment_state(self, annotations: Sequence[AnnotationRecord]) -> None:
+    def _normalise_enrichment_state(self, annotations: list[AnnotationRecord]) -> None:
         for record in annotations:
             if not record.enrichment or isinstance(record.enrichment, dict):
                 record.enrichment = CellTypeEntry(
@@ -144,15 +146,16 @@ class GroundingService:
             ],
             indent=2,
         )
-        response: TextAnnotationResult = await self.agent.run(expansions_json)
-        return response.output.annotations
+        result = await self.agent.run(expansions_json)
+        output: TextAnnotationResult = result.output
+        return output.annotations
 
     def _apply_groundings(
         self,
         batch: Sequence[AnnotationRecord],
         batch_groundings: Sequence[TextAnnotation],
     ) -> None:
-        by_input = {}
+        by_input: dict[str, list[TextAnnotation]] = {}
         for entry in batch_groundings:
             by_input.setdefault(entry.input_name, []).append(entry)
 

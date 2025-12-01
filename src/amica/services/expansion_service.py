@@ -6,10 +6,16 @@ from __future__ import annotations
 import json
 import logging
 
+from pathlib import Path
+
+from pydantic_ai import Agent
+
 from amica.agents.paper_celltype.paper_celltype_agent import (
+    BiocurationOutput,
     CellTypeEntry,
     celltype_agent,
 )
+from amica.agents.paper_celltype.paper_celltype_config import PaperCTDependencies
 from amica.utils.cxg import (
     AnnotationRecord,
     CxgPipelineSettings,
@@ -59,7 +65,7 @@ class ExpansionService:
         self,
         layout: CxgResourceLayout,
         settings: CxgPipelineSettings | None = None,
-        agent=celltype_agent,
+        agent: Agent[PaperCTDependencies, BiocurationOutput] = celltype_agent,
     ) -> None:
         self.layout = layout
         self.settings = settings or CxgPipelineSettings()
@@ -90,7 +96,7 @@ class ExpansionService:
         dataset_name: str,
         article_id: str,
         article_annotations: list[AnnotationRecord],
-        dataset_cache_dir,
+        dataset_cache_dir: Path,
     ) -> None:
         logger.info("[%s] Expanding entries for article %s", dataset_name, article_id)
         slug = normalise_identifier(article_id or "unknown")
@@ -147,7 +153,7 @@ class ExpansionService:
         article_id: str,
         batch: list[AnnotationRecord],
         article_text: str,
-        cache_file,
+        cache_file: Path,
     ) -> None:
         cc_labels = [{"cc.label": ann.annotation_text} for ann in batch]
         prompt = PROMPT_TEMPLATE.format(
@@ -160,8 +166,8 @@ class ExpansionService:
             article_id,
             len(batch),
         )
-        response = await self.agent.run(prompt)
-        annotations = response.output.cell_type_annotations
+        result = await self.agent.run(prompt)
+        annotations = result.output.cell_type_annotations
         by_name = {record.annotation_text: record for record in batch}
 
         for entry in annotations:
