@@ -1,0 +1,6 @@
+author_cell_type	CL_label	CL_ID	reference	dataset_version
+Oligodendrocytes	oligodendrocyte	CL:0000128	https://doi.org/10.1007/s00401-023-02599-5	https://datasets.cellxgene.cziscience.com/8ec7b265-1c95-4c33-9df3-45c850b8b6b5.h5ad
+L3-L5 Intratelencephalic Type 1	neuron	CL:0000540	https://doi.org/10.1007/s00401-023-02599-5	https://datasets.cellxgene.cziscience.com/8ec7b265-1c95-4c33-9df3-45c850b8b6b5.h5ad
+Astrocytes	astrocyte	CL:0000127	https://doi.org/10.1007/s00401-023-02599-5	https://datasets.cellxgene.cziscience.com/8ec7b265-1c95-4c33-9df3-45c850b8b6b5.h5ad
+L6 Intratelencephalic - Type 1	neuron	CL:0000540	https://doi.org/10.1007/s00401-023-02599-5	https://datasets.cellxgene.cziscience.com/8ec7b265-1c95-4c33-9df3-45c850b8b6b5.h5ad
+SV2C LAMP5 Interneurons	neuron	CL:0000540	https://doi.org/10.1007/s00401-023-02599-5	https://datasets.cellxgene.cziscience.com/8ec7b265-1c95-4c33-9df3-45c850b8b6b5.h5ad

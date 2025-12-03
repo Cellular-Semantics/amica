@@ -1,0 +1,11 @@
+# Enable only the linting rule families you want.
+# Common lint-only codes include:
+#   F = Pyflakes (undefined names, unused imports, etc.)
+#   B = flake8-bugbear (logical bug detection)
+lint.select = ["F", "RUF100"]
+
+# OPTIONAL: Disable formatting / style rule families
+# (E/W = pycodestyle, D = docstyle, I = import sorting, etc.)
+lint.ignore = ["E", "W", "D", "I"]
+
+# Do not use Ruff formatting — ensure `ruff format` is not run.
