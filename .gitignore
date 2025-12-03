@@ -12,3 +12,4 @@ docs/_build/
 *.egg-info
 resources/
 .idea/
+.vscode/settings.json

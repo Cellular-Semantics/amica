@@ -51,7 +51,9 @@ class DOIFetcher:
             "Accept": "application/json",
         }
         # fallback URL prefixes
-        self.url_prefixes = url_prefixes or os.getenv("DOI_FULL_TEXT_URLS", "").split(",")
+        self.url_prefixes = url_prefixes or os.getenv("DOI_FULL_TEXT_URLS", "").split(
+            ","
+        )
 
     def clean_text(self, text: str) -> str:
         """Clean extracted text by removing extra whitespace and normalized characters.
@@ -83,13 +85,15 @@ class DOIFetcher:
             resp = requests.get(f"{base_url}{doi}", headers=self.headers, timeout=30)
             resp.raise_for_status()
             return resp.json().get("message")
-        except Exception as err:  # noqa: BLE001
+        except Exception as err:
             if strict:
                 raise
             logger.warning("Error fetching metadata: %s", err)
             return None
 
-    def get_unpaywall_info(self, doi: str, strict: bool = False) -> dict[str, Any] | None:
+    def get_unpaywall_info(
+        self, doi: str, strict: bool = False
+    ) -> dict[str, Any] | None:
         """Check Unpaywall for open access versions.
 
         Example:
@@ -113,7 +117,7 @@ class DOIFetcher:
             resp = requests.get(base_url, timeout=30)
             resp.raise_for_status()
             return resp.json()
-        except Exception as err:  # noqa: BLE001
+        except Exception as err:
             if strict:
                 raise
             logger.warning("Error fetching Unpaywall data: %s", err)
@@ -168,11 +172,13 @@ class DOIFetcher:
                         return FullTextInfo(
                             text=None, pdf_url=pdf_url, source=url, metadata=metadata
                         )
-            except Exception:  # noqa: BLE001
+            except Exception:
                 continue
         return None
 
-    def text_from_pdf_url(self, pdf_url: str, raise_for_status: bool = False) -> str | None:
+    def text_from_pdf_url(
+        self, pdf_url: str, raise_for_status: bool = False
+    ) -> str | None:
         """Extract text from a PDF URL.
 
         Example:
@@ -231,11 +237,13 @@ class DOIFetcher:
 
             return out
 
-        except Exception:  # noqa: BLE001
+        except Exception:
             # you might want to log this exception here if needed
             return None
 
-    def get_full_text(self, doi: str, fallback_to_abstract: bool = True) -> str | bytes | None:
+    def get_full_text(
+        self, doi: str, fallback_to_abstract: bool = True
+    ) -> str | bytes | None:
         """
         Retrieve full text (HTML or PDF binary) of a paper by DOI.
 

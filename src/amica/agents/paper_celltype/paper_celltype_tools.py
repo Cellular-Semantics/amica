@@ -45,7 +45,9 @@ def read_json(ctx: RunContext[str], file_path: str) -> list[dict[str, Any]]:
         if isinstance(data, list) and all(
             isinstance(item, dict) and "cc.label" in item for item in data
         ):
-            print(f"Successfully read JSON from {file_path}. Found {len(data)} entries.")
+            print(
+                f"Successfully read JSON from {file_path}. Found {len(data)} entries."
+            )
             return data
         raise ValueError(
             "JSON file format not as expected. Expected a list of dictionaries, "

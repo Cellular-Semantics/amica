@@ -9,7 +9,11 @@ from typing import Any
 
 def load_schema(name: str) -> dict[str, Any]:
     """Load a JSON schema file bundled in the `schemas` directory."""
-    with resources.files(__package__).joinpath(name).open("r", encoding="utf-8") as handle:
+    with (
+        resources.files(__package__)
+        .joinpath(name)
+        .open("r", encoding="utf-8") as handle
+    ):
         return loads(handle.read())
 
 

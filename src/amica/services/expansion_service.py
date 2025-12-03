@@ -1,4 +1,3 @@
-# ruff: noqa: E501
 """Expansion service that enriches annotations via the paper cell type agent."""
 
 from __future__ import annotations
@@ -82,7 +81,9 @@ class ExpansionService:
             if not dataset_articles:
                 continue
 
-            dataset_cache_dir = self.layout.expansions_dir / normalise_identifier(dataset_name)
+            dataset_cache_dir = self.layout.expansions_dir / normalise_identifier(
+                dataset_name
+            )
             dataset_cache_dir.mkdir(parents=True, exist_ok=True)
 
             for article_id, article_annotations in sorted(dataset_articles.items()):
@@ -114,7 +115,9 @@ class ExpansionService:
         batch_size = self.settings.annotations_batch_size
         for batch_index in range(0, len(article_annotations), batch_size):
             batch = article_annotations[batch_index : batch_index + batch_size]
-            cache_file = dataset_cache_dir / f"{slug}_batch_{batch_index // batch_size}.json"
+            cache_file = (
+                dataset_cache_dir / f"{slug}_batch_{batch_index // batch_size}.json"
+            )
             if cache_file.exists():
                 logger.debug(
                     "[%s] Using cached expansion batch %s for article %s",

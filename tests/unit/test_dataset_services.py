@@ -67,7 +67,9 @@ def test_dataset_loader_respects_test_mode(tmp_path: Path) -> None:
 
 
 @pytest.mark.unit
-def test_publication_fetcher_downloads_missing_files(monkeypatch, tmp_path: Path) -> None:
+def test_publication_fetcher_downloads_missing_files(
+    monkeypatch, tmp_path: Path
+) -> None:
     """PublicationFetcher should write text files when not cached."""
     captured = {}
 

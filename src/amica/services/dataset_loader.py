@@ -71,7 +71,9 @@ class DatasetLoader:
             return []
 
         files = sorted(
-            path for path in self.layout.input_dir.iterdir() if path.suffix.lower() == ".tsv"
+            path
+            for path in self.layout.input_dir.iterdir()
+            if path.suffix.lower() == ".tsv"
         )
         return files
 

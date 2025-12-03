@@ -97,7 +97,9 @@ class WorkDir:
             :attr:`location`.
         """
         self._ensure_location()
-        return [entry.name for entry in Path(self.location).iterdir() if entry.is_file()]
+        return [
+            entry.name for entry in Path(self.location).iterdir() if entry.is_file()
+        ]
 
 
 @dataclass

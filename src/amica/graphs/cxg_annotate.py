@@ -75,8 +75,12 @@ class CxgGraphDependencies(GraphDependencies):
 
     def __post_init__(self) -> None:
         self.layout.ensure_directories()
-        self.dataset_loader = self.dataset_loader or DatasetLoader(self.layout, self.settings)
-        self.publication_fetcher = self.publication_fetcher or PublicationFetcher(self.layout)
+        self.dataset_loader = self.dataset_loader or DatasetLoader(
+            self.layout, self.settings
+        )
+        self.publication_fetcher = self.publication_fetcher or PublicationFetcher(
+            self.layout
+        )
         self.expansion_service = self.expansion_service or ExpansionService(
             self.layout, self.settings
         )
@@ -149,7 +153,9 @@ async def _handle_ground_annotations(deps: CxgGraphDependencies) -> None:
 
 def _require_bundle(deps: CxgGraphDependencies) -> PreparedAnnotationBundle:
     if not deps.bundle:
-        raise RuntimeError("Workflow bundle missing. Ensure prepare_data runs before other nodes.")
+        raise RuntimeError(
+            "Workflow bundle missing. Ensure prepare_data runs before other nodes."
+        )
     return deps.bundle
 
 

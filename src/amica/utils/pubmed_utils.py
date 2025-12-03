@@ -9,12 +9,8 @@ from bs4 import BeautifulSoup
 from .doi_fetcher import DOIFetcher
 
 BIOC_URL = "https://www.ncbi.nlm.nih.gov/research/bionlp/RESTful/pmcoa.cgi/BioC_xml/{pmid}/ascii"
-PUBMED_EUTILS_URL = (
-    "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?db=pubmed&id={pmid}&retmode=xml"
-)
-EFETCH_URL = (
-    "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=pubmed&id={pmid}&retmode=xml"
-)
+PUBMED_EUTILS_URL = "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?db=pubmed&id={pmid}&retmode=xml"
+EFETCH_URL = "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=pubmed&id={pmid}&retmode=xml"
 EUROPEPMC_URL = "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query={pmid}&resultType=lite&format=json"
 CROSSREF_API = "https://api.crossref.org/works/{preprint_doi}"
 

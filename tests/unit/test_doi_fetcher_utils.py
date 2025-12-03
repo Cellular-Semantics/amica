@@ -78,7 +78,9 @@ def test_get_full_text_info_prefers_unpaywall(monkeypatch) -> None:
 
 @pytest.mark.unit
 def test_get_full_text_info_falls_back_to_prefix(monkeypatch) -> None:
-    html = '<html><body><embed id="pdf" src="//downloads/demo.pdf#view=fit"></body></html>'
+    html = (
+        '<html><body><embed id="pdf" src="//downloads/demo.pdf#view=fit"></body></html>'
+    )
 
     def fake_get(url, *args, **kwargs):
         return DummyResponse(status_code=200, text=html)
@@ -124,7 +126,9 @@ def test_text_from_pdf_url_handles_non_200(monkeypatch) -> None:
         return DummyResponse(status_code=404)
 
     fake_session.get = fake_get
-    monkeypatch.setattr("amica.utils.doi_fetcher.requests.Session", lambda: fake_session)
+    monkeypatch.setattr(
+        "amica.utils.doi_fetcher.requests.Session", lambda: fake_session
+    )
     fetcher = DOIFetcher()
     assert fetcher.text_from_pdf_url("https://example.com/bad.pdf") is None
 

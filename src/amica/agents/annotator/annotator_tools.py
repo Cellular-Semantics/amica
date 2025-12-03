@@ -12,7 +12,9 @@ from .annotator_config import AnnotatorDependencies
 logger = logging.getLogger(__name__)
 
 
-def search_cl(ctx: RunContext[AnnotatorDependencies], term: str, /) -> list[tuple[str, str]]:
+def search_cl(
+    ctx: RunContext[AnnotatorDependencies], term: str, /
+) -> list[tuple[str, str]]:
     """
     Search the Cell Ontology for a term and return CL identifier/label pairs.
 

@@ -9,7 +9,9 @@ import amica.utils.pubmed_utils as pubmed_utils
 
 
 class DummyResponse:
-    def __init__(self, text="", json_data=None, status_code=200, url="https://example.com"):
+    def __init__(
+        self, text="", json_data=None, status_code=200, url="https://example.com"
+    ):
         self.text = text
         self._json_data = json_data or {}
         self.status_code = status_code
@@ -61,7 +63,9 @@ def test_crossref_published_doi(monkeypatch) -> None:
 @pytest.mark.unit
 def test_get_doi_text_prefers_pmid(monkeypatch) -> None:
     monkeypatch.setattr("amica.utils.pubmed_utils.doi_to_pmid", lambda doi: "12345")
-    monkeypatch.setattr("amica.utils.pubmed_utils.get_pmid_text", lambda pmid: "full text")
+    monkeypatch.setattr(
+        "amica.utils.pubmed_utils.get_pmid_text", lambda pmid: "full text"
+    )
     text = pubmed_utils.get_doi_text("10.1000/demo")
     assert text == "full text"
 
@@ -69,7 +73,9 @@ def test_get_doi_text_prefers_pmid(monkeypatch) -> None:
 @pytest.mark.unit
 def test_get_doi_text_falls_back_to_doi_fetcher(monkeypatch) -> None:
     monkeypatch.setattr("amica.utils.pubmed_utils.doi_to_pmid", lambda doi: None)
-    monkeypatch.setattr("amica.utils.pubmed_utils._crossref_published_doi", lambda doi: None)
+    monkeypatch.setattr(
+        "amica.utils.pubmed_utils._crossref_published_doi", lambda doi: None
+    )
     fake_fetcher = types.SimpleNamespace(get_full_text=lambda doi: "fallback text")
     monkeypatch.setattr("amica.utils.pubmed_utils.doi_fetcher", fake_fetcher)
     assert pubmed_utils.get_doi_text("10.1000/demo") == "fallback text"
@@ -77,17 +83,25 @@ def test_get_doi_text_falls_back_to_doi_fetcher(monkeypatch) -> None:
 
 @pytest.mark.unit
 def test_get_pmid_text_prefers_bioc(monkeypatch) -> None:
-    monkeypatch.setattr("amica.utils.pubmed_utils.get_full_text_from_bioc", lambda pmid: "bioctext")
+    monkeypatch.setattr(
+        "amica.utils.pubmed_utils.get_full_text_from_bioc", lambda pmid: "bioctext"
+    )
     assert pubmed_utils.get_pmid_text("PMID:123") == "bioctext"
 
 
 @pytest.mark.unit
 def test_get_pmid_text_falls_back_to_abstract(monkeypatch) -> None:
-    monkeypatch.setattr("amica.utils.pubmed_utils.get_full_text_from_bioc", lambda pmid: "")
+    monkeypatch.setattr(
+        "amica.utils.pubmed_utils.get_full_text_from_bioc", lambda pmid: ""
+    )
 
     def fake_get(url):
         return DummyResponse(
-            json_data={"resultList": {"result": [{"fullTextIdList": {"fullTextId": ["PMC123"]}}]}},
+            json_data={
+                "resultList": {
+                    "result": [{"fullTextIdList": {"fullTextId": ["PMC123"]}}]
+                }
+            },
             status_code=200,
         )
 
@@ -129,9 +143,7 @@ def test_pmid_to_doi_extracts_value(monkeypatch) -> None:
 
 @pytest.mark.unit
 def test_get_full_text_from_bioc_parses_text(monkeypatch) -> None:
-    xml = (
-        "<root><passage><text>Line A</text></passage><passage><text>Line B</text></passage></root>"
-    )
+    xml = "<root><passage><text>Line A</text></passage><passage><text>Line B</text></passage></root>"
 
     def fake_get(url, timeout=10.0):
         return DummyResponse(text=xml)

@@ -106,7 +106,9 @@ class GroundingService:
             if not batch_groundings:
                 batch_groundings = await self._run_grounding_agent(dataset_name, batch)
                 cache_file.write_text(
-                    json.dumps([entry.model_dump() for entry in batch_groundings], indent=2),
+                    json.dumps(
+                        [entry.model_dump() for entry in batch_groundings], indent=2
+                    ),
                     encoding="utf-8",
                 )
 
@@ -121,7 +123,9 @@ class GroundingService:
         expected_inputs = [record.annotation_text or "" for record in batch]
         cached_inputs = [entry.get("input_name", "") for entry in cached_payload]
         if cached_inputs != expected_inputs:
-            logger.warning("Cache mismatch detected at %s, regenerating batch.", cache_file)
+            logger.warning(
+                "Cache mismatch detected at %s, regenerating batch.", cache_file
+            )
             with suppress(FileNotFoundError):
                 cache_file.unlink()
             return []
