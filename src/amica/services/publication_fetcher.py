@@ -3,7 +3,7 @@
 from __future__ import annotations
 
 import logging
-from typing import Iterable, Set
+from collections.abc import Iterable
 
 from amica.utils.cxg import CxgResourceLayout, normalise_identifier
 from amica.utils.pubmed_utils import get_doi_text
@@ -17,7 +17,7 @@ class PublicationFetcher:
     def __init__(self, layout: CxgResourceLayout) -> None:
         self.layout = layout
 
-    def ensure_text_assets(self, dois: Iterable[str]) -> Set[str]:
+    def ensure_text_assets(self, dois: Iterable[str]) -> set[str]:
         """Fetch publication text files for the given DOIs if missing.
 
         Args:
@@ -27,7 +27,7 @@ class PublicationFetcher:
             Set of DOIs successfully downloaded or already present.
         """
         self.layout.publications_dir.mkdir(parents=True, exist_ok=True)
-        downloaded: Set[str] = set()
+        downloaded: set[str] = set()
 
         for doi in dois:
             if not doi:

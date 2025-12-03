@@ -102,7 +102,10 @@ def test_get_pmid_text_falls_back_to_abstract(monkeypatch) -> None:
     )
     fake_fetcher = types.SimpleNamespace(get_full_text=lambda doi: "")
     monkeypatch.setattr("amica.utils.pubmed_utils.doi_fetcher", fake_fetcher)
-    monkeypatch.setattr("amica.utils.pubmed_utils.get_abstract_from_pubmed", lambda pmid: "Abstract text")
+    monkeypatch.setattr(
+        "amica.utils.pubmed_utils.get_abstract_from_pubmed",
+        lambda pmid: "Abstract text",
+    )
 
     assert pubmed_utils.get_pmid_text("123") == "Abstract text"
 
@@ -126,7 +129,9 @@ def test_pmid_to_doi_extracts_value(monkeypatch) -> None:
 
 @pytest.mark.unit
 def test_get_full_text_from_bioc_parses_text(monkeypatch) -> None:
-    xml = "<root><passage><text>Line A</text></passage><passage><text>Line B</text></passage></root>"
+    xml = (
+        "<root><passage><text>Line A</text></passage><passage><text>Line B</text></passage></root>"
+    )
 
     def fake_get(url, timeout=10.0):
         return DummyResponse(text=xml)

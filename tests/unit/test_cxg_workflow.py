@@ -1,8 +1,8 @@
 from __future__ import annotations
 
 import asyncio
+from collections.abc import Iterable
 from pathlib import Path
-from typing import Iterable, List
 
 import pytest
 
@@ -29,7 +29,7 @@ class DummyDatasetLoader:
 
 class DummyPublicationFetcher:
     def __init__(self) -> None:
-        self.requested: List[str] = []
+        self.requested: list[str] = []
 
     def ensure_text_assets(self, dois: Iterable[str]):
         values = list(dois)

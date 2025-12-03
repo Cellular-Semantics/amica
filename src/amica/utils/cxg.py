@@ -5,7 +5,7 @@ from __future__ import annotations
 import os
 from dataclasses import dataclass, field
 from pathlib import Path
-from typing import Any, Dict, List, Optional, Tuple, Union
+from typing import Any
 
 from amica.agents.paper_celltype.paper_celltype_agent import CellTypeEntry
 
@@ -43,7 +43,7 @@ class CxgPipelineSettings:
     test_annotations_count: int = 4
 
     @classmethod
-    def from_env(cls) -> "CxgPipelineSettings":
+    def from_env(cls) -> CxgPipelineSettings:
         """Build settings from environment variables."""
         return cls(
             annotations_batch_size=_env_int("CXG_ANNOTATIONS_BATCH_SIZE", 5),
@@ -73,7 +73,7 @@ class CxgResourceLayout:
         self.output_dir = base / "output"
 
     @classmethod
-    def from_env(cls) -> "CxgResourceLayout":
+    def from_env(cls) -> CxgResourceLayout:
         """Construct a layout using environment variables."""
         override = os.environ.get("CXG_RESOURCES_DIR")
         if override:
@@ -99,15 +99,15 @@ class AnnotationRecord:
     dataset_name: str
     annotation_text: str
     article_id_doi: str
-    cl_id: Optional[str] = None
-    cl_label: Optional[str] = None
-    enrichment: Optional[Union[CellTypeEntry, Dict[str, Any]]] = None
-    grounding_cl_id: Optional[str] = None
-    grounding_cl_label: Optional[str] = None
+    cl_id: str | None = None
+    cl_label: str | None = None
+    enrichment: CellTypeEntry | dict[str, Any] | None = None
+    grounding_cl_id: str | None = None
+    grounding_cl_label: str | None = None
 
-    def as_dict(self) -> Dict[str, Optional[str]]:
+    def as_dict(self) -> dict[str, Any]:
         """Return a serialisable form for pandas/DataFrame consumers."""
-        payload: Dict[str, Optional[str]] = {
+        payload: dict[str, Any] = {
             "dataset_name": self.dataset_name,
             "annotation_text": self.annotation_text,
             "article_id_doi": self.article_id_doi,
@@ -128,11 +128,9 @@ class AnnotationRecord:
 class PreparedAnnotationBundle:
     """Outputs from the dataset loading/preparation stage."""
 
-    annotations: List[AnnotationRecord] = field(default_factory=list)
-    article_to_annotations: Dict[str, List[AnnotationRecord]] = field(
-        default_factory=dict
-    )
-    dataset_names: List[str] = field(default_factory=list)
+    annotations: list[AnnotationRecord] = field(default_factory=list)
+    article_to_annotations: dict[str, list[AnnotationRecord]] = field(default_factory=dict)
+    dataset_names: list[str] = field(default_factory=list)
 
 
 def normalise_identifier(value: str) -> str:
@@ -140,7 +138,7 @@ def normalise_identifier(value: str) -> str:
     return value.replace("/", "_").replace(":", "_").replace(".", "_")
 
 
-def load_cxg_configuration() -> Tuple[CxgPipelineSettings, CxgResourceLayout]:
+def load_cxg_configuration() -> tuple[CxgPipelineSettings, CxgResourceLayout]:
     """Return CXG runtime settings and resource layout derived from env vars.
 
     Returns:

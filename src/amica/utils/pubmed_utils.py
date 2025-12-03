@@ -1,7 +1,6 @@
 # Source repo: https://github.com/Cellular-Semantics/agentic-pipeline-testdata/blob/main/src/utils/pubmed_utils.py
 
 import re
-from typing import Optional
 from xml.etree import ElementTree
 
 import requests
@@ -10,8 +9,12 @@ from bs4 import BeautifulSoup
 from .doi_fetcher import DOIFetcher
 
 BIOC_URL = "https://www.ncbi.nlm.nih.gov/research/bionlp/RESTful/pmcoa.cgi/BioC_xml/{pmid}/ascii"
-PUBMED_EUTILS_URL = "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?db=pubmed&id={pmid}&retmode=xml"
-EFETCH_URL = "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=pubmed&id={pmid}&retmode=xml"
+PUBMED_EUTILS_URL = (
+    "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?db=pubmed&id={pmid}&retmode=xml"
+)
+EFETCH_URL = (
+    "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=pubmed&id={pmid}&retmode=xml"
+)
 EUROPEPMC_URL = "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query={pmid}&resultType=lite&format=json"
 CROSSREF_API = "https://api.crossref.org/works/{preprint_doi}"
 
@@ -20,7 +23,7 @@ DOI_PATTERN = r"/(10\.\d{4,9}/[\w\-.]+)"
 doi_fetcher = DOIFetcher("ub2@sanger.ac.uk")
 
 
-def extract_doi_from_url(url: str) -> Optional[str]:
+def extract_doi_from_url(url: str) -> str | None:
     """Extracts the DOI from a given journal URL.
 
     Args:
@@ -34,7 +37,7 @@ def extract_doi_from_url(url: str) -> Optional[str]:
     return doi_match.group(1) if doi_match else None
 
 
-def doi_to_pmid(doi: str) -> Optional[str]:
+def doi_to_pmid(doi: str) -> str | None:
     url = "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi"
     params = {
         "db": "pubmed",
@@ -50,6 +53,14 @@ def doi_to_pmid(doi: str) -> Optional[str]:
     root = ElementTree.fromstring(resp.text)
     id_el = root.find(".//IdList/Id")
     return id_el.text if id_el is not None else None
+
+
+def _ensure_text(value: str | bytes | None) -> str | None:
+    if value is None:
+        return None
+    if isinstance(value, bytes):
+        return value.decode("utf-8", errors="ignore")
+    return value
 
 
 def get_doi_text(doi: str) -> str:
@@ -80,7 +91,7 @@ def get_doi_text(doi: str) -> str:
             return get_pmid_text(pmid)
 
     # 3) Unpaywall direct full-text
-    info = doi_fetcher.get_full_text(doi)
+    info = _ensure_text(doi_fetcher.get_full_text(doi))
     if info:
         return info
 
@@ -88,7 +99,7 @@ def get_doi_text(doi: str) -> str:
     return ""
 
 
-def _crossref_published_doi(preprint_doi: str) -> Optional[str]:
+def _crossref_published_doi(preprint_doi: str) -> str | None:
     """Return the journal-article DOI linked to this preprint via Crossref."""
     try:
         resp = requests.get(CROSSREF_API.format(preprint_doi=preprint_doi), timeout=5)
@@ -100,7 +111,7 @@ def _crossref_published_doi(preprint_doi: str) -> Optional[str]:
         return None
 
 
-def get_pmid_from_pmcid(pmcid):
+def get_pmid_from_pmcid(pmcid: str) -> str | None:
     """Fetch the PMID from a PMC ID using the Entrez E-utilities `esummary`.
 
     Example:
@@ -135,7 +146,8 @@ def get_pmid_from_pmcid(pmcid):
             if item["idtype"] == "pmid":
                 return item["value"]
     except KeyError:
-        return "PMID not found"
+        return None
+    return None
 
 
 def get_pmcid_text(pmcid: str) -> str:
@@ -171,6 +183,8 @@ def get_pmcid_text(pmcid: str) -> str:
     except Exception as e:
         print(e)
     pmid = get_pmid_from_pmcid(pmcid)
+    if not pmid:
+        return ""
     return get_pmid_text(pmid)
 
 
@@ -182,7 +196,8 @@ def get_pmid_text(pmid: str) -> str:
         >>> pmid = "11"
         >>> full_text = get_pmid_text(pmid)
         >>> print(full_text)
-        Identification of adenylate cyclase-coupled beta-adrenergic receptors with radiolabeled beta-adrenergic antagonists.
+        Identification of adenylate cyclase-coupled beta-adrenergic receptors
+        with radiolabeled beta-adrenergic antagonists.
         <BLANKLINE>
         No abstract available
 
@@ -195,7 +210,7 @@ def get_pmid_text(pmid: str) -> str:
     """
     if ":" in pmid:
         pmid = pmid.split(":")[1]
-    text = get_full_text_from_bioc(pmid)
+    text: str | None = get_full_text_from_bioc(pmid) or None
     if not text:
         resp = requests.get(EUROPEPMC_URL.format(pmid=pmid))
         resp.raise_for_status()
@@ -210,13 +225,13 @@ def get_pmid_text(pmid: str) -> str:
     if not text:
         doi = pmid_to_doi(pmid)
         if doi:
-            text = doi_fetcher.get_full_text(doi)
+            text = _ensure_text(doi_fetcher.get_full_text(doi))
     if not text:
         text = get_abstract_from_pubmed(pmid)
-    return text
+    return text or ""
 
 
-def pmid_to_doi(pmid: str) -> Optional[str]:
+def pmid_to_doi(pmid: str) -> str | None:
     if ":" in pmid:
         pmid = pmid.split(":")[1]
     url = f"https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?db=pubmed&id={pmid}&retmode=json"
@@ -304,4 +319,3 @@ def get_abstract_from_pubmed(pmid: str) -> str:
     )
 
     return f"{title}\n\n{abstract}"
-

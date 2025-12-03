@@ -3,10 +3,8 @@
 from __future__ import annotations
 
 import tempfile
-from abc import ABC
 from dataclasses import dataclass, field
 from pathlib import Path
-from typing import List, Optional
 
 
 @dataclass
@@ -25,7 +23,7 @@ class WorkDir:
     location: str = field(default_factory=lambda: tempfile.mkdtemp())
 
     @classmethod
-    def create_temporary_workdir(cls) -> "WorkDir":
+    def create_temporary_workdir(cls) -> WorkDir:
         """Create a new temporary working directory."""
         temp_dir = tempfile.mkdtemp()
         return cls(location=temp_dir)
@@ -91,7 +89,7 @@ class WorkDir:
         if file_path.exists():
             file_path.unlink()
 
-    def list_file_names(self) -> List[str]:
+    def list_file_names(self) -> list[str]:
         """List non-recursive file names contained in the working directory.
 
         Returns:
@@ -99,18 +97,14 @@ class WorkDir:
             :attr:`location`.
         """
         self._ensure_location()
-        return [
-            entry.name
-            for entry in Path(self.location).iterdir()
-            if entry.is_file()
-        ]
+        return [entry.name for entry in Path(self.location).iterdir() if entry.is_file()]
 
 
 @dataclass
-class HasWorkdir(ABC):
+class HasWorkdir:
     """Mixin to provide a :class:`WorkDir` attribute to dependency objects."""
 
-    workdir: Optional[WorkDir] = field(default=None)
+    workdir: WorkDir | None = field(default=None)
 
     def ensure_workdir(self) -> WorkDir:
         """Return an initialised work directory, creating one if required.

@@ -5,12 +5,16 @@ import json
 from pathlib import Path
 from types import SimpleNamespace
 
-import pandas as pd
 import pytest
 
 from amica.agents.annotator.annotator_agent import TextAnnotation
 from amica.services import GroundingService
-from amica.utils.cxg import AnnotationRecord, CxgPipelineSettings, CxgResourceLayout, PreparedAnnotationBundle
+from amica.utils.cxg import (
+    AnnotationRecord,
+    CxgPipelineSettings,
+    CxgResourceLayout,
+    PreparedAnnotationBundle,
+)
 
 
 class DummyGroundingAgent:
@@ -50,13 +54,18 @@ def test_grounding_service_updates_annotations(tmp_path: Path) -> None:
 
     bundle = _bundle_with_enrichment("demo")
     agent = DummyGroundingAgent()
-    service = GroundingService(layout, settings=CxgPipelineSettings(annotations_batch_size=1), agent=agent)
+    service = GroundingService(
+        layout,
+        settings=CxgPipelineSettings(annotations_batch_size=1),
+        agent=agent,
+    )
 
     asyncio.run(service.ground_annotations(bundle))
 
     record = bundle.annotations[0]
     assert record.grounding_cl_id == "CL:0000000"
-    assert (layout.output_dir / "demo" / "cell_type_annotations_un_filtered.tsv").exists()
+    output_file = layout.output_dir / "demo" / "cell_type_annotations_un_filtered.tsv"
+    assert output_file.exists()
     assert agent.calls == 1
 
 
@@ -84,7 +93,11 @@ def test_grounding_service_reuses_cache(tmp_path: Path) -> None:
     )
 
     agent = DummyGroundingAgent()
-    service = GroundingService(layout, settings=CxgPipelineSettings(annotations_batch_size=1), agent=agent)
+    service = GroundingService(
+        layout,
+        settings=CxgPipelineSettings(annotations_batch_size=1),
+        agent=agent,
+    )
     asyncio.run(service.ground_annotations(bundle))
 
     record = bundle.annotations[0]

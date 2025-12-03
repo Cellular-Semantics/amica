@@ -19,4 +19,3 @@ def test_workflow_graph_routing() -> None:
     assert node.service == "svc_b"
     with pytest.raises(KeyError):
         graph.route("missing")
-

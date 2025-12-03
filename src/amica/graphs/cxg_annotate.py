@@ -2,8 +2,8 @@
 
 from __future__ import annotations
 
+from collections.abc import Awaitable, Callable
 from dataclasses import dataclass, field
-from typing import Awaitable, Callable, Dict, Optional
 
 from amica.services import (
     DatasetLoader,
@@ -75,12 +75,8 @@ class CxgGraphDependencies(GraphDependencies):
 
     def __post_init__(self) -> None:
         self.layout.ensure_directories()
-        self.dataset_loader = self.dataset_loader or DatasetLoader(
-            self.layout, self.settings
-        )
-        self.publication_fetcher = self.publication_fetcher or PublicationFetcher(
-            self.layout
-        )
+        self.dataset_loader = self.dataset_loader or DatasetLoader(self.layout, self.settings)
+        self.publication_fetcher = self.publication_fetcher or PublicationFetcher(self.layout)
         self.expansion_service = self.expansion_service or ExpansionService(
             self.layout, self.settings
         )
@@ -89,7 +85,7 @@ class CxgGraphDependencies(GraphDependencies):
         )
 
 
-NodeHandler = Callable[[CxgGraphDependencies], Awaitable[Optional[str]]]
+NodeHandler = Callable[[CxgGraphDependencies], Awaitable[str | None]]
 
 
 async def run_cxg_workflow(
@@ -110,7 +106,7 @@ async def run_cxg_workflow(
     else:
         deps.graph = graph
 
-    node_id = graph.entrypoint
+    node_id: str | None = graph.entrypoint
     while node_id:
         node = deps.graph.route(node_id)
         handler = _SERVICE_HANDLERS.get(node.service)
@@ -153,13 +149,11 @@ async def _handle_ground_annotations(deps: CxgGraphDependencies) -> None:
 
 def _require_bundle(deps: CxgGraphDependencies) -> PreparedAnnotationBundle:
     if not deps.bundle:
-        raise RuntimeError(
-            "Workflow bundle missing. Ensure prepare_data runs before other nodes."
-        )
+        raise RuntimeError("Workflow bundle missing. Ensure prepare_data runs before other nodes.")
     return deps.bundle
 
 
-_SERVICE_HANDLERS: Dict[str, NodeHandler] = {
+_SERVICE_HANDLERS: dict[str, NodeHandler] = {
     "cxg.prepare_data": _handle_prepare_data,
     "cxg.expand_full_names": _handle_expand_full_names,
     "cxg.ground_annotations": _handle_ground_annotations,

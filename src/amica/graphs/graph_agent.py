@@ -18,7 +18,9 @@ class GraphDependencies:
     graph: WorkflowGraph
 
 
-def build_graph_agent(model: str = DEFAULT_LLM_MODEL) -> Agent[GraphDependencies, GraphNode]:
+def build_graph_agent(
+    model: str = DEFAULT_LLM_MODEL,
+) -> Agent[GraphDependencies, GraphNode]:
     """Construct a Pydantic AI agent to navigate workflow graphs."""
 
     instructions = (

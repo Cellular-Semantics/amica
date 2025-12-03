@@ -1,15 +1,20 @@
+# ruff: noqa: E501
 """Expansion service that enriches annotations via the paper cell type agent."""
 
 from __future__ import annotations
 
 import json
 import logging
-from typing import Dict, List
+from pathlib import Path
+
+from pydantic_ai import Agent
 
 from amica.agents.paper_celltype.paper_celltype_agent import (
+    BiocurationOutput,
     CellTypeEntry,
     celltype_agent,
 )
+from amica.agents.paper_celltype.paper_celltype_config import PaperCTDependencies
 from amica.utils.cxg import (
     AnnotationRecord,
     CxgPipelineSettings,
@@ -59,7 +64,7 @@ class ExpansionService:
         self,
         layout: CxgResourceLayout,
         settings: CxgPipelineSettings | None = None,
-        agent=celltype_agent,
+        agent: Agent[PaperCTDependencies, BiocurationOutput] = celltype_agent,
     ) -> None:
         self.layout = layout
         self.settings = settings or CxgPipelineSettings()
@@ -77,22 +82,20 @@ class ExpansionService:
             if not dataset_articles:
                 continue
 
-            dataset_cache_dir = self.layout.expansions_dir / normalise_identifier(
-                dataset_name
-            )
+            dataset_cache_dir = self.layout.expansions_dir / normalise_identifier(dataset_name)
             dataset_cache_dir.mkdir(parents=True, exist_ok=True)
 
-            for article_id, annotations in sorted(dataset_articles.items()):
+            for article_id, article_annotations in sorted(dataset_articles.items()):
                 await self._expand_article_annotations(
-                    dataset_name, article_id, annotations, dataset_cache_dir
+                    dataset_name, article_id, article_annotations, dataset_cache_dir
                 )
 
     async def _expand_article_annotations(
         self,
         dataset_name: str,
         article_id: str,
-        annotations: List[AnnotationRecord],
-        dataset_cache_dir,
+        article_annotations: list[AnnotationRecord],
+        dataset_cache_dir: Path,
     ) -> None:
         logger.info("[%s] Expanding entries for article %s", dataset_name, article_id)
         slug = normalise_identifier(article_id or "unknown")
@@ -109,8 +112,8 @@ class ExpansionService:
         article_text = article_path.read_text(encoding="utf-8")
 
         batch_size = self.settings.annotations_batch_size
-        for batch_index in range(0, len(annotations), batch_size):
-            batch = annotations[batch_index : batch_index + batch_size]
+        for batch_index in range(0, len(article_annotations), batch_size):
+            batch = article_annotations[batch_index : batch_index + batch_size]
             cache_file = dataset_cache_dir / f"{slug}_batch_{batch_index // batch_size}.json"
             if cache_file.exists():
                 logger.debug(
@@ -133,8 +136,8 @@ class ExpansionService:
 
     def _hydrate_from_cache(
         self,
-        batch: List[AnnotationRecord],
-        cached_entries: List[dict],
+        batch: list[AnnotationRecord],
+        cached_entries: list[dict],
     ) -> None:
         by_name = {record.annotation_text: record for record in batch}
         for entry in cached_entries:
@@ -147,9 +150,9 @@ class ExpansionService:
         self,
         dataset_name: str,
         article_id: str,
-        batch: List[AnnotationRecord],
+        batch: list[AnnotationRecord],
         article_text: str,
-        cache_file,
+        cache_file: Path,
     ) -> None:
         cc_labels = [{"cc.label": ann.annotation_text} for ann in batch]
         prompt = PROMPT_TEMPLATE.format(
@@ -162,8 +165,8 @@ class ExpansionService:
             article_id,
             len(batch),
         )
-        response = await self.agent.run(prompt)
-        annotations = response.output.cell_type_annotations
+        result = await self.agent.run(prompt)
+        annotations = result.output.cell_type_annotations
         by_name = {record.annotation_text: record for record in batch}
 
         for entry in annotations:
@@ -184,10 +187,10 @@ class ExpansionService:
 
     def _group_by_dataset_and_article(
         self, bundle: PreparedAnnotationBundle
-    ) -> Dict[str, Dict[str, List[AnnotationRecord]]]:
-        dataset_map: Dict[str, Dict[str, List[AnnotationRecord]]] = {}
-        for doi, annotations in bundle.article_to_annotations.items():
-            for record in annotations:
+    ) -> dict[str, dict[str, list[AnnotationRecord]]]:
+        dataset_map: dict[str, dict[str, list[AnnotationRecord]]] = {}
+        for doi, article_annotations in bundle.article_to_annotations.items():
+            for record in article_annotations:
                 dataset_articles = dataset_map.setdefault(record.dataset_name, {})
                 dataset_articles.setdefault(doi, []).append(record)
         return dataset_map

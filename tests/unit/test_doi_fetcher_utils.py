@@ -31,7 +31,7 @@ def test_clean_text_normalises_whitespace() -> None:
 
 @pytest.mark.unit
 def test_get_metadata_returns_message(monkeypatch) -> None:
-    def fake_get(url, headers=None):
+    def fake_get(url, headers=None, timeout=30):
         assert "api.crossref.org" in url
         return DummyResponse(json_data={"message": {"title": ["demo"]}})
 
@@ -43,7 +43,7 @@ def test_get_metadata_returns_message(monkeypatch) -> None:
 
 @pytest.mark.unit
 def test_get_unpaywall_info_returns_payload(monkeypatch) -> None:
-    def fake_get(url):
+    def fake_get(url, timeout=30):
         assert "api.unpaywall.org" in url
         return DummyResponse(json_data={"doi": "10.1000/demo"})
 
@@ -64,7 +64,10 @@ def test_get_full_text_info_prefers_unpaywall(monkeypatch) -> None:
     monkeypatch.setattr(
         fetcher,
         "get_unpaywall_info",
-        lambda doi: {"is_oa": True, "best_oa_location": {"url_for_pdf": "https://example.com/demo.pdf"}},
+        lambda doi: {
+            "is_oa": True,
+            "best_oa_location": {"url_for_pdf": "https://example.com/demo.pdf"},
+        },
     )
     info = fetcher.get_full_text_info("10.1000/demo")
     assert isinstance(info, FullTextInfo)
