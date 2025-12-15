@@ -108,6 +108,48 @@ print(f"Processed {len(bundle.annotations)} annotations across {len(bundle.datas
 
 You can tweak `settings` (batch size, test mode) or `layout` (resource folders) before calling the workflow.
 
+### Retrieval Vector Store
+
+Expansion prompts can optionally use a local vector store to pull only the most relevant publication snippets instead of pasting entire articles. Turn it on via CLI flags:
+
+```bash
+scripts/cxg_annotate.py \
+  --resources-dir resources/cxg \
+  --enable-vector-store \
+  --embedding-model text-embedding-3-small \
+  --chunk-chars 1200 \
+  --chunk-overlap 200 \
+  --retrieval-top-k 2
+```
+
+Internally this:
+
+- Sets `CxgPipelineSettings.vector_store_enabled = True`.
+- Builds a `DocumentVectorStore` (default cache under `resources/cxg/cache/vector_store/`) using the selected OpenAI embedding model.
+- Reuses embeddings per DOI, so the first run incurs a one-time embedding cost and later runs simply load the cached JSON payloads.
+
+Programmatic equivalent:
+
+```python
+from amica.services.vector_store import DocumentVectorStore, OpenAIEmbeddingBackend
+from amica.utils.cxg import CxgPipelineSettings, CxgResourceLayout
+
+settings = CxgPipelineSettings.from_env()
+settings.vector_store_enabled = True
+layout = CxgResourceLayout.from_env()
+backend = OpenAIEmbeddingBackend(model_name=settings.embedding_model)
+vector_store = DocumentVectorStore(
+    layout,
+    backend=backend,
+    chunk_chars=settings.chunk_chars,
+    chunk_overlap=settings.chunk_overlap,
+)
+
+expansion_service = ExpansionService(layout, settings=settings, vector_store=vector_store)
+```
+
+If you prefer a different embedding backend (local models, FAISS, etc.), implement the `EmbeddingBackend` protocol and pass it to `DocumentVectorStore`.
+
 ---
 
 ## 5. Architecture Snapshot
