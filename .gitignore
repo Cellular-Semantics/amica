@@ -11,6 +11,8 @@ build/
 docs/_build/
 *.egg-info
 resources/
+tmpdata/
 .idea/
 .vscode/settings.json
 coverage.xml
+*.log

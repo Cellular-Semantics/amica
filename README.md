@@ -72,11 +72,11 @@ scripts/cxg_annotate.py \
 
 Key flags / env vars:
 
-| Flag / Env                       | Description                                                       |
-|---------------------------------|-------------------------------------------------------------------|
-| `--resources-dir` / `CXG_RESOURCES_DIR` | Base directory containing `input`, `output`, caches.            |
-| `--batch-size` / `CXG_ANNOTATIONS_BATCH_SIZE` | Batch size used by expansion + grounding agents.               |
-| `--test-mode` / `CXG_TEST_MODE` | Enable truncated runs for smoke tests.                            |
+| Flag / Env                                                | Description                                               |
+| --------------------------------------------------------- | --------------------------------------------------------- |
+| `--resources-dir` / `CXG_RESOURCES_DIR`                   | Base directory containing `input`, `output`, caches.      |
+| `--batch-size` / `CXG_ANNOTATIONS_BATCH_SIZE`             | Batch size used by expansion + grounding agents.          |
+| `--test-mode` / `CXG_TEST_MODE`                           | Enable truncated runs for smoke tests.                    |
 | `--test-annotations-count` / `CXG_TEST_ANNOTATIONS_COUNT` | Number of annotations preserved when test mode is active. |
 
 The CLI performs three orchestrated stages:

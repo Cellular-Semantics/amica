@@ -8,6 +8,7 @@ from pydantic import BaseModel, Field
 from pydantic_ai import Agent
 
 from .paper_celltype_config import PaperCTDependencies
+from .paper_celltype_tools import search_cached_snippets
 
 cell_logger = logging.getLogger(__name__)
 cell_logger.setLevel(logging.INFO)
@@ -70,3 +71,4 @@ celltype_agent = Agent(
 
 # celltype_agent.tool(get_full_text)
 # celltype_agent.tool(read_json)
+celltype_agent.tool(search_cached_snippets)

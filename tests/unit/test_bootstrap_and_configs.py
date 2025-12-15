@@ -55,10 +55,20 @@ def test_cxg_settings_from_env(monkeypatch) -> None:
     monkeypatch.setenv("CXG_ANNOTATIONS_BATCH_SIZE", "7")
     monkeypatch.setenv("CXG_TEST_MODE", "true")
     monkeypatch.setenv("CXG_TEST_ANNOTATIONS_COUNT", "3")
+    monkeypatch.setenv("CXG_VECTOR_STORE_ENABLED", "1")
+    monkeypatch.setenv("CXG_EMBEDDING_MODEL", "text-embedding-3-large")
+    monkeypatch.setenv("CXG_CHUNK_CHARS", "2048")
+    monkeypatch.setenv("CXG_CHUNK_OVERLAP", "256")
+    monkeypatch.setenv("CXG_RETRIEVAL_TOP_K", "4")
     settings = CxgPipelineSettings.from_env()
     assert settings.annotations_batch_size == 7
     assert settings.test_mode is True
     assert settings.test_annotations_count == 3
+    assert settings.vector_store_enabled is True
+    assert settings.embedding_model == "text-embedding-3-large"
+    assert settings.chunk_chars == 2048
+    assert settings.chunk_overlap == 256
+    assert settings.retrieval_top_k == 4
 
 
 @pytest.mark.unit

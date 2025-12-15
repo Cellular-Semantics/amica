@@ -17,6 +17,8 @@ dependencies = [
     "oaklib>=0.6.23",
     "pymupdf>=1.26.6",
     "pandas>=2.0.0",
+    "openai>=1.40.0",
+    "tiktoken>=0.12.0",
 ]
 
 [project.optional-dependencies]

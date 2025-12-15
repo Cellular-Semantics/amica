@@ -50,6 +50,17 @@ class DummyGroundingService:
             record.grounding_cl_label = "dummy"
 
 
+class DummyVectorStore:
+    def __init__(self) -> None:
+        self.requests: list[tuple[str, str]] = []
+
+    def ensure_index(self, article_id: str, article_text: str) -> None:
+        self.requests.append((article_id, article_text))
+
+    def similarity_search(self, article_id: str, query: str, top_k: int = 2):
+        return []
+
+
 @pytest.mark.unit
 def test_cxg_workflow_runs_with_dummy_services(tmp_path: Path) -> None:
     annotation = AnnotationRecord(
@@ -88,3 +99,48 @@ def test_cxg_workflow_runs_with_dummy_services(tmp_path: Path) -> None:
     assert result is bundle
     assert annotation.grounding_cl_id == "CL:0000000"
     assert publication_fetcher.requested == [annotation.article_id_doi]
+
+
+@pytest.mark.unit
+def test_cxg_dependencies_use_vector_store(tmp_path: Path) -> None:
+    settings = CxgPipelineSettings(vector_store_enabled=True)
+    layout = CxgResourceLayout(resources_dir=tmp_path)
+    dummy_vector_store = DummyVectorStore()
+
+    deps = CxgGraphDependencies(
+        graph=build_cxg_annotate_graph(),
+        settings=settings,
+        layout=layout,
+        vector_store=dummy_vector_store,
+    )
+
+    assert deps.expansion_service is not None
+    assert deps.expansion_service.vector_store is dummy_vector_store
+
+
+@pytest.mark.unit
+def test_vector_store_failure_disables_feature(
+    tmp_path: Path, monkeypatch, caplog
+) -> None:
+    class ExplodingBackend:
+        def __init__(self, *args, **kwargs) -> None:
+            raise RuntimeError("boom")
+
+    monkeypatch.setattr(
+        "amica.graphs.cxg_annotate.OpenAIEmbeddingBackend", ExplodingBackend
+    )
+
+    settings = CxgPipelineSettings(vector_store_enabled=True)
+    layout = CxgResourceLayout(resources_dir=tmp_path)
+
+    with caplog.at_level("WARNING"):
+        deps = CxgGraphDependencies(
+            graph=build_cxg_annotate_graph(),
+            settings=settings,
+            layout=layout,
+        )
+
+    assert deps.expansion_service is not None
+    assert deps.expansion_service.vector_store is None
+    assert deps.settings.vector_store_enabled is False
+    assert any("Vector store disabled" in message for message in caplog.messages)

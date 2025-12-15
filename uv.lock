@@ -184,12 +184,14 @@ dependencies = [
     { name = "jsonschema" },
     { name = "markitdown" },
     { name = "oaklib" },
+    { name = "openai" },
     { name = "pandas" },
     { name = "pydantic" },
     { name = "pydantic-ai" },
     { name = "pymupdf" },
     { name = "python-dotenv" },
     { name = "requests-cache" },
+    { name = "tiktoken" },
 ]
 
 [package.optional-dependencies]
@@ -214,6 +216,7 @@ requires-dist = [
     { name = "mypy", marker = "extra == 'dev'", specifier = ">=1.10.0" },
     { name = "myst-parser", marker = "extra == 'dev'", specifier = ">=2.0.0" },
     { name = "oaklib", specifier = ">=0.6.23" },
+    { name = "openai", specifier = ">=1.40.0" },
     { name = "pandas", specifier = ">=2.0.0" },
     { name = "pre-commit", marker = "extra == 'dev'", specifier = ">=3.7.0" },
     { name = "pydantic", specifier = ">=2.7.0" },
@@ -226,6 +229,7 @@ requires-dist = [
     { name = "ruff", marker = "extra == 'dev'", specifier = ">=0.5.0" },
     { name = "sphinx", marker = "extra == 'dev'", specifier = ">=7.3.0" },
     { name = "sphinx-autodoc-typehints", marker = "extra == 'dev'", specifier = ">=1.25.0" },
+    { name = "tiktoken", specifier = ">=0.12.0" },
 ]
 provides-extras = ["dev"]
 
