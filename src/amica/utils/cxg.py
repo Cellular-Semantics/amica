@@ -7,7 +7,10 @@ from dataclasses import dataclass, field
 from pathlib import Path
 from typing import Any
 
-from amica.agents.paper_celltype.paper_celltype_agent import CellTypeEntry
+try:  # pragma: no cover - avoids circular import at startup
+    from amica.agents.paper_celltype.paper_celltype_agent import CellTypeEntry
+except ImportError:  # pragma: no cover
+    CellTypeEntry = None  # type: ignore
 
 
 def _default_resources_dir() -> Path:
@@ -41,6 +44,11 @@ class CxgPipelineSettings:
     annotations_batch_size: int = 5
     test_mode: bool = False
     test_annotations_count: int = 4
+    vector_store_enabled: bool = False
+    embedding_model: str = "text-embedding-3-small"
+    chunk_chars: int = 1200
+    chunk_overlap: int = 200
+    retrieval_top_k: int = 2
 
     @classmethod
     def from_env(cls) -> CxgPipelineSettings:
@@ -49,6 +57,13 @@ class CxgPipelineSettings:
             annotations_batch_size=_env_int("CXG_ANNOTATIONS_BATCH_SIZE", 5),
             test_mode=_env_bool("CXG_TEST_MODE", False),
             test_annotations_count=_env_int("CXG_TEST_ANNOTATIONS_COUNT", 4),
+            vector_store_enabled=_env_bool("CXG_VECTOR_STORE_ENABLED", False),
+            embedding_model=os.environ.get(
+                "CXG_EMBEDDING_MODEL", "text-embedding-3-small"
+            ),
+            chunk_chars=_env_int("CXG_CHUNK_CHARS", 1200),
+            chunk_overlap=_env_int("CXG_CHUNK_OVERLAP", 200),
+            retrieval_top_k=_env_int("CXG_RETRIEVAL_TOP_K", 2),
         )
 
 
@@ -117,7 +132,7 @@ class AnnotationRecord:
             "grounding_cl_label": self.grounding_cl_label,
         }
         if self.enrichment:
-            if isinstance(self.enrichment, CellTypeEntry):
+            if CellTypeEntry is not None and isinstance(self.enrichment, CellTypeEntry):
                 payload["enrichment"] = self.enrichment.model_dump()
             else:
                 payload["enrichment"] = self.enrichment
