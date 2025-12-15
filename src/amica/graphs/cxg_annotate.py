@@ -4,11 +4,14 @@ from __future__ import annotations
 
 from collections.abc import Awaitable, Callable
 from dataclasses import dataclass, field
+import logging
 
 from amica.services import (
     DatasetLoader,
+    DocumentVectorStore,
     ExpansionService,
     GroundingService,
+    OpenAIEmbeddingBackend,
     PublicationFetcher,
 )
 from amica.utils.cxg import (
@@ -19,6 +22,9 @@ from amica.utils.cxg import (
 
 from .definitions import GraphNode, WorkflowGraph
 from .graph_agent import GraphDependencies
+
+
+logger = logging.getLogger(__name__)
 
 
 def build_cxg_annotate_graph() -> WorkflowGraph:
@@ -71,6 +77,7 @@ class CxgGraphDependencies(GraphDependencies):
     publication_fetcher: PublicationFetcher | None = None
     expansion_service: ExpansionService | None = None
     grounding_service: GroundingService | None = None
+    vector_store: DocumentVectorStore | None = None
     bundle: PreparedAnnotationBundle | None = None
 
     def __post_init__(self) -> None:
@@ -81,11 +88,32 @@ class CxgGraphDependencies(GraphDependencies):
         self.publication_fetcher = self.publication_fetcher or PublicationFetcher(
             self.layout
         )
+        if self.vector_store is None and self.settings.vector_store_enabled:
+            try:
+                backend = OpenAIEmbeddingBackend(
+                    model_name=self.settings.embedding_model
+                )
+                self.vector_store = DocumentVectorStore(
+                    self.layout,
+                    backend=backend,
+                    chunk_chars=self.settings.chunk_chars,
+                    chunk_overlap=self.settings.chunk_overlap,
+                )
+            except Exception as exc:
+                logger.warning(
+                    "Vector store disabled; falling back to full-text prompts: %s",
+                    exc,
+                )
+                self.settings.vector_store_enabled = False
         self.expansion_service = self.expansion_service or ExpansionService(
-            self.layout, self.settings
+            self.layout,
+            self.settings,
+            vector_store=self.vector_store,
+            retrieval_top_k=self.settings.retrieval_top_k,
         )
         self.grounding_service = self.grounding_service or GroundingService(
-            self.layout, self.settings
+            self.layout,
+            self.settings,
         )
 
 

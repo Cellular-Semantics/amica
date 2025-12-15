@@ -6,10 +6,13 @@ import json
 import logging
 from collections.abc import Sequence
 from contextlib import suppress
+from dataclasses import asdict
 from pathlib import Path
+from typing import Any, Mapping, cast
 
 import pandas as pd
 from pydantic_ai import Agent
+from pydantic_ai.agent import AgentRunResult
 
 from amica.agents.annotator.annotator_agent import (
     TextAnnotation,
@@ -139,18 +142,35 @@ class GroundingService:
             dataset_name,
             len(batch),
         )
-        expansions_json = json.dumps(
-            [
-                (
-                    record.enrichment.model_dump()
-                    if isinstance(record.enrichment, CellTypeEntry)
-                    else record.enrichment
-                )
-                for record in batch
-            ],
-            indent=2,
-        )
+        payload = []
+        for record in batch:
+            enrichment = record.enrichment
+            if isinstance(enrichment, CellTypeEntry):
+                entry: dict[str, Any] = enrichment.model_dump()
+            elif isinstance(enrichment, Mapping):
+                entry = dict(enrichment)
+            else:
+                model_dumper = getattr(enrichment, "model_dump", None)
+                if callable(model_dumper):
+                    entry = model_dumper()
+                else:
+                    entry = dict(cast(Mapping[str, Any], enrichment))
+            payload.append(entry)
+
+        expansions_json = json.dumps(payload, indent=2)
         result = await self.agent.run(expansions_json)
+        self._log_agent_usage(
+            dataset_name=dataset_name,
+            batch_size=len(batch),
+            article_ids=sorted(
+                {
+                    record.article_id_doi or ""
+                    for record in batch
+                    if record.article_id_doi
+                }
+            ),
+            run_result=result,
+        )
         output: TextAnnotationResult = result.output
         return output.annotations
 
@@ -214,3 +234,27 @@ class GroundingService:
         for record in annotations:
             grouped.setdefault(record.dataset_name, []).append(record)
         return grouped
+
+    def _log_agent_usage(
+        self,
+        *,
+        dataset_name: str,
+        batch_size: int,
+        article_ids: list[str],
+        run_result: AgentRunResult[Any],
+    ) -> None:
+        usage = None
+        try:
+            usage = run_result.usage()
+        except Exception:  # pragma: no cover - defensive
+            usage = None
+        if not usage:
+            return
+        payload = {
+            "kind": "grounding",
+            "dataset": dataset_name,
+            "article_ids": article_ids,
+            "batch_size": batch_size,
+            "usage": asdict(usage),
+        }
+        logger.info("openai_usage %s", json.dumps(payload))
