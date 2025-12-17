@@ -1,0 +1,26 @@
+author_cell_type	CL_label	CL_ID	match_type	reference	dataset_version
+PC	renal principal cell	CL:0005009	exact	https://doi.org/10.1073/pnas.2103240118	https://datasets.cellxgene.cziscience.com/c0b7ba53-d527-44ae-aa8c-1b7eef19017e.h5ad
+CNT	kidney collecting duct cell	CL:1001225	exact	https://doi.org/10.1073/pnas.2103240118	https://datasets.cellxgene.cziscience.com/c0b7ba53-d527-44ae-aa8c-1b7eef19017e.h5ad
+DCT	kidney distal convoluted tubule epithelial cell	CL:1000849	exact	https://doi.org/10.1073/pnas.2103240118	https://datasets.cellxgene.cziscience.com/c0b7ba53-d527-44ae-aa8c-1b7eef19017e.h5ad
+TAL	kidney loop of Henle thick ascending limb epithelial cell	CL:1001106	more specific term	https://doi.org/10.1073/pnas.2103240118	https://datasets.cellxgene.cziscience.com/c0b7ba53-d527-44ae-aa8c-1b7eef19017e.h5ad
+Macro	macrophage	CL:0000235	exact	https://doi.org/10.1073/pnas.2103240118	https://datasets.cellxgene.cziscience.com/c0b7ba53-d527-44ae-aa8c-1b7eef19017e.h5ad
+IC-A	renal alpha-intercalated cell	CL:0005011	exact	https://doi.org/10.1073/pnas.2103240118	https://datasets.cellxgene.cziscience.com/c0b7ba53-d527-44ae-aa8c-1b7eef19017e.h5ad
+PT-C	epithelial cell of proximal tubule	CL:0002306	more specific term	https://doi.org/10.1073/pnas.2103240118	https://datasets.cellxgene.cziscience.com/c0b7ba53-d527-44ae-aa8c-1b7eef19017e.h5ad
+IC-B	renal beta-intercalated cell	CL:0002201	exact	https://doi.org/10.1073/pnas.2103240118	https://datasets.cellxgene.cziscience.com/c0b7ba53-d527-44ae-aa8c-1b7eef19017e.h5ad
+AVR	vasa recta ascending limb cell	CL:1001131	exact	https://doi.org/10.1073/pnas.2103240118	https://datasets.cellxgene.cziscience.com/c0b7ba53-d527-44ae-aa8c-1b7eef19017e.h5ad
+PT-B	epithelial cell of proximal tubule	CL:0002306	more specific term	https://doi.org/10.1073/pnas.2103240118	https://datasets.cellxgene.cziscience.com/c0b7ba53-d527-44ae-aa8c-1b7eef19017e.h5ad
+Mono	monocyte	CL:0000576	exact	https://doi.org/10.1073/pnas.2103240118	https://datasets.cellxgene.cziscience.com/c0b7ba53-d527-44ae-aa8c-1b7eef19017e.h5ad
+tAL	kidney loop of Henle thick ascending limb epithelial cell	CL:1001106	more specific term	https://doi.org/10.1073/pnas.2103240118	https://datasets.cellxgene.cziscience.com/c0b7ba53-d527-44ae-aa8c-1b7eef19017e.h5ad
+IC-PC	columnar/cuboidal epithelial cell	CL:0000075	exact	https://doi.org/10.1073/pnas.2103240118	https://datasets.cellxgene.cziscience.com/c0b7ba53-d527-44ae-aa8c-1b7eef19017e.h5ad
+vSMC	vascular associated smooth muscle cell	CL:0000359	exact	https://doi.org/10.1073/pnas.2103240118	https://datasets.cellxgene.cziscience.com/c0b7ba53-d527-44ae-aa8c-1b7eef19017e.h5ad
+GC	glomerular capillary endothelial cell	CL:1001005	exact	https://doi.org/10.1073/pnas.2103240118	https://datasets.cellxgene.cziscience.com/c0b7ba53-d527-44ae-aa8c-1b7eef19017e.h5ad
+AEA-DVR	vasa recta descending limb cell	CL:1001285	more specific term	https://doi.org/10.1073/pnas.2103240118	https://datasets.cellxgene.cziscience.com/c0b7ba53-d527-44ae-aa8c-1b7eef19017e.h5ad
+NKcell	natural killer cell	CL:0000623	exact	https://doi.org/10.1073/pnas.2103240118	https://datasets.cellxgene.cziscience.com/c0b7ba53-d527-44ae-aa8c-1b7eef19017e.h5ad
+DL	vasa recta descending limb cell	CL:1001285	more specific term	https://doi.org/10.1073/pnas.2103240118	https://datasets.cellxgene.cziscience.com/c0b7ba53-d527-44ae-aa8c-1b7eef19017e.h5ad
+Tcell	T cell	CL:0000084	exact	https://doi.org/10.1073/pnas.2103240118	https://datasets.cellxgene.cziscience.com/c0b7ba53-d527-44ae-aa8c-1b7eef19017e.h5ad
+UC	unknown	unknown	exact	https://doi.org/10.1073/pnas.2103240118	https://datasets.cellxgene.cziscience.com/c0b7ba53-d527-44ae-aa8c-1b7eef19017e.h5ad
+Peri	pericyte	CL:0000669	exact	https://doi.org/10.1073/pnas.2103240118	https://datasets.cellxgene.cziscience.com/c0b7ba53-d527-44ae-aa8c-1b7eef19017e.h5ad
+Bcell	B cell	CL:0000236	exact	https://doi.org/10.1073/pnas.2103240118	https://datasets.cellxgene.cziscience.com/c0b7ba53-d527-44ae-aa8c-1b7eef19017e.h5ad
+PT-A	epithelial cell of proximal tubule	CL:0002306	more specific term	https://doi.org/10.1073/pnas.2103240118	https://datasets.cellxgene.cziscience.com/c0b7ba53-d527-44ae-aa8c-1b7eef19017e.h5ad
+Podo	podocyte	CL:0000653	exact	https://doi.org/10.1073/pnas.2103240118	https://datasets.cellxgene.cziscience.com/c0b7ba53-d527-44ae-aa8c-1b7eef19017e.h5ad
+Mesangial	mesangial cell	CL:0000650	exact	https://doi.org/10.1073/pnas.2103240118	https://datasets.cellxgene.cziscience.com/c0b7ba53-d527-44ae-aa8c-1b7eef19017e.h5ad

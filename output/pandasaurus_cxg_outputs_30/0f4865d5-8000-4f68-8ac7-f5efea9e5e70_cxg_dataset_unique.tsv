@@ -1,0 +1,17 @@
+author_cell_type	CL_label	CL_ID	match_type	reference	dataset_version
+Fibroblasts ADAMDEC1	fibroblast	CL:0000057	more specific term	https://doi.org/10.1016/j.immuni.2023.01.002	https://datasets.cellxgene.cziscience.com/1a640ddc-ea3c-4711-ba8e-07084cc40a88.h5ad
+Endothelial cells CD36	endothelial cell	CL:0000115	more specific term	https://doi.org/10.1016/j.immuni.2023.01.002	https://datasets.cellxgene.cziscience.com/1a640ddc-ea3c-4711-ba8e-07084cc40a88.h5ad
+Myofibroblasts HHIP NPNT	myofibroblast cell	CL:0000186	more specific term	https://doi.org/10.1016/j.immuni.2023.01.002	https://datasets.cellxgene.cziscience.com/1a640ddc-ea3c-4711-ba8e-07084cc40a88.h5ad
+Fibroblasts SMOC2 PTGIS	fibroblast	CL:0000057	more specific term	https://doi.org/10.1016/j.immuni.2023.01.002	https://datasets.cellxgene.cziscience.com/1a640ddc-ea3c-4711-ba8e-07084cc40a88.h5ad
+Endothelial cells DARC	endothelial cell	CL:0000115	more specific term	https://doi.org/10.1016/j.immuni.2023.01.002	https://datasets.cellxgene.cziscience.com/1a640ddc-ea3c-4711-ba8e-07084cc40a88.h5ad
+Fibroblasts NPY SLITRK6	fibroblast	CL:0000057	more specific term	https://doi.org/10.1016/j.immuni.2023.01.002	https://datasets.cellxgene.cziscience.com/1a640ddc-ea3c-4711-ba8e-07084cc40a88.h5ad
+Myofibroblasts GREM1 GREM2	myofibroblast cell	CL:0000186	more specific term	https://doi.org/10.1016/j.immuni.2023.01.002	https://datasets.cellxgene.cziscience.com/1a640ddc-ea3c-4711-ba8e-07084cc40a88.h5ad
+Endothelial cells CA4 CD36	endothelial cell	CL:0000115	more specific term	https://doi.org/10.1016/j.immuni.2023.01.002	https://datasets.cellxgene.cziscience.com/1a640ddc-ea3c-4711-ba8e-07084cc40a88.h5ad
+Glial cells	glial cell	CL:0000125	exact	https://doi.org/10.1016/j.immuni.2023.01.002	https://datasets.cellxgene.cziscience.com/1a640ddc-ea3c-4711-ba8e-07084cc40a88.h5ad
+Fibroblasts SFRP2 SLPI	fibroblast	CL:0000057	more specific term	https://doi.org/10.1016/j.immuni.2023.01.002	https://datasets.cellxgene.cziscience.com/1a640ddc-ea3c-4711-ba8e-07084cc40a88.h5ad
+Endothelial cells LTC4S SEMA3G	endothelial cell	CL:0000115	more specific term	https://doi.org/10.1016/j.immuni.2023.01.002	https://datasets.cellxgene.cziscience.com/1a640ddc-ea3c-4711-ba8e-07084cc40a88.h5ad
+Pericytes HIGD1B STEAP4	pericyte	CL:0000669	more specific term	https://doi.org/10.1016/j.immuni.2023.01.002	https://datasets.cellxgene.cziscience.com/1a640ddc-ea3c-4711-ba8e-07084cc40a88.h5ad
+Activated fibroblasts CCL19 ADAMADEC1	fibroblast	CL:0000057	more specific term	https://doi.org/10.1016/j.immuni.2023.01.002	https://datasets.cellxgene.cziscience.com/1a640ddc-ea3c-4711-ba8e-07084cc40a88.h5ad
+Lymphatics	lymphocyte	CL:0000542	exact	https://doi.org/10.1016/j.immuni.2023.01.002	https://datasets.cellxgene.cziscience.com/1a640ddc-ea3c-4711-ba8e-07084cc40a88.h5ad
+Fibroblasts KCNN3 LY6H	fibroblast	CL:0000057	more specific term	https://doi.org/10.1016/j.immuni.2023.01.002	https://datasets.cellxgene.cziscience.com/1a640ddc-ea3c-4711-ba8e-07084cc40a88.h5ad
+Pericytes RERGL NTRK2	pericyte	CL:0000669	more specific term	https://doi.org/10.1016/j.immuni.2023.01.002	https://datasets.cellxgene.cziscience.com/1a640ddc-ea3c-4711-ba8e-07084cc40a88.h5ad

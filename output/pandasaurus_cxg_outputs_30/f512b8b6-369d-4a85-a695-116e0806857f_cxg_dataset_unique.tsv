@@ -1,0 +1,11 @@
+author_cell_type	CL_label	CL_ID	match_type	reference	dataset_version
+spinous	spinous cell of epidermis	CL:0000649	exact	https://doi.org/10.1016/j.celrep.2018.09.006	https://datasets.cellxgene.cziscience.com/022b2aab-8abb-4972-92e2-750b7cadafa7.h5ad
+basal2	basal cell of epidermis	CL:0002187	more specific term	https://doi.org/10.1016/j.celrep.2018.09.006	https://datasets.cellxgene.cziscience.com/022b2aab-8abb-4972-92e2-750b7cadafa7.h5ad
+melanocyte	melanocyte	CL:0000148	exact	https://doi.org/10.1016/j.celrep.2018.09.006	https://datasets.cellxgene.cziscience.com/022b2aab-8abb-4972-92e2-750b7cadafa7.h5ad
+mitotic	keratinocyte	CL:0000312	more specific term	https://doi.org/10.1016/j.celrep.2018.09.006	https://datasets.cellxgene.cziscience.com/022b2aab-8abb-4972-92e2-750b7cadafa7.h5ad
+channel	Merkel cell	CL:0000242	exact	https://doi.org/10.1016/j.celrep.2018.09.006	https://datasets.cellxgene.cziscience.com/022b2aab-8abb-4972-92e2-750b7cadafa7.h5ad
+basal1	basal cell of epidermis	CL:0002187	more specific term	https://doi.org/10.1016/j.celrep.2018.09.006	https://datasets.cellxgene.cziscience.com/022b2aab-8abb-4972-92e2-750b7cadafa7.h5ad
+immune	hematopoietic cell	CL:0000988	exact	https://doi.org/10.1016/j.celrep.2018.09.006	https://datasets.cellxgene.cziscience.com/022b2aab-8abb-4972-92e2-750b7cadafa7.h5ad
+WNT1	keratinocyte	CL:0000312	more specific term	https://doi.org/10.1016/j.celrep.2018.09.006	https://datasets.cellxgene.cziscience.com/022b2aab-8abb-4972-92e2-750b7cadafa7.h5ad
+folicular	hair follicular keratinocyte	CL:2000092	exact	https://doi.org/10.1016/j.celrep.2018.09.006	https://datasets.cellxgene.cziscience.com/022b2aab-8abb-4972-92e2-750b7cadafa7.h5ad
+granular	granular cell of epidermis	CL:0002189	exact	https://doi.org/10.1016/j.celrep.2018.09.006	https://datasets.cellxgene.cziscience.com/022b2aab-8abb-4972-92e2-750b7cadafa7.h5ad

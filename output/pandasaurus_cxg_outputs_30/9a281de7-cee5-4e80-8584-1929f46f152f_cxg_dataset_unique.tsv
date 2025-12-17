@@ -1,0 +1,10 @@
+author_cell_type	CL_label	CL_ID	match_type	reference	dataset_version
+Iris_PPE	pigmented epithelial cell	CL:0000529	more specific term	https://doi.org/10.1073/pnas.2200914119	https://datasets.cellxgene.cziscience.com/518aaebf-2678-4141-b063-16c5979be995.h5ad
+Uveal_Melanocyte	melanocyte	CL:0000148	exact	https://doi.org/10.1073/pnas.2200914119	https://datasets.cellxgene.cziscience.com/518aaebf-2678-4141-b063-16c5979be995.h5ad
+Iris_Fibro	fibroblast	CL:0000057	exact	https://doi.org/10.1073/pnas.2200914119	https://datasets.cellxgene.cziscience.com/518aaebf-2678-4141-b063-16c5979be995.h5ad
+Iris_APE	pigmented epithelial cell	CL:0000529	more specific term	https://doi.org/10.1073/pnas.2200914119	https://datasets.cellxgene.cziscience.com/518aaebf-2678-4141-b063-16c5979be995.h5ad
+Macrophage	macrophage	CL:0000235	exact	https://doi.org/10.1073/pnas.2200914119	https://datasets.cellxgene.cziscience.com/518aaebf-2678-4141-b063-16c5979be995.h5ad
+Iris_Sphincter	smooth muscle cell of sphincter of pupil	CL:0002243	exact	https://doi.org/10.1073/pnas.2200914119	https://datasets.cellxgene.cziscience.com/518aaebf-2678-4141-b063-16c5979be995.h5ad
+Schwann	Schwann cell	CL:0002573	exact	https://doi.org/10.1073/pnas.2200914119	https://datasets.cellxgene.cziscience.com/518aaebf-2678-4141-b063-16c5979be995.h5ad
+Lymphocyte	lymphocyte	CL:0000542	exact	https://doi.org/10.1073/pnas.2200914119	https://datasets.cellxgene.cziscience.com/518aaebf-2678-4141-b063-16c5979be995.h5ad
+Vasc_Endo	blood vessel endothelial cell	CL:0000071	exact	https://doi.org/10.1073/pnas.2200914119	https://datasets.cellxgene.cziscience.com/518aaebf-2678-4141-b063-16c5979be995.h5ad

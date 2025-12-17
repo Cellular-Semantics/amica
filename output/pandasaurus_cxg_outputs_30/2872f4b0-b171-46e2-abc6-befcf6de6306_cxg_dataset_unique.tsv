@@ -1,0 +1,26 @@
+author_cell_type	CL_label	CL_ID	match_type	reference	dataset_version
+B cell IgA Plasma	IgA plasma cell	CL:0000987	exact	https://doi.org/10.1038/s41590-020-0602-z	https://datasets.cellxgene.cziscience.com/9a696bfb-7cd5-4c27-89f5-f7979ae12111.h5ad
+B cell memory	memory B cell	CL:0000787	exact	https://doi.org/10.1038/s41590-020-0602-z	https://datasets.cellxgene.cziscience.com/9a696bfb-7cd5-4c27-89f5-f7979ae12111.h5ad
+CD8 T	CD8-positive, alpha-beta T cell	CL:0000625	exact	https://doi.org/10.1038/s41590-020-0602-z	https://datasets.cellxgene.cziscience.com/9a696bfb-7cd5-4c27-89f5-f7979ae12111.h5ad
+gd T	gamma-delta T cell	CL:0000798	more specific term	https://doi.org/10.1038/s41590-020-0602-z	https://datasets.cellxgene.cziscience.com/9a696bfb-7cd5-4c27-89f5-f7979ae12111.h5ad
+Mast	mast cell	CL:0000097	exact	https://doi.org/10.1038/s41590-020-0602-z	https://datasets.cellxgene.cziscience.com/9a696bfb-7cd5-4c27-89f5-f7979ae12111.h5ad
+ILC	innate lymphoid cell	CL:0001065	exact	https://doi.org/10.1038/s41590-020-0602-z	https://datasets.cellxgene.cziscience.com/9a696bfb-7cd5-4c27-89f5-f7979ae12111.h5ad
+Macrophage	colon macrophage	CL:0009038	exact	https://doi.org/10.1038/s41590-020-0602-z	https://datasets.cellxgene.cziscience.com/9a696bfb-7cd5-4c27-89f5-f7979ae12111.h5ad
+NK	natural killer cell	CL:0000623	exact	https://doi.org/10.1038/s41590-020-0602-z	https://datasets.cellxgene.cziscience.com/9a696bfb-7cd5-4c27-89f5-f7979ae12111.h5ad
+Follicular B cell	follicular B cell	CL:0000843	exact	https://doi.org/10.1038/s41590-020-0602-z	https://datasets.cellxgene.cziscience.com/9a696bfb-7cd5-4c27-89f5-f7979ae12111.h5ad
+B cell IgG Plasma	B cell	CL:0000236	more specific term	https://doi.org/10.1038/s41590-020-0602-z	https://datasets.cellxgene.cziscience.com/9a696bfb-7cd5-4c27-89f5-f7979ae12111.h5ad
+Tcm	memory T cell	CL:0000813	exact	https://doi.org/10.1038/s41590-020-0602-z	https://datasets.cellxgene.cziscience.com/9a696bfb-7cd5-4c27-89f5-f7979ae12111.h5ad
+B cell cycling	B cell	CL:0000236	more specific term	https://doi.org/10.1038/s41590-020-0602-z	https://datasets.cellxgene.cziscience.com/9a696bfb-7cd5-4c27-89f5-f7979ae12111.h5ad
+Treg	regulatory T cell	CL:0000815	exact	https://doi.org/10.1038/s41590-020-0602-z	https://datasets.cellxgene.cziscience.com/9a696bfb-7cd5-4c27-89f5-f7979ae12111.h5ad
+LYVE1 Macrophage	macrophage	CL:0000235	exact	https://doi.org/10.1038/s41590-020-0602-z	https://datasets.cellxgene.cziscience.com/9a696bfb-7cd5-4c27-89f5-f7979ae12111.h5ad
+Th1	T-helper 1 cell	CL:0000545	exact	https://doi.org/10.1038/s41590-020-0602-z	https://datasets.cellxgene.cziscience.com/9a696bfb-7cd5-4c27-89f5-f7979ae12111.h5ad
+Th17	T-helper 17 cell	CL:0000899	exact	https://doi.org/10.1038/s41590-020-0602-z	https://datasets.cellxgene.cziscience.com/9a696bfb-7cd5-4c27-89f5-f7979ae12111.h5ad
+cDC2	conventional dendritic cell	CL:0000990	more specific term	https://doi.org/10.1038/s41590-020-0602-z	https://datasets.cellxgene.cziscience.com/9a696bfb-7cd5-4c27-89f5-f7979ae12111.h5ad
+cycling gd T	gamma-delta T cell	CL:0000798	more specific term	https://doi.org/10.1038/s41590-020-0602-z	https://datasets.cellxgene.cziscience.com/9a696bfb-7cd5-4c27-89f5-f7979ae12111.h5ad
+Monocyte	monocyte	CL:0000576	exact	https://doi.org/10.1038/s41590-020-0602-z	https://datasets.cellxgene.cziscience.com/9a696bfb-7cd5-4c27-89f5-f7979ae12111.h5ad
+cDC1	conventional dendritic cell	CL:0000990	more specific term	https://doi.org/10.1038/s41590-020-0602-z	https://datasets.cellxgene.cziscience.com/9a696bfb-7cd5-4c27-89f5-f7979ae12111.h5ad
+Activated CD4 T	CD4-positive, alpha-beta T cell	CL:0000624	exact	https://doi.org/10.1038/s41590-020-0602-z	https://datasets.cellxgene.cziscience.com/9a696bfb-7cd5-4c27-89f5-f7979ae12111.h5ad
+pDC	plasmacytoid dendritic cell	CL:0000784	exact	https://doi.org/10.1038/s41590-020-0602-z	https://datasets.cellxgene.cziscience.com/9a696bfb-7cd5-4c27-89f5-f7979ae12111.h5ad
+Tfh	T follicular helper cell	CL:0002038	exact	https://doi.org/10.1038/s41590-020-0602-z	https://datasets.cellxgene.cziscience.com/9a696bfb-7cd5-4c27-89f5-f7979ae12111.h5ad
+Lymphoid DC	dendritic cell	CL:0000451	more specific term	https://doi.org/10.1038/s41590-020-0602-z	https://datasets.cellxgene.cziscience.com/9a696bfb-7cd5-4c27-89f5-f7979ae12111.h5ad
+cycling DCs	dendritic cell	CL:0000451	more specific term	https://doi.org/10.1038/s41590-020-0602-z	https://datasets.cellxgene.cziscience.com/9a696bfb-7cd5-4c27-89f5-f7979ae12111.h5ad

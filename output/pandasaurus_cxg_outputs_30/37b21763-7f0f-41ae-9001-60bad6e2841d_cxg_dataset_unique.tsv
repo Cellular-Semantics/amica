@@ -1,0 +1,15 @@
+author_cell_type	CL_label	CL_ID	match_type	reference	dataset_version
+alpha	pancreatic A cell	CL:0000171	exact	https://doi.org/10.1038/s42255-022-00531-x	https://datasets.cellxgene.cziscience.com/111d6e7d-d3d2-48fd-907a-4d3f8c77ee93.h5ad
+beta_major	type B pancreatic cell	CL:0000169	more specific term	https://doi.org/10.1038/s42255-022-00531-x	https://datasets.cellxgene.cziscience.com/111d6e7d-d3d2-48fd-907a-4d3f8c77ee93.h5ad
+endothelial	endothelial cell	CL:0000115	exact	https://doi.org/10.1038/s42255-022-00531-x	https://datasets.cellxgene.cziscience.com/111d6e7d-d3d2-48fd-907a-4d3f8c77ee93.h5ad
+delta	pancreatic D cell	CL:0000173	exact	https://doi.org/10.1038/s42255-022-00531-x	https://datasets.cellxgene.cziscience.com/111d6e7d-d3d2-48fd-907a-4d3f8c77ee93.h5ad
+stellates	pancreatic stellate cell	CL:0002410	exact	https://doi.org/10.1038/s42255-022-00531-x	https://datasets.cellxgene.cziscience.com/111d6e7d-d3d2-48fd-907a-4d3f8c77ee93.h5ad
+beta_minor	type B pancreatic cell	CL:0000169	more specific term	https://doi.org/10.1038/s42255-022-00531-x	https://datasets.cellxgene.cziscience.com/111d6e7d-d3d2-48fd-907a-4d3f8c77ee93.h5ad
+duct_major	pancreatic ductal cell	CL:0002079	more specific term	https://doi.org/10.1038/s42255-022-00531-x	https://datasets.cellxgene.cziscience.com/111d6e7d-d3d2-48fd-907a-4d3f8c77ee93.h5ad
+immune_stellates	unknown	unknown	more specific term	https://doi.org/10.1038/s42255-022-00531-x	https://datasets.cellxgene.cziscience.com/111d6e7d-d3d2-48fd-907a-4d3f8c77ee93.h5ad
+acinar_minor_mhcclassII	pancreatic acinar cell	CL:0002064	more specific term	https://doi.org/10.1038/s42255-022-00531-x	https://datasets.cellxgene.cziscience.com/111d6e7d-d3d2-48fd-907a-4d3f8c77ee93.h5ad
+hybrid	unknown	unknown	more specific term	https://doi.org/10.1038/s42255-022-00531-x	https://datasets.cellxgene.cziscience.com/111d6e7d-d3d2-48fd-907a-4d3f8c77ee93.h5ad
+acinar	pancreatic acinar cell	CL:0002064	more specific term	https://doi.org/10.1038/s42255-022-00531-x	https://datasets.cellxgene.cziscience.com/111d6e7d-d3d2-48fd-907a-4d3f8c77ee93.h5ad
+epsilon	pancreatic epsilon cell	CL:0005019	exact	https://doi.org/10.1038/s42255-022-00531-x	https://datasets.cellxgene.cziscience.com/111d6e7d-d3d2-48fd-907a-4d3f8c77ee93.h5ad
+duct_acinar_related	pancreatic ductal cell	CL:0002079	more specific term	https://doi.org/10.1038/s42255-022-00531-x	https://datasets.cellxgene.cziscience.com/111d6e7d-d3d2-48fd-907a-4d3f8c77ee93.h5ad
+pp	PP cell	CL:0000696	exact	https://doi.org/10.1038/s42255-022-00531-x	https://datasets.cellxgene.cziscience.com/111d6e7d-d3d2-48fd-907a-4d3f8c77ee93.h5ad

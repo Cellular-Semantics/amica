@@ -1,0 +1,13 @@
+author_cell_type	CL_label	CL_ID	match_type	reference	dataset_version
+IMB	ON-bipolar cell	CL:0000749	more specific term	https://doi.org/10.1038/s41598-020-66092-9	https://datasets.cellxgene.cziscience.com/e5c05222-061f-47fd-9555-26f8a160bb81.h5ad
+FMB	OFF-bipolar cell	CL:0000750	more specific term	https://doi.org/10.1038/s41598-020-66092-9	https://datasets.cellxgene.cziscience.com/e5c05222-061f-47fd-9555-26f8a160bb81.h5ad
+DB5*	ON-bipolar cell	CL:0000749	more specific term	https://doi.org/10.1038/s41598-020-66092-9	https://datasets.cellxgene.cziscience.com/e5c05222-061f-47fd-9555-26f8a160bb81.h5ad
+DB3b	OFF-bipolar cell	CL:0000750	more specific term	https://doi.org/10.1038/s41598-020-66092-9	https://datasets.cellxgene.cziscience.com/e5c05222-061f-47fd-9555-26f8a160bb81.h5ad
+DB3a	OFF-bipolar cell	CL:0000750	more specific term	https://doi.org/10.1038/s41598-020-66092-9	https://datasets.cellxgene.cziscience.com/e5c05222-061f-47fd-9555-26f8a160bb81.h5ad
+BB+GB*	ON-bipolar cell	CL:0000749	more specific term	https://doi.org/10.1038/s41598-020-66092-9	https://datasets.cellxgene.cziscience.com/e5c05222-061f-47fd-9555-26f8a160bb81.h5ad
+DB4	ON-bipolar cell	CL:0000749	more specific term	https://doi.org/10.1038/s41598-020-66092-9	https://datasets.cellxgene.cziscience.com/e5c05222-061f-47fd-9555-26f8a160bb81.h5ad
+DB2	OFF-bipolar cell	CL:0000750	more specific term	https://doi.org/10.1038/s41598-020-66092-9	https://datasets.cellxgene.cziscience.com/e5c05222-061f-47fd-9555-26f8a160bb81.h5ad
+DB1	OFF-bipolar cell	CL:0000750	more specific term	https://doi.org/10.1038/s41598-020-66092-9	https://datasets.cellxgene.cziscience.com/e5c05222-061f-47fd-9555-26f8a160bb81.h5ad
+OFFx	OFF-bipolar cell	CL:0000750	more specific term	https://doi.org/10.1038/s41598-020-66092-9	https://datasets.cellxgene.cziscience.com/e5c05222-061f-47fd-9555-26f8a160bb81.h5ad
+DB6	ON-bipolar cell	CL:0000749	more specific term	https://doi.org/10.1038/s41598-020-66092-9	https://datasets.cellxgene.cziscience.com/e5c05222-061f-47fd-9555-26f8a160bb81.h5ad
+RB1	ON-bipolar cell	CL:0000749	more specific term	https://doi.org/10.1038/s41598-020-66092-9	https://datasets.cellxgene.cziscience.com/e5c05222-061f-47fd-9555-26f8a160bb81.h5ad

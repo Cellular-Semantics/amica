@@ -1,0 +1,29 @@
+author_cell_type	CL_label	CL_ID	match_type	reference	dataset_version
+K_Epi-Wing	corneal epithelial cell	CL:0000575	more specific term	https://doi.org/10.1073/pnas.2200914119	https://datasets.cellxgene.cziscience.com/8b0c2c6a-902e-41dd-ad1c-60165d552360.h5ad
+Limbal_Epi-Superficial	basal cell	CL:0000646	more specific term	https://doi.org/10.1073/pnas.2200914119	https://datasets.cellxgene.cziscience.com/8b0c2c6a-902e-41dd-ad1c-60165d552360.h5ad
+Conj_Epi-Superficial	conjunctival epithelial cell	CL:1000432	more specific term	https://doi.org/10.1073/pnas.2200914119	https://datasets.cellxgene.cziscience.com/8b0c2c6a-902e-41dd-ad1c-60165d552360.h5ad
+Conj_Epi-Basal	conjunctival epithelial cell	CL:1000432	more specific term	https://doi.org/10.1073/pnas.2200914119	https://datasets.cellxgene.cziscience.com/8b0c2c6a-902e-41dd-ad1c-60165d552360.h5ad
+K_Epi-Superficial	corneal epithelial cell	CL:0000575	more specific term	https://doi.org/10.1073/pnas.2200914119	https://datasets.cellxgene.cziscience.com/8b0c2c6a-902e-41dd-ad1c-60165d552360.h5ad
+K_Epi-Basal	basal cell	CL:0000646	more specific term	https://doi.org/10.1073/pnas.2200914119	https://datasets.cellxgene.cziscience.com/8b0c2c6a-902e-41dd-ad1c-60165d552360.h5ad
+Conj_Epi-Wing	conjunctival epithelial cell	CL:1000432	more specific term	https://doi.org/10.1073/pnas.2200914119	https://datasets.cellxgene.cziscience.com/8b0c2c6a-902e-41dd-ad1c-60165d552360.h5ad
+Limbal_Epi-Basal	basal cell	CL:0000646	more specific term	https://doi.org/10.1073/pnas.2200914119	https://datasets.cellxgene.cziscience.com/8b0c2c6a-902e-41dd-ad1c-60165d552360.h5ad
+Limbal_Epi-Wing	basal cell	CL:0000646	more specific term	https://doi.org/10.1073/pnas.2200914119	https://datasets.cellxgene.cziscience.com/8b0c2c6a-902e-41dd-ad1c-60165d552360.h5ad
+TM_Fibro	fibroblast	CL:0000057	more specific term	https://doi.org/10.1073/pnas.2200914119	https://datasets.cellxgene.cziscience.com/8b0c2c6a-902e-41dd-ad1c-60165d552360.h5ad
+Conj_Melanocyte	melanocyte	CL:0000148	more specific term	https://doi.org/10.1073/pnas.2200914119	https://datasets.cellxgene.cziscience.com/8b0c2c6a-902e-41dd-ad1c-60165d552360.h5ad
+Lymphatic_Endo	endothelial cell of lymphatic vessel	CL:0002138	exact	https://doi.org/10.1073/pnas.2200914119	https://datasets.cellxgene.cziscience.com/8b0c2c6a-902e-41dd-ad1c-60165d552360.h5ad
+Uveal_Fibro	fibroblast	CL:0000057	more specific term	https://doi.org/10.1073/pnas.2200914119	https://datasets.cellxgene.cziscience.com/8b0c2c6a-902e-41dd-ad1c-60165d552360.h5ad
+Schwann	Schwann cell	CL:0002573	exact	https://doi.org/10.1073/pnas.2200914119	https://datasets.cellxgene.cziscience.com/8b0c2c6a-902e-41dd-ad1c-60165d552360.h5ad
+Sclera_Fibro	fibroblast	CL:0000057	more specific term	https://doi.org/10.1073/pnas.2200914119	https://datasets.cellxgene.cziscience.com/8b0c2c6a-902e-41dd-ad1c-60165d552360.h5ad
+Uveal_Melanocyte	melanocyte	CL:0000148	more specific term	https://doi.org/10.1073/pnas.2200914119	https://datasets.cellxgene.cziscience.com/8b0c2c6a-902e-41dd-ad1c-60165d552360.h5ad
+Ciliary_Muscle	ciliary muscle cell	CL:1000443	exact	https://doi.org/10.1073/pnas.2200914119	https://datasets.cellxgene.cziscience.com/8b0c2c6a-902e-41dd-ad1c-60165d552360.h5ad
+CC_VenEndo	endothelial cell	CL:0000115	more specific term	https://doi.org/10.1073/pnas.2200914119	https://datasets.cellxgene.cziscience.com/8b0c2c6a-902e-41dd-ad1c-60165d552360.h5ad
+Lymphocyte	lymphocyte	CL:0000542	exact	https://doi.org/10.1073/pnas.2200914119	https://datasets.cellxgene.cziscience.com/8b0c2c6a-902e-41dd-ad1c-60165d552360.h5ad
+K_Endo	corneal endothelial cell	CL:0000132	exact	https://doi.org/10.1073/pnas.2200914119	https://datasets.cellxgene.cziscience.com/8b0c2c6a-902e-41dd-ad1c-60165d552360.h5ad
+VascEndo	blood vessel endothelial cell	CL:0000071	exact	https://doi.org/10.1073/pnas.2200914119	https://datasets.cellxgene.cziscience.com/8b0c2c6a-902e-41dd-ad1c-60165d552360.h5ad
+Pericyte	pericyte	CL:0000669	exact	https://doi.org/10.1073/pnas.2200914119	https://datasets.cellxgene.cziscience.com/8b0c2c6a-902e-41dd-ad1c-60165d552360.h5ad
+K_Fibro	fibroblast	CL:0000057	more specific term	https://doi.org/10.1073/pnas.2200914119	https://datasets.cellxgene.cziscience.com/8b0c2c6a-902e-41dd-ad1c-60165d552360.h5ad
+Goblet	goblet cell	CL:0000160	exact	https://doi.org/10.1073/pnas.2200914119	https://datasets.cellxgene.cziscience.com/8b0c2c6a-902e-41dd-ad1c-60165d552360.h5ad
+Schlemm_Endo	endothelial cell	CL:0000115	more specific term	https://doi.org/10.1073/pnas.2200914119	https://datasets.cellxgene.cziscience.com/8b0c2c6a-902e-41dd-ad1c-60165d552360.h5ad
+Macrophage	macrophage	CL:0000235	exact	https://doi.org/10.1073/pnas.2200914119	https://datasets.cellxgene.cziscience.com/8b0c2c6a-902e-41dd-ad1c-60165d552360.h5ad
+FibroX	fibroblast	CL:0000057	more specific term	https://doi.org/10.1073/pnas.2200914119	https://datasets.cellxgene.cziscience.com/8b0c2c6a-902e-41dd-ad1c-60165d552360.h5ad
+Mast	mast cell	CL:0000097	exact	https://doi.org/10.1073/pnas.2200914119	https://datasets.cellxgene.cziscience.com/8b0c2c6a-902e-41dd-ad1c-60165d552360.h5ad

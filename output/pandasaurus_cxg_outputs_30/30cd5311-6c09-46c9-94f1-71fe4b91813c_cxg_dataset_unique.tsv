@@ -1,0 +1,11 @@
+author_cell_type	CL_label	CL_ID	match_type	reference	dataset_version
+non-classical monocyte	non-classical monocyte	CL:0000875	exact	https://doi.org/10.1016/j.cell.2021.02.018	https://datasets.cellxgene.cziscience.com/73024e1c-c5e4-48d2-9ca4-49d2f845c8b9.h5ad
+classical monocyte	classical monocyte	CL:0000860	exact	https://doi.org/10.1016/j.cell.2021.02.018	https://datasets.cellxgene.cziscience.com/73024e1c-c5e4-48d2-9ca4-49d2f845c8b9.h5ad
+NK_CD16hi	CD16-positive, CD56-dim natural killer cell, human	CL:0000939	exact	https://doi.org/10.1016/j.cell.2021.02.018	https://datasets.cellxgene.cziscience.com/73024e1c-c5e4-48d2-9ca4-49d2f845c8b9.h5ad
+NK_CD56loCD16lo	natural killer cell	CL:0000623	exact	https://doi.org/10.1016/j.cell.2021.02.018	https://datasets.cellxgene.cziscience.com/73024e1c-c5e4-48d2-9ca4-49d2f845c8b9.h5ad
+plasmacytoid dendritic cell	plasmacytoid dendritic cell	CL:0000784	exact	https://doi.org/10.1016/j.cell.2021.02.018	https://datasets.cellxgene.cziscience.com/73024e1c-c5e4-48d2-9ca4-49d2f845c8b9.h5ad
+conventional dendritic cell	conventional dendritic cell	CL:0000990	exact	https://doi.org/10.1016/j.cell.2021.02.018	https://datasets.cellxgene.cziscience.com/73024e1c-c5e4-48d2-9ca4-49d2f845c8b9.h5ad
+platelet	platelet	CL:0000233	exact	https://doi.org/10.1016/j.cell.2021.02.018	https://datasets.cellxgene.cziscience.com/73024e1c-c5e4-48d2-9ca4-49d2f845c8b9.h5ad
+NK_CD56hiCD16lo	CD16-negative, CD56-bright natural killer cell, human	CL:0000938	exact	https://doi.org/10.1016/j.cell.2021.02.018	https://datasets.cellxgene.cziscience.com/73024e1c-c5e4-48d2-9ca4-49d2f845c8b9.h5ad
+granulocyte	granulocyte	CL:0000094	exact	https://doi.org/10.1016/j.cell.2021.02.018	https://datasets.cellxgene.cziscience.com/73024e1c-c5e4-48d2-9ca4-49d2f845c8b9.h5ad
+intermediate monocyte	intermediate monocyte	CL:0002393	exact	https://doi.org/10.1016/j.cell.2021.02.018	https://datasets.cellxgene.cziscience.com/73024e1c-c5e4-48d2-9ca4-49d2f845c8b9.h5ad

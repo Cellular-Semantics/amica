@@ -1,0 +1,17 @@
+author_cell_type	CL_label	CL_ID	match_type	reference	dataset_version
+PT	epithelial cell of proximal tubule	CL:0002306	more specific term	https://doi.org/10.1038/s41467-022-32972-z	https://datasets.cellxgene.cziscience.com/46d8d92b-32e0-4ca5-9907-4dbf519c7fc3.h5ad
+TAL1	kidney loop of Henle thick ascending limb epithelial cell	CL:1001106	more specific term	https://doi.org/10.1038/s41467-022-32972-z	https://datasets.cellxgene.cziscience.com/46d8d92b-32e0-4ca5-9907-4dbf519c7fc3.h5ad
+DCT2	kidney distal convoluted tubule epithelial cell	CL:1000849	more specific term	https://doi.org/10.1038/s41467-022-32972-z	https://datasets.cellxgene.cziscience.com/46d8d92b-32e0-4ca5-9907-4dbf519c7fc3.h5ad
+DCT1	kidney distal convoluted tubule epithelial cell	CL:1000849	more specific term	https://doi.org/10.1038/s41467-022-32972-z	https://datasets.cellxgene.cziscience.com/46d8d92b-32e0-4ca5-9907-4dbf519c7fc3.h5ad
+TAL2	kidney loop of Henle thick ascending limb epithelial cell	CL:1001106	more specific term	https://doi.org/10.1038/s41467-022-32972-z	https://datasets.cellxgene.cziscience.com/46d8d92b-32e0-4ca5-9907-4dbf519c7fc3.h5ad
+ICA	renal alpha-intercalated cell	CL:0005011	exact	https://doi.org/10.1038/s41467-022-32972-z	https://datasets.cellxgene.cziscience.com/46d8d92b-32e0-4ca5-9907-4dbf519c7fc3.h5ad
+ICB	renal beta-intercalated cell	CL:0002201	exact	https://doi.org/10.1038/s41467-022-32972-z	https://datasets.cellxgene.cziscience.com/46d8d92b-32e0-4ca5-9907-4dbf519c7fc3.h5ad
+PEC	parietal epithelial cell	CL:1000452	exact	https://doi.org/10.1038/s41467-022-32972-z	https://datasets.cellxgene.cziscience.com/46d8d92b-32e0-4ca5-9907-4dbf519c7fc3.h5ad
+ENDO	endothelial cell	CL:0000115	exact	https://doi.org/10.1038/s41467-022-32972-z	https://datasets.cellxgene.cziscience.com/46d8d92b-32e0-4ca5-9907-4dbf519c7fc3.h5ad
+ATL	kidney loop of Henle thin ascending limb epithelial cell	CL:1001107	exact	https://doi.org/10.1038/s41467-022-32972-z	https://datasets.cellxgene.cziscience.com/46d8d92b-32e0-4ca5-9907-4dbf519c7fc3.h5ad
+PTVCAM1	epithelial cell of proximal tubule	CL:0002306	more specific term	https://doi.org/10.1038/s41467-022-32972-z	https://datasets.cellxgene.cziscience.com/46d8d92b-32e0-4ca5-9907-4dbf519c7fc3.h5ad
+PODO	podocyte	CL:0000653	exact	https://doi.org/10.1038/s41467-022-32972-z	https://datasets.cellxgene.cziscience.com/46d8d92b-32e0-4ca5-9907-4dbf519c7fc3.h5ad
+PC	renal principal cell	CL:0005009	exact	https://doi.org/10.1038/s41467-022-32972-z	https://datasets.cellxgene.cziscience.com/46d8d92b-32e0-4ca5-9907-4dbf519c7fc3.h5ad
+MES	mesangial cell	CL:0000650	exact	https://doi.org/10.1038/s41467-022-32972-z	https://datasets.cellxgene.cziscience.com/46d8d92b-32e0-4ca5-9907-4dbf519c7fc3.h5ad
+FIB	fibroblast	CL:0000057	exact	https://doi.org/10.1038/s41467-022-32972-z	https://datasets.cellxgene.cziscience.com/46d8d92b-32e0-4ca5-9907-4dbf519c7fc3.h5ad
+LEUK	leukocyte	CL:0000738	exact	https://doi.org/10.1038/s41467-022-32972-z	https://datasets.cellxgene.cziscience.com/46d8d92b-32e0-4ca5-9907-4dbf519c7fc3.h5ad
