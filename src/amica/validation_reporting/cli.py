@@ -66,7 +66,9 @@ def generate_reports(
 
     datasets = load_grounding_datasets(paths.raw_output)
     resolver = MatchTypeResolver(paths.match_type_inputs)
-    adapter = _initialise_adapter(skip_ontology=skip_ontology, adapter_spec=adapter_spec)
+    adapter = _initialise_adapter(
+        skip_ontology=skip_ontology, adapter_spec=adapter_spec
+    )
 
     paths.ensure_report_dir()
     written: dict[str, Path] = {}

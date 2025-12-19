@@ -2,7 +2,6 @@
 
 from __future__ import annotations
 
-from textwrap import dedent
 
 from .stats import FilteredStats, ImprovedExample, RawStats
 

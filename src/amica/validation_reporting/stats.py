@@ -13,6 +13,7 @@ from .data_loader import MatchTypeResolver
 LOGGER = logging.getLogger(__name__)
 _ONTOLOGY_FAILURE = False
 
+
 def _clean_str(value: Any) -> str:
     if pd.isna(value):
         return ""
