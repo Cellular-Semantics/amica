@@ -34,7 +34,10 @@ class ValidationPaths:
     ) -> "ValidationPaths":
         """Build directory references from the CXG resource layout."""
 
-        base_output = _resolve(output_root) if output_root else layout.output_dir
+        base_output_override = (
+            _resolve(output_root) if output_root is not None else None
+        )
+        base_output: Path = base_output_override or layout.output_dir
         return cls(
             raw_output=_resolve(raw_output_dir) or (base_output / "raw_output"),
             match_type_inputs=_resolve(match_type_dir)
