@@ -1,0 +1,15 @@
+author_cell_type	CL_label	CL_ID	match_type	reference	dataset_version
+naive B cell	naive B cell	CL:0000788	exact	https://doi.org/10.1016/j.cell.2021.02.018	https://datasets.cellxgene.cziscience.com/e6ef9f09-bf7f-49bf-900c-457c02675411.h5ad
+memory B cell	memory B cell	CL:0000787	exact	https://doi.org/10.1016/j.cell.2021.02.018	https://datasets.cellxgene.cziscience.com/e6ef9f09-bf7f-49bf-900c-457c02675411.h5ad
+gamma-delta T cell	gamma-delta T cell	CL:0000798	exact	https://doi.org/10.1016/j.cell.2021.02.018	https://datasets.cellxgene.cziscience.com/e6ef9f09-bf7f-49bf-900c-457c02675411.h5ad
+plasmablast	plasmablast	CL:0000980	exact	https://doi.org/10.1016/j.cell.2021.02.018	https://datasets.cellxgene.cziscience.com/e6ef9f09-bf7f-49bf-900c-457c02675411.h5ad
+regulatory T cell	regulatory T cell	CL:0000815	exact	https://doi.org/10.1016/j.cell.2021.02.018	https://datasets.cellxgene.cziscience.com/e6ef9f09-bf7f-49bf-900c-457c02675411.h5ad
+CD4-positive, alpha-beta memory T cell	CD4-positive, alpha-beta memory T cell	CL:0000897	exact	https://doi.org/10.1016/j.cell.2021.02.018	https://datasets.cellxgene.cziscience.com/e6ef9f09-bf7f-49bf-900c-457c02675411.h5ad
+CD8-positive, alpha-beta memory T cell	CD8-positive, alpha-beta memory T cell	CL:0000909	exact	https://doi.org/10.1016/j.cell.2021.02.018	https://datasets.cellxgene.cziscience.com/e6ef9f09-bf7f-49bf-900c-457c02675411.h5ad
+naive CD8+ T cell	naive thymus-derived CD8-positive, alpha-beta T cell	CL:0000900	exact	https://doi.org/10.1016/j.cell.2021.02.018	https://datasets.cellxgene.cziscience.com/e6ef9f09-bf7f-49bf-900c-457c02675411.h5ad
+naive CD4+ T cell	naive thymus-derived CD4-positive, alpha-beta T cell	CL:0000895	exact	https://doi.org/10.1016/j.cell.2021.02.018	https://datasets.cellxgene.cziscience.com/e6ef9f09-bf7f-49bf-900c-457c02675411.h5ad
+mucosal invariant T cell (MAIT)	mucosal invariant T cell	CL:0000940	exact	https://doi.org/10.1016/j.cell.2021.02.018	https://datasets.cellxgene.cziscience.com/e6ef9f09-bf7f-49bf-900c-457c02675411.h5ad
+TissueResMemT	memory T cell	CL:0000813	exact	https://doi.org/10.1016/j.cell.2021.02.018	https://datasets.cellxgene.cziscience.com/e6ef9f09-bf7f-49bf-900c-457c02675411.h5ad
+double-positive T cell (DPT)	double-positive, alpha-beta thymocyte	CL:0000809	exact	https://doi.org/10.1016/j.cell.2021.02.018	https://datasets.cellxgene.cziscience.com/e6ef9f09-bf7f-49bf-900c-457c02675411.h5ad
+double negative T cell (DNT)	double negative thymocyte	CL:0002489	exact	https://doi.org/10.1016/j.cell.2021.02.018	https://datasets.cellxgene.cziscience.com/e6ef9f09-bf7f-49bf-900c-457c02675411.h5ad
+TCRVbeta13.1pos	T cell	CL:0000084	exact	https://doi.org/10.1016/j.cell.2021.02.018	https://datasets.cellxgene.cziscience.com/e6ef9f09-bf7f-49bf-900c-457c02675411.h5ad

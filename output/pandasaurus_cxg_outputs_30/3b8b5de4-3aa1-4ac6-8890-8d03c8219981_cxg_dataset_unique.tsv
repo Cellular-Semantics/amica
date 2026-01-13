@@ -1,0 +1,18 @@
+author_cell_type	CL_label	CL_ID	match_type	reference	dataset_version
+Oligodendrocytes	oligodendrocyte	CL:0000128	exact	https://doi.org/10.1007/s00401-023-02599-5	https://datasets.cellxgene.cziscience.com/8ec7b265-1c95-4c33-9df3-45c850b8b6b5.h5ad
+L3-L5 Intratelencephalic Type 1	neuron	CL:0000540	more specific term	https://doi.org/10.1007/s00401-023-02599-5	https://datasets.cellxgene.cziscience.com/8ec7b265-1c95-4c33-9df3-45c850b8b6b5.h5ad
+Astrocytes	astrocyte	CL:0000127	exact	https://doi.org/10.1007/s00401-023-02599-5	https://datasets.cellxgene.cziscience.com/8ec7b265-1c95-4c33-9df3-45c850b8b6b5.h5ad
+L6 Intratelencephalic - Type 1	neuron	CL:0000540	more specific term	https://doi.org/10.1007/s00401-023-02599-5	https://datasets.cellxgene.cziscience.com/8ec7b265-1c95-4c33-9df3-45c850b8b6b5.h5ad
+SV2C LAMP5 Interneurons	neuron	CL:0000540	more specific term	https://doi.org/10.1007/s00401-023-02599-5	https://datasets.cellxgene.cziscience.com/8ec7b265-1c95-4c33-9df3-45c850b8b6b5.h5ad
+L6 Corticothalamic / L6B	neuron	CL:0000540	more specific term	https://doi.org/10.1007/s00401-023-02599-5	https://datasets.cellxgene.cziscience.com/8ec7b265-1c95-4c33-9df3-45c850b8b6b5.h5ad
+L2-L3 Intratelencephalic	neuron	CL:0000540	more specific term	https://doi.org/10.1007/s00401-023-02599-5	https://datasets.cellxgene.cziscience.com/8ec7b265-1c95-4c33-9df3-45c850b8b6b5.h5ad
+L3-L5 Intratelencephalic Type 2	neuron	CL:0000540	more specific term	https://doi.org/10.1007/s00401-023-02599-5	https://datasets.cellxgene.cziscience.com/8ec7b265-1c95-4c33-9df3-45c850b8b6b5.h5ad
+L6 Intratelencephalic - Type 2	neuron	CL:0000540	more specific term	https://doi.org/10.1007/s00401-023-02599-5	https://datasets.cellxgene.cziscience.com/8ec7b265-1c95-4c33-9df3-45c850b8b6b5.h5ad
+OPCs	oligodendrocyte precursor cell	CL:0002453	exact	https://doi.org/10.1007/s00401-023-02599-5	https://datasets.cellxgene.cziscience.com/8ec7b265-1c95-4c33-9df3-45c850b8b6b5.h5ad
+L5-L6 Near Projecting	neuron	CL:0000540	more specific term	https://doi.org/10.1007/s00401-023-02599-5	https://datasets.cellxgene.cziscience.com/8ec7b265-1c95-4c33-9df3-45c850b8b6b5.h5ad
+Somatostatin Interneurons	neuron	CL:0000540	more specific term	https://doi.org/10.1007/s00401-023-02599-5	https://datasets.cellxgene.cziscience.com/8ec7b265-1c95-4c33-9df3-45c850b8b6b5.h5ad
+Microglia	microglial cell	CL:0000129	exact	https://doi.org/10.1007/s00401-023-02599-5	https://datasets.cellxgene.cziscience.com/8ec7b265-1c95-4c33-9df3-45c850b8b6b5.h5ad
+VIP Interneurons	neuron	CL:0000540	more specific term	https://doi.org/10.1007/s00401-023-02599-5	https://datasets.cellxgene.cziscience.com/8ec7b265-1c95-4c33-9df3-45c850b8b6b5.h5ad
+L5 Extratelencephalic	neuron	CL:0000540	more specific term	https://doi.org/10.1007/s00401-023-02599-5	https://datasets.cellxgene.cziscience.com/8ec7b265-1c95-4c33-9df3-45c850b8b6b5.h5ad
+Endothelial	endothelial cell	CL:0000115	exact	https://doi.org/10.1007/s00401-023-02599-5	https://datasets.cellxgene.cziscience.com/8ec7b265-1c95-4c33-9df3-45c850b8b6b5.h5ad
+Parvalbumin interneurons	neuron	CL:0000540	more specific term	https://doi.org/10.1007/s00401-023-02599-5	https://datasets.cellxgene.cziscience.com/8ec7b265-1c95-4c33-9df3-45c850b8b6b5.h5ad

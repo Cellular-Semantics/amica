@@ -1,0 +1,43 @@
+author_cell_type	CL_label	CL_ID	match_type	reference	dataset_version
+Plasma cells	plasma cell	CL:0000786	exact	https://doi.org/10.1016/j.cell.2019.08.008	https://datasets.cellxgene.cziscience.com/73904545-a97e-4b0b-9599-a8636359ef00.h5ad
+Doublets	unknown	unknown	more specific term	https://doi.org/10.1016/j.cell.2019.08.008	https://datasets.cellxgene.cziscience.com/73904545-a97e-4b0b-9599-a8636359ef00.h5ad
+T cells	alpha-beta T cell	CL:0000789	exact	https://doi.org/10.1016/j.cell.2019.08.008	https://datasets.cellxgene.cziscience.com/73904545-a97e-4b0b-9599-a8636359ef00.h5ad
+ILC	innate lymphoid cell	CL:0001065	exact	https://doi.org/10.1016/j.cell.2019.08.008	https://datasets.cellxgene.cziscience.com/73904545-a97e-4b0b-9599-a8636359ef00.h5ad
+Progenitors	progenitor cell	CL:0011026	exact	https://doi.org/10.1016/j.cell.2019.08.008	https://datasets.cellxgene.cziscience.com/73904545-a97e-4b0b-9599-a8636359ef00.h5ad
+B cells	B cell	CL:0000236	exact	https://doi.org/10.1016/j.cell.2019.08.008	https://datasets.cellxgene.cziscience.com/73904545-a97e-4b0b-9599-a8636359ef00.h5ad
+CD36+ endothelium	endothelial cell	CL:0000115	more specific term	https://doi.org/10.1016/j.cell.2019.08.008	https://datasets.cellxgene.cziscience.com/73904545-a97e-4b0b-9599-a8636359ef00.h5ad
+MNP	mononuclear phagocyte	CL:0000113	exact	https://doi.org/10.1016/j.cell.2019.08.008	https://datasets.cellxgene.cziscience.com/73904545-a97e-4b0b-9599-a8636359ef00.h5ad
+Cycling	unknown	unknown	more specific term	https://doi.org/10.1016/j.cell.2019.08.008	https://datasets.cellxgene.cziscience.com/73904545-a97e-4b0b-9599-a8636359ef00.h5ad
+Mast cells	mast cell	CL:0000097	exact	https://doi.org/10.1016/j.cell.2019.08.008	https://datasets.cellxgene.cziscience.com/73904545-a97e-4b0b-9599-a8636359ef00.h5ad
+TA	transit amplifying cell of small intestine	CL:0009012	exact	https://doi.org/10.1016/j.cell.2019.08.008	https://datasets.cellxgene.cziscience.com/73904545-a97e-4b0b-9599-a8636359ef00.h5ad
+Enterocytes	enterocyte of epithelium proper of ileum	CL:1000342	exact	https://doi.org/10.1016/j.cell.2019.08.008	https://datasets.cellxgene.cziscience.com/73904545-a97e-4b0b-9599-a8636359ef00.h5ad
+SM	smooth muscle fiber of ileum	CL:1000278	exact	https://doi.org/10.1016/j.cell.2019.08.008	https://datasets.cellxgene.cziscience.com/73904545-a97e-4b0b-9599-a8636359ef00.h5ad
+Goblets	ileal goblet cell	CL:1000326	exact	https://doi.org/10.1016/j.cell.2019.08.008	https://datasets.cellxgene.cziscience.com/73904545-a97e-4b0b-9599-a8636359ef00.h5ad
+Fibs	fibroblast	CL:0000057	exact	https://doi.org/10.1016/j.cell.2019.08.008	https://datasets.cellxgene.cziscience.com/73904545-a97e-4b0b-9599-a8636359ef00.h5ad
+ACKR1+ endothelium	endothelial cell	CL:0000115	more specific term	https://doi.org/10.1016/j.cell.2019.08.008	https://datasets.cellxgene.cziscience.com/73904545-a97e-4b0b-9599-a8636359ef00.h5ad
+Pericytes	pericyte	CL:0000669	exact	https://doi.org/10.1016/j.cell.2019.08.008	https://datasets.cellxgene.cziscience.com/73904545-a97e-4b0b-9599-a8636359ef00.h5ad
+Enteroendocrines	enteroendocrine cell of small intestine	CL:0009006	exact	https://doi.org/10.1016/j.cell.2019.08.008	https://datasets.cellxgene.cziscience.com/73904545-a97e-4b0b-9599-a8636359ef00.h5ad
+Paneth cells	paneth cell of epithelium of small intestine	CL:1000343	exact	https://doi.org/10.1016/j.cell.2019.08.008	https://datasets.cellxgene.cziscience.com/73904545-a97e-4b0b-9599-a8636359ef00.h5ad
+Glial cells	glial cell	CL:0000125	exact	https://doi.org/10.1016/j.cell.2019.08.008	https://datasets.cellxgene.cziscience.com/73904545-a97e-4b0b-9599-a8636359ef00.h5ad
+Lymphatics	endothelial cell of lymphatic vessel	CL:0002138	exact	https://doi.org/10.1016/j.cell.2019.08.008	https://datasets.cellxgene.cziscience.com/73904545-a97e-4b0b-9599-a8636359ef00.h5ad
+Immune cells	plasma cell	CL:0000786	broad term	https://doi.org/10.1016/j.cell.2019.08.008	https://datasets.cellxgene.cziscience.com/73904545-a97e-4b0b-9599-a8636359ef00.h5ad
+Immune cells	alpha-beta T cell	CL:0000789	broad term	https://doi.org/10.1016/j.cell.2019.08.008	https://datasets.cellxgene.cziscience.com/73904545-a97e-4b0b-9599-a8636359ef00.h5ad
+Immune cells	innate lymphoid cell	CL:0001065	broad term	https://doi.org/10.1016/j.cell.2019.08.008	https://datasets.cellxgene.cziscience.com/73904545-a97e-4b0b-9599-a8636359ef00.h5ad
+Immune cells	B cell	CL:0000236	broad term	https://doi.org/10.1016/j.cell.2019.08.008	https://datasets.cellxgene.cziscience.com/73904545-a97e-4b0b-9599-a8636359ef00.h5ad
+Endothelium	endothelial cell	CL:0000115	broad term	https://doi.org/10.1016/j.cell.2019.08.008	https://datasets.cellxgene.cziscience.com/73904545-a97e-4b0b-9599-a8636359ef00.h5ad
+Immune cells	mononuclear phagocyte	CL:0000113	broad term	https://doi.org/10.1016/j.cell.2019.08.008	https://datasets.cellxgene.cziscience.com/73904545-a97e-4b0b-9599-a8636359ef00.h5ad
+Immune cells	mast cell	CL:0000097	broad term	https://doi.org/10.1016/j.cell.2019.08.008	https://datasets.cellxgene.cziscience.com/73904545-a97e-4b0b-9599-a8636359ef00.h5ad
+Endothelium	endothelial cell of lymphatic vessel	CL:0002138	broad term	https://doi.org/10.1016/j.cell.2019.08.008	https://datasets.cellxgene.cziscience.com/73904545-a97e-4b0b-9599-a8636359ef00.h5ad
+Stroma	progenitor cell	CL:0011026	broad term	https://doi.org/10.1016/j.cell.2019.08.008	https://datasets.cellxgene.cziscience.com/73904545-a97e-4b0b-9599-a8636359ef00.h5ad
+Stroma	endothelial cell	CL:0000115	broad term	https://doi.org/10.1016/j.cell.2019.08.008	https://datasets.cellxgene.cziscience.com/73904545-a97e-4b0b-9599-a8636359ef00.h5ad
+Stroma	unknown	unknown		https://doi.org/10.1016/j.cell.2019.08.008	https://datasets.cellxgene.cziscience.com/73904545-a97e-4b0b-9599-a8636359ef00.h5ad
+Stroma	transit amplifying cell of small intestine	CL:0009012	broad term	https://doi.org/10.1016/j.cell.2019.08.008	https://datasets.cellxgene.cziscience.com/73904545-a97e-4b0b-9599-a8636359ef00.h5ad
+Stroma	enterocyte of epithelium proper of ileum	CL:1000342	broad term	https://doi.org/10.1016/j.cell.2019.08.008	https://datasets.cellxgene.cziscience.com/73904545-a97e-4b0b-9599-a8636359ef00.h5ad
+Stroma	smooth muscle fiber of ileum	CL:1000278	broad term	https://doi.org/10.1016/j.cell.2019.08.008	https://datasets.cellxgene.cziscience.com/73904545-a97e-4b0b-9599-a8636359ef00.h5ad
+Stroma	ileal goblet cell	CL:1000326	broad term	https://doi.org/10.1016/j.cell.2019.08.008	https://datasets.cellxgene.cziscience.com/73904545-a97e-4b0b-9599-a8636359ef00.h5ad
+Stroma	fibroblast	CL:0000057	broad term	https://doi.org/10.1016/j.cell.2019.08.008	https://datasets.cellxgene.cziscience.com/73904545-a97e-4b0b-9599-a8636359ef00.h5ad
+Stroma	pericyte	CL:0000669	broad term	https://doi.org/10.1016/j.cell.2019.08.008	https://datasets.cellxgene.cziscience.com/73904545-a97e-4b0b-9599-a8636359ef00.h5ad
+Stroma	enteroendocrine cell of small intestine	CL:0009006	broad term	https://doi.org/10.1016/j.cell.2019.08.008	https://datasets.cellxgene.cziscience.com/73904545-a97e-4b0b-9599-a8636359ef00.h5ad
+Stroma	paneth cell of epithelium of small intestine	CL:1000343	broad term	https://doi.org/10.1016/j.cell.2019.08.008	https://datasets.cellxgene.cziscience.com/73904545-a97e-4b0b-9599-a8636359ef00.h5ad
+Stroma	glial cell	CL:0000125	broad term	https://doi.org/10.1016/j.cell.2019.08.008	https://datasets.cellxgene.cziscience.com/73904545-a97e-4b0b-9599-a8636359ef00.h5ad
+Stroma	endothelial cell of lymphatic vessel	CL:0002138	broad term	https://doi.org/10.1016/j.cell.2019.08.008	https://datasets.cellxgene.cziscience.com/73904545-a97e-4b0b-9599-a8636359ef00.h5ad

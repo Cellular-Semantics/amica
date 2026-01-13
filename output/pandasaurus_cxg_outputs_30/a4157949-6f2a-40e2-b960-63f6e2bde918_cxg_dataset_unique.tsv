@@ -1,0 +1,8 @@
+author_cell_type	CL_label	CL_ID	match_type	reference	dataset_version
+K_Epi-Basal	basal cell	CL:0000646	exact	https://doi.org/10.1073/pnas.2200914119	https://datasets.cellxgene.cziscience.com/9a25a459-dedc-45c0-b3b7-0e4be0a0b2c9.h5ad
+K_Epi-Wing	corneal epithelial cell	CL:0000575	more specific term	https://doi.org/10.1073/pnas.2200914119	https://datasets.cellxgene.cziscience.com/9a25a459-dedc-45c0-b3b7-0e4be0a0b2c9.h5ad
+K_Fibro	fibroblast	CL:0000057	exact	https://doi.org/10.1073/pnas.2200914119	https://datasets.cellxgene.cziscience.com/9a25a459-dedc-45c0-b3b7-0e4be0a0b2c9.h5ad
+K_Epi-Superficial	corneal epithelial cell	CL:0000575	more specific term	https://doi.org/10.1073/pnas.2200914119	https://datasets.cellxgene.cziscience.com/9a25a459-dedc-45c0-b3b7-0e4be0a0b2c9.h5ad
+K_Endo	corneal endothelial cell	CL:0000132	exact	https://doi.org/10.1073/pnas.2200914119	https://datasets.cellxgene.cziscience.com/9a25a459-dedc-45c0-b3b7-0e4be0a0b2c9.h5ad
+K_Epi-TA	transit amplifying cell	CL:0009010	exact	https://doi.org/10.1073/pnas.2200914119	https://datasets.cellxgene.cziscience.com/9a25a459-dedc-45c0-b3b7-0e4be0a0b2c9.h5ad
+Immune	leukocyte	CL:0000738	exact	https://doi.org/10.1073/pnas.2200914119	https://datasets.cellxgene.cziscience.com/9a25a459-dedc-45c0-b3b7-0e4be0a0b2c9.h5ad

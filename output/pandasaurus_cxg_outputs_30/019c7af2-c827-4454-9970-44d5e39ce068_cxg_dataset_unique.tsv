@@ -1,0 +1,46 @@
+author_cell_type	CL_label	CL_ID	match_type	reference	dataset_version
+SI_earlyAE	enterocyte of epithelium of small intestine	CL:1000334	more specific term	https://doi.org/10.1016/j.jcmgh.2022.02.007	https://datasets.cellxgene.cziscience.com/45a7d3bd-dc1a-4565-8881-25f8975247a6.h5ad
+SI_AE2	enterocyte of epithelium of small intestine	CL:1000334	more specific term	https://doi.org/10.1016/j.jcmgh.2022.02.007	https://datasets.cellxgene.cziscience.com/45a7d3bd-dc1a-4565-8881-25f8975247a6.h5ad
+SI_tuft	intestinal tuft cell	CL:0019032	exact	https://doi.org/10.1016/j.jcmgh.2022.02.007	https://datasets.cellxgene.cziscience.com/45a7d3bd-dc1a-4565-8881-25f8975247a6.h5ad
+C_earlyACC	enterocyte of epithelium of large intestine	CL:0002071	more specific term	https://doi.org/10.1016/j.jcmgh.2022.02.007	https://datasets.cellxgene.cziscience.com/45a7d3bd-dc1a-4565-8881-25f8975247a6.h5ad
+C_goblet	colon goblet cell	CL:0009039	exact	https://doi.org/10.1016/j.jcmgh.2022.02.007	https://datasets.cellxgene.cziscience.com/45a7d3bd-dc1a-4565-8881-25f8975247a6.h5ad
+SI_matureAE	enterocyte of epithelium of small intestine	CL:1000334	more specific term	https://doi.org/10.1016/j.jcmgh.2022.02.007	https://datasets.cellxgene.cziscience.com/45a7d3bd-dc1a-4565-8881-25f8975247a6.h5ad
+C_BEST4	BEST4+ enterocyte	CL:4030026	exact	https://doi.org/10.1016/j.jcmgh.2022.02.007	https://datasets.cellxgene.cziscience.com/45a7d3bd-dc1a-4565-8881-25f8975247a6.h5ad
+SI_intermAE	enterocyte of epithelium of small intestine	CL:1000334	more specific term	https://doi.org/10.1016/j.jcmgh.2022.02.007	https://datasets.cellxgene.cziscience.com/45a7d3bd-dc1a-4565-8881-25f8975247a6.h5ad
+C_lateACC	enterocyte of epithelium of large intestine	CL:0002071	more specific term	https://doi.org/10.1016/j.jcmgh.2022.02.007	https://datasets.cellxgene.cziscience.com/45a7d3bd-dc1a-4565-8881-25f8975247a6.h5ad
+SI_goblet	small intestine goblet cell	CL:1000495	exact	https://doi.org/10.1016/j.jcmgh.2022.02.007	https://datasets.cellxgene.cziscience.com/45a7d3bd-dc1a-4565-8881-25f8975247a6.h5ad
+C_EEC	enteroendocrine cell of colon	CL:0009042	exact	https://doi.org/10.1016/j.jcmgh.2022.02.007	https://datasets.cellxgene.cziscience.com/45a7d3bd-dc1a-4565-8881-25f8975247a6.h5ad
+C_tuft	tuft cell of colon	CL:0009041	exact	https://doi.org/10.1016/j.jcmgh.2022.02.007	https://datasets.cellxgene.cziscience.com/45a7d3bd-dc1a-4565-8881-25f8975247a6.h5ad
+C_ISC	intestinal crypt stem cell of colon	CL:0009043	exact	https://doi.org/10.1016/j.jcmgh.2022.02.007	https://datasets.cellxgene.cziscience.com/45a7d3bd-dc1a-4565-8881-25f8975247a6.h5ad
+SI_ISC	intestinal crypt stem cell of small intestine	CL:0009017	exact	https://doi.org/10.1016/j.jcmgh.2022.02.007	https://datasets.cellxgene.cziscience.com/45a7d3bd-dc1a-4565-8881-25f8975247a6.h5ad
+SI_BEST4	epithelial cell of small intestine	CL:0002254	exact	https://doi.org/10.1016/j.jcmgh.2022.02.007	https://datasets.cellxgene.cziscience.com/45a7d3bd-dc1a-4565-8881-25f8975247a6.h5ad
+SI_TA	transit amplifying cell of small intestine	CL:0009012	more specific term	https://doi.org/10.1016/j.jcmgh.2022.02.007	https://datasets.cellxgene.cziscience.com/45a7d3bd-dc1a-4565-8881-25f8975247a6.h5ad
+C_TA	transit amplifying cell of colon	CL:0009011	exact	https://doi.org/10.1016/j.jcmgh.2022.02.007	https://datasets.cellxgene.cziscience.com/45a7d3bd-dc1a-4565-8881-25f8975247a6.h5ad
+SI_secretory_prog	progenitor cell	CL:0011026	more specific term	https://doi.org/10.1016/j.jcmgh.2022.02.007	https://datasets.cellxgene.cziscience.com/45a7d3bd-dc1a-4565-8881-25f8975247a6.h5ad
+C_secretory_prog	progenitor cell	CL:0011026	more specific term	https://doi.org/10.1016/j.jcmgh.2022.02.007	https://datasets.cellxgene.cziscience.com/45a7d3bd-dc1a-4565-8881-25f8975247a6.h5ad
+SI_EEC	enteroendocrine cell of small intestine	CL:0009006	exact	https://doi.org/10.1016/j.jcmgh.2022.02.007	https://datasets.cellxgene.cziscience.com/45a7d3bd-dc1a-4565-8881-25f8975247a6.h5ad
+SI_TA2	transit amplifying cell of small intestine	CL:0009012	more specific term	https://doi.org/10.1016/j.jcmgh.2022.02.007	https://datasets.cellxgene.cziscience.com/45a7d3bd-dc1a-4565-8881-25f8975247a6.h5ad
+SI_paneth	paneth cell of epithelium of small intestine	CL:1000343	exact	https://doi.org/10.1016/j.jcmgh.2022.02.007	https://datasets.cellxgene.cziscience.com/45a7d3bd-dc1a-4565-8881-25f8975247a6.h5ad
+SI_FAE	microfold cell of epithelium of small intestine	CL:1000353	exact	https://doi.org/10.1016/j.jcmgh.2022.02.007	https://datasets.cellxgene.cziscience.com/45a7d3bd-dc1a-4565-8881-25f8975247a6.h5ad
+absorptive	enterocyte of epithelium of small intestine	CL:1000334	broad term	https://doi.org/10.1016/j.jcmgh.2022.02.007	https://datasets.cellxgene.cziscience.com/45a7d3bd-dc1a-4565-8881-25f8975247a6.h5ad
+tuft	intestinal tuft cell	CL:0019032	broad term	https://doi.org/10.1016/j.jcmgh.2022.02.007	https://datasets.cellxgene.cziscience.com/45a7d3bd-dc1a-4565-8881-25f8975247a6.h5ad
+absorptive	enterocyte of epithelium of large intestine	CL:0002071	broad term	https://doi.org/10.1016/j.jcmgh.2022.02.007	https://datasets.cellxgene.cziscience.com/45a7d3bd-dc1a-4565-8881-25f8975247a6.h5ad
+goblet	colon goblet cell	CL:0009039	broad term	https://doi.org/10.1016/j.jcmgh.2022.02.007	https://datasets.cellxgene.cziscience.com/45a7d3bd-dc1a-4565-8881-25f8975247a6.h5ad
+BEST4+	BEST4+ enterocyte	CL:4030026	broad term	https://doi.org/10.1016/j.jcmgh.2022.02.007	https://datasets.cellxgene.cziscience.com/45a7d3bd-dc1a-4565-8881-25f8975247a6.h5ad
+goblet	small intestine goblet cell	CL:1000495	broad term	https://doi.org/10.1016/j.jcmgh.2022.02.007	https://datasets.cellxgene.cziscience.com/45a7d3bd-dc1a-4565-8881-25f8975247a6.h5ad
+EEC	enteroendocrine cell of colon	CL:0009042	broad term	https://doi.org/10.1016/j.jcmgh.2022.02.007	https://datasets.cellxgene.cziscience.com/45a7d3bd-dc1a-4565-8881-25f8975247a6.h5ad
+tuft	tuft cell of colon	CL:0009041	broad term	https://doi.org/10.1016/j.jcmgh.2022.02.007	https://datasets.cellxgene.cziscience.com/45a7d3bd-dc1a-4565-8881-25f8975247a6.h5ad
+ISC	intestinal crypt stem cell of colon	CL:0009043	broad term	https://doi.org/10.1016/j.jcmgh.2022.02.007	https://datasets.cellxgene.cziscience.com/45a7d3bd-dc1a-4565-8881-25f8975247a6.h5ad
+ISC	intestinal crypt stem cell of small intestine	CL:0009017	broad term	https://doi.org/10.1016/j.jcmgh.2022.02.007	https://datasets.cellxgene.cziscience.com/45a7d3bd-dc1a-4565-8881-25f8975247a6.h5ad
+BEST4+	epithelial cell of small intestine	CL:0002254	broad term	https://doi.org/10.1016/j.jcmgh.2022.02.007	https://datasets.cellxgene.cziscience.com/45a7d3bd-dc1a-4565-8881-25f8975247a6.h5ad
+TA	transit amplifying cell of small intestine	CL:0009012	broad term	https://doi.org/10.1016/j.jcmgh.2022.02.007	https://datasets.cellxgene.cziscience.com/45a7d3bd-dc1a-4565-8881-25f8975247a6.h5ad
+TA	transit amplifying cell of colon	CL:0009011	broad term	https://doi.org/10.1016/j.jcmgh.2022.02.007	https://datasets.cellxgene.cziscience.com/45a7d3bd-dc1a-4565-8881-25f8975247a6.h5ad
+secretory_prog	progenitor cell	CL:0011026	exact	https://doi.org/10.1016/j.jcmgh.2022.02.007	https://datasets.cellxgene.cziscience.com/45a7d3bd-dc1a-4565-8881-25f8975247a6.h5ad
+EEC	enteroendocrine cell of small intestine	CL:0009006	broad term	https://doi.org/10.1016/j.jcmgh.2022.02.007	https://datasets.cellxgene.cziscience.com/45a7d3bd-dc1a-4565-8881-25f8975247a6.h5ad
+paneth	paneth cell of epithelium of small intestine	CL:1000343	exact	https://doi.org/10.1016/j.jcmgh.2022.02.007	https://datasets.cellxgene.cziscience.com/45a7d3bd-dc1a-4565-8881-25f8975247a6.h5ad
+FAE	microfold cell of epithelium of small intestine	CL:1000353	exact	https://doi.org/10.1016/j.jcmgh.2022.02.007	https://datasets.cellxgene.cziscience.com/45a7d3bd-dc1a-4565-8881-25f8975247a6.h5ad
+SI_6-?	enterocyte of epithelium of small intestine	CL:1000334	more specific term	https://doi.org/10.1016/j.jcmgh.2022.02.007	https://datasets.cellxgene.cziscience.com/45a7d3bd-dc1a-4565-8881-25f8975247a6.h5ad
+C_earlyCC	enterocyte of epithelium of large intestine	CL:0002071	more specific term	https://doi.org/10.1016/j.jcmgh.2022.02.007	https://datasets.cellxgene.cziscience.com/45a7d3bd-dc1a-4565-8881-25f8975247a6.h5ad
+C_lateCC	enterocyte of epithelium of large intestine	CL:0002071	more specific term	https://doi.org/10.1016/j.jcmgh.2022.02.007	https://datasets.cellxgene.cziscience.com/45a7d3bd-dc1a-4565-8881-25f8975247a6.h5ad
+SI_secretory	small intestine goblet cell	CL:1000495	broad term	https://doi.org/10.1016/j.jcmgh.2022.02.007	https://datasets.cellxgene.cziscience.com/45a7d3bd-dc1a-4565-8881-25f8975247a6.h5ad
+SI_secretory	paneth cell of epithelium of small intestine	CL:1000343	broad term	https://doi.org/10.1016/j.jcmgh.2022.02.007	https://datasets.cellxgene.cziscience.com/45a7d3bd-dc1a-4565-8881-25f8975247a6.h5ad

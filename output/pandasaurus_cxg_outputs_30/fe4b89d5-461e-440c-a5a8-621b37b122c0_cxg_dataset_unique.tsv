@@ -1,0 +1,18 @@
+author_cell_type	CL_label	CL_ID	match_type	reference	dataset_version
+Stem cells OLFM4 PCNA	stem cell	CL:0000034	more specific term	https://doi.org/10.1016/j.immuni.2023.01.002	https://datasets.cellxgene.cziscience.com/b7c3c27c-97c2-4983-97df-1d537d138a43.h5ad
+Enterocytes TMIGD1 MEP1A	enterocyte	CL:0000584	more specific term	https://doi.org/10.1016/j.immuni.2023.01.002	https://datasets.cellxgene.cziscience.com/b7c3c27c-97c2-4983-97df-1d537d138a43.h5ad
+Stem cells OLFM4	stem cell	CL:0000034	more specific term	https://doi.org/10.1016/j.immuni.2023.01.002	https://datasets.cellxgene.cziscience.com/b7c3c27c-97c2-4983-97df-1d537d138a43.h5ad
+Goblet cells MUC2 TFF1-	goblet cell	CL:0000160	more specific term	https://doi.org/10.1016/j.immuni.2023.01.002	https://datasets.cellxgene.cziscience.com/b7c3c27c-97c2-4983-97df-1d537d138a43.h5ad
+Stem cells OLFM4 GSTA1	stem cell	CL:0000034	more specific term	https://doi.org/10.1016/j.immuni.2023.01.002	https://datasets.cellxgene.cziscience.com/b7c3c27c-97c2-4983-97df-1d537d138a43.h5ad
+Goblet cells MUC2 TFF1	goblet cell	CL:0000160	more specific term	https://doi.org/10.1016/j.immuni.2023.01.002	https://datasets.cellxgene.cziscience.com/b7c3c27c-97c2-4983-97df-1d537d138a43.h5ad
+Epithelial Cycling cells	epithelial cell	CL:0000066	more specific term	https://doi.org/10.1016/j.immuni.2023.01.002	https://datasets.cellxgene.cziscience.com/b7c3c27c-97c2-4983-97df-1d537d138a43.h5ad
+Stem cells OLFM4 LGR5	stem cell	CL:0000034	more specific term	https://doi.org/10.1016/j.immuni.2023.01.002	https://datasets.cellxgene.cziscience.com/b7c3c27c-97c2-4983-97df-1d537d138a43.h5ad
+Enterocytes BEST4	enterocyte	CL:0000584	more specific term	https://doi.org/10.1016/j.immuni.2023.01.002	https://datasets.cellxgene.cziscience.com/b7c3c27c-97c2-4983-97df-1d537d138a43.h5ad
+L cells	type L enteroendocrine cell	CL:0002279	exact	https://doi.org/10.1016/j.immuni.2023.01.002	https://datasets.cellxgene.cziscience.com/b7c3c27c-97c2-4983-97df-1d537d138a43.h5ad
+Epithelial cells METTL12 MAFB	epithelial cell	CL:0000066	more specific term	https://doi.org/10.1016/j.immuni.2023.01.002	https://datasets.cellxgene.cziscience.com/b7c3c27c-97c2-4983-97df-1d537d138a43.h5ad
+Paneth cells	paneth cell	CL:0000510	exact	https://doi.org/10.1016/j.immuni.2023.01.002	https://datasets.cellxgene.cziscience.com/b7c3c27c-97c2-4983-97df-1d537d138a43.h5ad
+Enterocytes TMIGD1 MEP1A GSTA1	enterocyte	CL:0000584	more specific term	https://doi.org/10.1016/j.immuni.2023.01.002	https://datasets.cellxgene.cziscience.com/b7c3c27c-97c2-4983-97df-1d537d138a43.h5ad
+Goblet cells SPINK4	goblet cell	CL:0000160	more specific term	https://doi.org/10.1016/j.immuni.2023.01.002	https://datasets.cellxgene.cziscience.com/b7c3c27c-97c2-4983-97df-1d537d138a43.h5ad
+Epithelial HBB HBA	epithelial cell	CL:0000066	more specific term	https://doi.org/10.1016/j.immuni.2023.01.002	https://datasets.cellxgene.cziscience.com/b7c3c27c-97c2-4983-97df-1d537d138a43.h5ad
+Tuft cells	tuft cell	CL:0002204	exact	https://doi.org/10.1016/j.immuni.2023.01.002	https://datasets.cellxgene.cziscience.com/b7c3c27c-97c2-4983-97df-1d537d138a43.h5ad
+Enterochromaffin cells	type EC enteroendocrine cell	CL:0000577	exact	https://doi.org/10.1016/j.immuni.2023.01.002	https://datasets.cellxgene.cziscience.com/b7c3c27c-97c2-4983-97df-1d537d138a43.h5ad

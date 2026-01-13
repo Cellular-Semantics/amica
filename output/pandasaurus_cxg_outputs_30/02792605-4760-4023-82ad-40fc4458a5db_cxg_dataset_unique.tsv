@@ -1,0 +1,46 @@
+author_cell_type	CL_label	CL_ID	match_type	reference	dataset_version
+cvLSEC	endothelial cell of pericentral hepatic sinusoid	CL:0019022	exact	https://doi.org/10.1016/j.jhep.2023.12.023	https://datasets.cellxgene.cziscience.com/7d4d0da4-655e-438a-a2ec-b4371e2b80fc.h5ad
+LAM-like	macrophage	CL:0000235	more specific term	https://doi.org/10.1016/j.jhep.2023.12.023	https://datasets.cellxgene.cziscience.com/7d4d0da4-655e-438a-a2ec-b4371e2b80fc.h5ad
+lrNK	hepatic pit cell	CL:2000054	more specific term	https://doi.org/10.1016/j.jhep.2023.12.023	https://datasets.cellxgene.cziscience.com/7d4d0da4-655e-438a-a2ec-b4371e2b80fc.h5ad
+C-Hepato2	centrilobular region hepatocyte	CL:0019029	more specific term	https://doi.org/10.1016/j.jhep.2023.12.023	https://datasets.cellxgene.cziscience.com/7d4d0da4-655e-438a-a2ec-b4371e2b80fc.h5ad
+Arterial	endothelial cell of artery	CL:1000413	exact	https://doi.org/10.1016/j.jhep.2023.12.023	https://datasets.cellxgene.cziscience.com/7d4d0da4-655e-438a-a2ec-b4371e2b80fc.h5ad
+I-Hepato	midzonal region hepatocyte	CL:0019028	exact	https://doi.org/10.1016/j.jhep.2023.12.023	https://datasets.cellxgene.cziscience.com/7d4d0da4-655e-438a-a2ec-b4371e2b80fc.h5ad
+CD8T	CD8-positive, alpha-beta T cell	CL:0000625	exact	https://doi.org/10.1016/j.jhep.2023.12.023	https://datasets.cellxgene.cziscience.com/7d4d0da4-655e-438a-a2ec-b4371e2b80fc.h5ad
+P-Hepato	periportal region hepatocyte	CL:0019026	more specific term	https://doi.org/10.1016/j.jhep.2023.12.023	https://datasets.cellxgene.cziscience.com/7d4d0da4-655e-438a-a2ec-b4371e2b80fc.h5ad
+ppLSEC	endothelial cell of periportal hepatic sinusoid	CL:0019021	exact	https://doi.org/10.1016/j.jhep.2023.12.023	https://datasets.cellxgene.cziscience.com/7d4d0da4-655e-438a-a2ec-b4371e2b80fc.h5ad
+Kupffer	Kupffer cell	CL:0000091	exact	https://doi.org/10.1016/j.jhep.2023.12.023	https://datasets.cellxgene.cziscience.com/7d4d0da4-655e-438a-a2ec-b4371e2b80fc.h5ad
+ActMac	macrophage	CL:0000235	more specific term	https://doi.org/10.1016/j.jhep.2023.12.023	https://datasets.cellxgene.cziscience.com/7d4d0da4-655e-438a-a2ec-b4371e2b80fc.h5ad
+CD4T	CD4-positive, alpha-beta T cell	CL:0000624	exact	https://doi.org/10.1016/j.jhep.2023.12.023	https://datasets.cellxgene.cziscience.com/7d4d0da4-655e-438a-a2ec-b4371e2b80fc.h5ad
+CD3T-lrNK	hepatic pit cell	CL:2000054	more specific term	https://doi.org/10.1016/j.jhep.2023.12.023	https://datasets.cellxgene.cziscience.com/7d4d0da4-655e-438a-a2ec-b4371e2b80fc.h5ad
+C-Hepato	centrilobular region hepatocyte	CL:0019029	more specific term	https://doi.org/10.1016/j.jhep.2023.12.023	https://datasets.cellxgene.cziscience.com/7d4d0da4-655e-438a-a2ec-b4371e2b80fc.h5ad
+MHCII	macrophage	CL:0000235	more specific term	https://doi.org/10.1016/j.jhep.2023.12.023	https://datasets.cellxgene.cziscience.com/7d4d0da4-655e-438a-a2ec-b4371e2b80fc.h5ad
+CD8T-cNK	natural killer cell	CL:0000623	more specific term	https://doi.org/10.1016/j.jhep.2023.12.023	https://datasets.cellxgene.cziscience.com/7d4d0da4-655e-438a-a2ec-b4371e2b80fc.h5ad
+Stellate	hepatic stellate cell	CL:0000632	exact	https://doi.org/10.1016/j.jhep.2023.12.023	https://datasets.cellxgene.cziscience.com/7d4d0da4-655e-438a-a2ec-b4371e2b80fc.h5ad
+Kupffer--LSEC-Doublet	unknown	unknown	more specific term	https://doi.org/10.1016/j.jhep.2023.12.023	https://datasets.cellxgene.cziscience.com/7d4d0da4-655e-438a-a2ec-b4371e2b80fc.h5ad
+Tcell	T cell	CL:0000084	exact	https://doi.org/10.1016/j.jhep.2023.12.023	https://datasets.cellxgene.cziscience.com/7d4d0da4-655e-438a-a2ec-b4371e2b80fc.h5ad
+Neutrophil	neutrophil	CL:0000775	exact	https://doi.org/10.1016/j.jhep.2023.12.023	https://datasets.cellxgene.cziscience.com/7d4d0da4-655e-438a-a2ec-b4371e2b80fc.h5ad
+Chol	intrahepatic cholangiocyte	CL:0002538	more specific term	https://doi.org/10.1016/j.jhep.2023.12.023	https://datasets.cellxgene.cziscience.com/7d4d0da4-655e-438a-a2ec-b4371e2b80fc.h5ad
+cNK	natural killer cell	CL:0000623	more specific term	https://doi.org/10.1016/j.jhep.2023.12.023	https://datasets.cellxgene.cziscience.com/7d4d0da4-655e-438a-a2ec-b4371e2b80fc.h5ad
+cDC	conventional dendritic cell	CL:0000990	exact	https://doi.org/10.1016/j.jhep.2023.12.023	https://datasets.cellxgene.cziscience.com/7d4d0da4-655e-438a-a2ec-b4371e2b80fc.h5ad
+Hepato	hepatocyte	CL:0000182	exact	https://doi.org/10.1016/j.jhep.2023.12.023	https://datasets.cellxgene.cziscience.com/7d4d0da4-655e-438a-a2ec-b4371e2b80fc.h5ad
+P-Hepato2	periportal region hepatocyte	CL:0019026	more specific term	https://doi.org/10.1016/j.jhep.2023.12.023	https://datasets.cellxgene.cziscience.com/7d4d0da4-655e-438a-a2ec-b4371e2b80fc.h5ad
+cvLSEC--T-Doublet	unknown	unknown	more specific term	https://doi.org/10.1016/j.jhep.2023.12.023	https://datasets.cellxgene.cziscience.com/7d4d0da4-655e-438a-a2ec-b4371e2b80fc.h5ad
+cvEndo	vein endothelial cell	CL:0002543	exact	https://doi.org/10.1016/j.jhep.2023.12.023	https://datasets.cellxgene.cziscience.com/7d4d0da4-655e-438a-a2ec-b4371e2b80fc.h5ad
+Monocyte	monocyte	CL:0000576	exact	https://doi.org/10.1016/j.jhep.2023.12.023	https://datasets.cellxgene.cziscience.com/7d4d0da4-655e-438a-a2ec-b4371e2b80fc.h5ad
+Prolif	unknown	unknown	more specific term	https://doi.org/10.1016/j.jhep.2023.12.023	https://datasets.cellxgene.cziscience.com/7d4d0da4-655e-438a-a2ec-b4371e2b80fc.h5ad
+AntiB	plasma cell	CL:0000786	exact	https://doi.org/10.1016/j.jhep.2023.12.023	https://datasets.cellxgene.cziscience.com/7d4d0da4-655e-438a-a2ec-b4371e2b80fc.h5ad
+NKT--Mac-Doublet	unknown	unknown	more specific term	https://doi.org/10.1016/j.jhep.2023.12.023	https://datasets.cellxgene.cziscience.com/7d4d0da4-655e-438a-a2ec-b4371e2b80fc.h5ad
+CholMucus	intrahepatic cholangiocyte	CL:0002538	more specific term	https://doi.org/10.1016/j.jhep.2023.12.023	https://datasets.cellxgene.cziscience.com/7d4d0da4-655e-438a-a2ec-b4371e2b80fc.h5ad
+MatB	mature B cell	CL:0000785	exact	https://doi.org/10.1016/j.jhep.2023.12.023	https://datasets.cellxgene.cziscience.com/7d4d0da4-655e-438a-a2ec-b4371e2b80fc.h5ad
+Fibroblast	fibroblast	CL:0000057	exact	https://doi.org/10.1016/j.jhep.2023.12.023	https://datasets.cellxgene.cziscience.com/7d4d0da4-655e-438a-a2ec-b4371e2b80fc.h5ad
+Hepato--Mac	unknown	unknown	more specific term	https://doi.org/10.1016/j.jhep.2023.12.023	https://datasets.cellxgene.cziscience.com/7d4d0da4-655e-438a-a2ec-b4371e2b80fc.h5ad
+pDC	plasmacytoid dendritic cell	CL:0000784	exact	https://doi.org/10.1016/j.jhep.2023.12.023	https://datasets.cellxgene.cziscience.com/7d4d0da4-655e-438a-a2ec-b4371e2b80fc.h5ad
+Mac--Fibro-Doublet	unknown	unknown	more specific term	https://doi.org/10.1016/j.jhep.2023.12.023	https://datasets.cellxgene.cziscience.com/7d4d0da4-655e-438a-a2ec-b4371e2b80fc.h5ad
+RBC	erythrocyte	CL:0000232	exact	https://doi.org/10.1016/j.jhep.2023.12.023	https://datasets.cellxgene.cziscience.com/7d4d0da4-655e-438a-a2ec-b4371e2b80fc.h5ad
+MAST	mast cell	CL:0000097	exact	https://doi.org/10.1016/j.jhep.2023.12.023	https://datasets.cellxgene.cziscience.com/7d4d0da4-655e-438a-a2ec-b4371e2b80fc.h5ad
+MatB--CD4T-Doublet	unknown	unknown	more specific term	https://doi.org/10.1016/j.jhep.2023.12.023	https://datasets.cellxgene.cziscience.com/7d4d0da4-655e-438a-a2ec-b4371e2b80fc.h5ad
+Mac--B-Doublet	unknown	unknown	more specific term	https://doi.org/10.1016/j.jhep.2023.12.023	https://datasets.cellxgene.cziscience.com/7d4d0da4-655e-438a-a2ec-b4371e2b80fc.h5ad
+MatB--RBC	unknown	unknown	more specific term	https://doi.org/10.1016/j.jhep.2023.12.023	https://datasets.cellxgene.cziscience.com/7d4d0da4-655e-438a-a2ec-b4371e2b80fc.h5ad
+CD4T--RBC-Doublet	unknown	unknown	more specific term	https://doi.org/10.1016/j.jhep.2023.12.023	https://datasets.cellxgene.cziscience.com/7d4d0da4-655e-438a-a2ec-b4371e2b80fc.h5ad
+cNK--RBC-Doublet	unknown	unknown	more specific term	https://doi.org/10.1016/j.jhep.2023.12.023	https://datasets.cellxgene.cziscience.com/7d4d0da4-655e-438a-a2ec-b4371e2b80fc.h5ad
+NKT	natural killer cell	CL:0000623	more specific term	https://doi.org/10.1016/j.jhep.2023.12.023	https://datasets.cellxgene.cziscience.com/7d4d0da4-655e-438a-a2ec-b4371e2b80fc.h5ad

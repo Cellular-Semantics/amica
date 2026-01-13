@@ -1,0 +1,15 @@
+author_cell_type	CL_label	CL_ID	match_type	reference	dataset_version
+cone	retinal cone cell	CL:0000573	exact	https://doi.org/10.1093/hmg/ddab140	https://datasets.cellxgene.cziscience.com/4d7c53aa-892b-4c73-8616-a97a5be4fb2c.h5ad
+RGC	retinal ganglion cell	CL:0000740	exact	https://doi.org/10.1093/hmg/ddab140	https://datasets.cellxgene.cziscience.com/4d7c53aa-892b-4c73-8616-a97a5be4fb2c.h5ad
+Muller	Mueller cell	CL:0000636	exact	https://doi.org/10.1093/hmg/ddab140	https://datasets.cellxgene.cziscience.com/4d7c53aa-892b-4c73-8616-a97a5be4fb2c.h5ad
+cone-on-BC	cone retinal bipolar cell	CL:0000752	more specific term	https://doi.org/10.1093/hmg/ddab140	https://datasets.cellxgene.cziscience.com/4d7c53aa-892b-4c73-8616-a97a5be4fb2c.h5ad
+cone-off-BC	cone retinal bipolar cell	CL:0000752	more specific term	https://doi.org/10.1093/hmg/ddab140	https://datasets.cellxgene.cziscience.com/4d7c53aa-892b-4c73-8616-a97a5be4fb2c.h5ad
+amacrine	amacrine cell	CL:0000561	exact	https://doi.org/10.1093/hmg/ddab140	https://datasets.cellxgene.cziscience.com/4d7c53aa-892b-4c73-8616-a97a5be4fb2c.h5ad
+pericyte	pericyte	CL:0000669	exact	https://doi.org/10.1093/hmg/ddab140	https://datasets.cellxgene.cziscience.com/4d7c53aa-892b-4c73-8616-a97a5be4fb2c.h5ad
+endothelial	retinal blood vessel endothelial cell	CL:0002585	exact	https://doi.org/10.1093/hmg/ddab140	https://datasets.cellxgene.cziscience.com/4d7c53aa-892b-4c73-8616-a97a5be4fb2c.h5ad
+horizontal	retina horizontal cell	CL:0000745	exact	https://doi.org/10.1093/hmg/ddab140	https://datasets.cellxgene.cziscience.com/4d7c53aa-892b-4c73-8616-a97a5be4fb2c.h5ad
+rod	retinal rod cell	CL:0000604	exact	https://doi.org/10.1093/hmg/ddab140	https://datasets.cellxgene.cziscience.com/4d7c53aa-892b-4c73-8616-a97a5be4fb2c.h5ad
+astrocyte	retinal astrocyte	CL:4033015	exact	https://doi.org/10.1093/hmg/ddab140	https://datasets.cellxgene.cziscience.com/4d7c53aa-892b-4c73-8616-a97a5be4fb2c.h5ad
+rod-BC	rod bipolar cell	CL:0000751	exact	https://doi.org/10.1093/hmg/ddab140	https://datasets.cellxgene.cziscience.com/4d7c53aa-892b-4c73-8616-a97a5be4fb2c.h5ad
+cone-off-BC-BC3A	cone retinal bipolar cell	CL:0000752	more specific term	https://doi.org/10.1093/hmg/ddab140	https://datasets.cellxgene.cziscience.com/4d7c53aa-892b-4c73-8616-a97a5be4fb2c.h5ad
+microglia	microglial cell	CL:0000129	exact	https://doi.org/10.1093/hmg/ddab140	https://datasets.cellxgene.cziscience.com/4d7c53aa-892b-4c73-8616-a97a5be4fb2c.h5ad

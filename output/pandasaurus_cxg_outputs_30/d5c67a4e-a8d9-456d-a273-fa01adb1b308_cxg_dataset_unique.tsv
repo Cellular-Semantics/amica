@@ -1,0 +1,15 @@
+author_cell_type	CL_label	CL_ID	match_type	reference	dataset_version
+retinal rod cell type A	retinal rod cell	CL:0000604	more specific term	https://doi.org/10.15252/embj.2018100811	https://datasets.cellxgene.cziscience.com/74a5e56b-15f0-4965-b6de-7e8dd689d74f.h5ad
+unannotated	unknown	unknown	more specific term	https://doi.org/10.15252/embj.2018100811	https://datasets.cellxgene.cziscience.com/74a5e56b-15f0-4965-b6de-7e8dd689d74f.h5ad
+retinal rod cell type B	retinal rod cell	CL:0000604	more specific term	https://doi.org/10.15252/embj.2018100811	https://datasets.cellxgene.cziscience.com/74a5e56b-15f0-4965-b6de-7e8dd689d74f.h5ad
+retinal bipolar neuron type B	OFF-bipolar cell	CL:0000750	exact	https://doi.org/10.15252/embj.2018100811	https://datasets.cellxgene.cziscience.com/74a5e56b-15f0-4965-b6de-7e8dd689d74f.h5ad
+retinal rod cell type C	retinal rod cell	CL:0000604	more specific term	https://doi.org/10.15252/embj.2018100811	https://datasets.cellxgene.cziscience.com/74a5e56b-15f0-4965-b6de-7e8dd689d74f.h5ad
+unspecified	unknown	unknown	more specific term	https://doi.org/10.15252/embj.2018100811	https://datasets.cellxgene.cziscience.com/74a5e56b-15f0-4965-b6de-7e8dd689d74f.h5ad
+retinal bipolar neuron type C	ON-bipolar cell	CL:0000749	more specific term	https://doi.org/10.15252/embj.2018100811	https://datasets.cellxgene.cziscience.com/74a5e56b-15f0-4965-b6de-7e8dd689d74f.h5ad
+Muller cell	Mueller cell	CL:0000636	exact	https://doi.org/10.15252/embj.2018100811	https://datasets.cellxgene.cziscience.com/74a5e56b-15f0-4965-b6de-7e8dd689d74f.h5ad
+retinal cone cell	retinal cone cell	CL:0000573	exact	https://doi.org/10.15252/embj.2018100811	https://datasets.cellxgene.cziscience.com/74a5e56b-15f0-4965-b6de-7e8dd689d74f.h5ad
+retinal bipolar neuron type A	ON-bipolar cell	CL:0000749	more specific term	https://doi.org/10.15252/embj.2018100811	https://datasets.cellxgene.cziscience.com/74a5e56b-15f0-4965-b6de-7e8dd689d74f.h5ad
+amacrine cell	amacrine cell	CL:0000561	exact	https://doi.org/10.15252/embj.2018100811	https://datasets.cellxgene.cziscience.com/74a5e56b-15f0-4965-b6de-7e8dd689d74f.h5ad
+retinal bipolar neuron type D	ON-bipolar cell	CL:0000749	more specific term	https://doi.org/10.15252/embj.2018100811	https://datasets.cellxgene.cziscience.com/74a5e56b-15f0-4965-b6de-7e8dd689d74f.h5ad
+retinal ganglion cell	retinal ganglion cell	CL:0000740	exact	https://doi.org/10.15252/embj.2018100811	https://datasets.cellxgene.cziscience.com/74a5e56b-15f0-4965-b6de-7e8dd689d74f.h5ad
+microglial cell	microglial cell	CL:0000129	exact	https://doi.org/10.15252/embj.2018100811	https://datasets.cellxgene.cziscience.com/74a5e56b-15f0-4965-b6de-7e8dd689d74f.h5ad

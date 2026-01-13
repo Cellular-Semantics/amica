@@ -1,0 +1,42 @@
+author_cell_type	CL_label	CL_ID	match_type	reference	dataset_version
+CD4 T cell	CD4-positive, alpha-beta T cell	CL:0000624	exact	https://doi.org/10.1016/j.devcel.2020.11.010	https://datasets.cellxgene.cziscience.com/5790e30c-cc55-449f-bf80-62f5c12efe40.h5ad
+TA	transit amplifying cell	CL:0009010	exact	https://doi.org/10.1016/j.devcel.2020.11.010	https://datasets.cellxgene.cziscience.com/5790e30c-cc55-449f-bf80-62f5c12efe40.h5ad
+IgA plasma cell	IgA plasma cell	CL:0000987	exact	https://doi.org/10.1016/j.devcel.2020.11.010	https://datasets.cellxgene.cziscience.com/5790e30c-cc55-449f-bf80-62f5c12efe40.h5ad
+Goblet cell	intestine goblet cell	CL:0019031	exact	https://doi.org/10.1016/j.devcel.2020.11.010	https://datasets.cellxgene.cziscience.com/5790e30c-cc55-449f-bf80-62f5c12efe40.h5ad
+IgG plasma cell	IgG plasma cell	CL:0000985	exact	https://doi.org/10.1016/j.devcel.2020.11.010	https://datasets.cellxgene.cziscience.com/5790e30c-cc55-449f-bf80-62f5c12efe40.h5ad
+Cycling B cell	B cell	CL:0000236	more specific term	https://doi.org/10.1016/j.devcel.2020.11.010	https://datasets.cellxgene.cziscience.com/5790e30c-cc55-449f-bf80-62f5c12efe40.h5ad
+S4 fibroblasts	fibroblast	CL:0000057	more specific term	https://doi.org/10.1016/j.devcel.2020.11.010	https://datasets.cellxgene.cziscience.com/5790e30c-cc55-449f-bf80-62f5c12efe40.h5ad
+crypt	intestinal crypt stem cell	CL:0002250	exact	https://doi.org/10.1016/j.devcel.2020.11.010	https://datasets.cellxgene.cziscience.com/5790e30c-cc55-449f-bf80-62f5c12efe40.h5ad
+early enterocyte	enterocyte	CL:0000584	more specific term	https://doi.org/10.1016/j.devcel.2020.11.010	https://datasets.cellxgene.cziscience.com/5790e30c-cc55-449f-bf80-62f5c12efe40.h5ad
+Memory B cell	memory B cell	CL:0000787	exact	https://doi.org/10.1016/j.devcel.2020.11.010	https://datasets.cellxgene.cziscience.com/5790e30c-cc55-449f-bf80-62f5c12efe40.h5ad
+FCER2 B cell	B cell	CL:0000236	more specific term	https://doi.org/10.1016/j.devcel.2020.11.010	https://datasets.cellxgene.cziscience.com/5790e30c-cc55-449f-bf80-62f5c12efe40.h5ad
+Tfh	T follicular helper cell	CL:0002038	exact	https://doi.org/10.1016/j.devcel.2020.11.010	https://datasets.cellxgene.cziscience.com/5790e30c-cc55-449f-bf80-62f5c12efe40.h5ad
+cDC2	conventional dendritic cell	CL:0000990	more specific term	https://doi.org/10.1016/j.devcel.2020.11.010	https://datasets.cellxgene.cziscience.com/5790e30c-cc55-449f-bf80-62f5c12efe40.h5ad
+Arterial endothelial cell	endothelial cell of artery	CL:1000413	exact	https://doi.org/10.1016/j.devcel.2020.11.010	https://datasets.cellxgene.cziscience.com/5790e30c-cc55-449f-bf80-62f5c12efe40.h5ad
+IL2RG+ enterocyte (M cell)	M cell of gut	CL:0000682	exact	https://doi.org/10.1016/j.devcel.2020.11.010	https://datasets.cellxgene.cziscience.com/5790e30c-cc55-449f-bf80-62f5c12efe40.h5ad
+enterocyte	enterocyte	CL:0000584	more specific term	https://doi.org/10.1016/j.devcel.2020.11.010	https://datasets.cellxgene.cziscience.com/5790e30c-cc55-449f-bf80-62f5c12efe40.h5ad
+enteroendocrine	enteroendocrine cell	CL:0000164	exact	https://doi.org/10.1016/j.devcel.2020.11.010	https://datasets.cellxgene.cziscience.com/5790e30c-cc55-449f-bf80-62f5c12efe40.h5ad
+Venous endothelial cell	vein endothelial cell	CL:0002543	exact	https://doi.org/10.1016/j.devcel.2020.11.010	https://datasets.cellxgene.cziscience.com/5790e30c-cc55-449f-bf80-62f5c12efe40.h5ad
+Activated T	activated CD4-positive, alpha-beta T cell, human	CL:0001043	exact	https://doi.org/10.1016/j.devcel.2020.11.010	https://datasets.cellxgene.cziscience.com/5790e30c-cc55-449f-bf80-62f5c12efe40.h5ad
+Monocyte	monocyte	CL:0000576	exact	https://doi.org/10.1016/j.devcel.2020.11.010	https://datasets.cellxgene.cziscience.com/5790e30c-cc55-449f-bf80-62f5c12efe40.h5ad
+S1 fibroblasts	fibroblast	CL:0000057	more specific term	https://doi.org/10.1016/j.devcel.2020.11.010	https://datasets.cellxgene.cziscience.com/5790e30c-cc55-449f-bf80-62f5c12efe40.h5ad
+cDC1	conventional dendritic cell	CL:0000990	more specific term	https://doi.org/10.1016/j.devcel.2020.11.010	https://datasets.cellxgene.cziscience.com/5790e30c-cc55-449f-bf80-62f5c12efe40.h5ad
+myofibroblast	myofibroblast cell	CL:0000186	exact	https://doi.org/10.1016/j.devcel.2020.11.010	https://datasets.cellxgene.cziscience.com/5790e30c-cc55-449f-bf80-62f5c12efe40.h5ad
+pericyte	pericyte	CL:0000669	exact	https://doi.org/10.1016/j.devcel.2020.11.010	https://datasets.cellxgene.cziscience.com/5790e30c-cc55-449f-bf80-62f5c12efe40.h5ad
+Treg	regulatory T cell	CL:0000815	exact	https://doi.org/10.1016/j.devcel.2020.11.010	https://datasets.cellxgene.cziscience.com/5790e30c-cc55-449f-bf80-62f5c12efe40.h5ad
+Lymphatic endothelial cell	endothelial cell of lymphatic vessel	CL:0002138	exact	https://doi.org/10.1016/j.devcel.2020.11.010	https://datasets.cellxgene.cziscience.com/5790e30c-cc55-449f-bf80-62f5c12efe40.h5ad
+B cell	B cell	CL:0000236	more specific term	https://doi.org/10.1016/j.devcel.2020.11.010	https://datasets.cellxgene.cziscience.com/5790e30c-cc55-449f-bf80-62f5c12efe40.h5ad
+Activated B cell	B cell	CL:0000236	more specific term	https://doi.org/10.1016/j.devcel.2020.11.010	https://datasets.cellxgene.cziscience.com/5790e30c-cc55-449f-bf80-62f5c12efe40.h5ad
+pDC	plasmacytoid dendritic cell	CL:0000784	exact	https://doi.org/10.1016/j.devcel.2020.11.010	https://datasets.cellxgene.cziscience.com/5790e30c-cc55-449f-bf80-62f5c12efe40.h5ad
+Cycling plasma cell	plasma cell	CL:0000786	exact	https://doi.org/10.1016/j.devcel.2020.11.010	https://datasets.cellxgene.cziscience.com/5790e30c-cc55-449f-bf80-62f5c12efe40.h5ad
+gd T/NK cell	gamma-delta T cell	CL:0000798	exact	https://doi.org/10.1016/j.devcel.2020.11.010	https://datasets.cellxgene.cziscience.com/5790e30c-cc55-449f-bf80-62f5c12efe40.h5ad
+mast cells	mast cell	CL:0000097	exact	https://doi.org/10.1016/j.devcel.2020.11.010	https://datasets.cellxgene.cziscience.com/5790e30c-cc55-449f-bf80-62f5c12efe40.h5ad
+Paneth cell	glial cell	CL:0000125	more specific term	https://doi.org/10.1016/j.devcel.2020.11.010	https://datasets.cellxgene.cziscience.com/5790e30c-cc55-449f-bf80-62f5c12efe40.h5ad
+BEST4 enterocyte	enterocyte	CL:0000584	more specific term	https://doi.org/10.1016/j.devcel.2020.11.010	https://datasets.cellxgene.cziscience.com/5790e30c-cc55-449f-bf80-62f5c12efe40.h5ad
+activated DC	dendritic cell, human	CL:0001056	exact	https://doi.org/10.1016/j.devcel.2020.11.010	https://datasets.cellxgene.cziscience.com/5790e30c-cc55-449f-bf80-62f5c12efe40.h5ad
+S2 fibroblasts	fibroblast	CL:0000057	more specific term	https://doi.org/10.1016/j.devcel.2020.11.010	https://datasets.cellxgene.cziscience.com/5790e30c-cc55-449f-bf80-62f5c12efe40.h5ad
+CD8 T cell	CD8-positive, alpha-beta T cell	CL:0000625	exact	https://doi.org/10.1016/j.devcel.2020.11.010	https://datasets.cellxgene.cziscience.com/5790e30c-cc55-449f-bf80-62f5c12efe40.h5ad
+Macrophage	glial cell	CL:0000125	more specific term	https://doi.org/10.1016/j.devcel.2020.11.010	https://datasets.cellxgene.cziscience.com/5790e30c-cc55-449f-bf80-62f5c12efe40.h5ad
+Glial cell	glial cell	CL:0000125	more specific term	https://doi.org/10.1016/j.devcel.2020.11.010	https://datasets.cellxgene.cziscience.com/5790e30c-cc55-449f-bf80-62f5c12efe40.h5ad
+Cycling myeloid cells	myeloid cell	CL:0000763	exact	https://doi.org/10.1016/j.devcel.2020.11.010	https://datasets.cellxgene.cziscience.com/5790e30c-cc55-449f-bf80-62f5c12efe40.h5ad
+Tuft	intestinal tuft cell	CL:0019032	exact	https://doi.org/10.1016/j.devcel.2020.11.010	https://datasets.cellxgene.cziscience.com/5790e30c-cc55-449f-bf80-62f5c12efe40.h5ad

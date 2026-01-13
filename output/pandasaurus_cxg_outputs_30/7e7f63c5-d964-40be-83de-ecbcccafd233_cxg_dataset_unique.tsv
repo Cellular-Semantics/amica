@@ -1,0 +1,52 @@
+author_cell_type	CL_label	CL_ID	match_type	reference	dataset_version
+RPE	retinal pigment epithelial cell	CL:0002586	exact	https://doi.org/10.1016/j.cell.2020.08.013	https://datasets.cellxgene.cziscience.com/228fc052-e279-4253-92f6-593ac3d32c58.h5ad
+AC_B_01	amacrine cell	CL:0000561	more specific term	https://doi.org/10.1016/j.cell.2020.08.013	https://datasets.cellxgene.cziscience.com/228fc052-e279-4253-92f6-593ac3d32c58.h5ad
+AC_Y_03	amacrine cell	CL:0000561	more specific term	https://doi.org/10.1016/j.cell.2020.08.013	https://datasets.cellxgene.cziscience.com/228fc052-e279-4253-92f6-593ac3d32c58.h5ad
+AC_B_17	amacrine cell	CL:0000561	more specific term	https://doi.org/10.1016/j.cell.2020.08.013	https://datasets.cellxgene.cziscience.com/228fc052-e279-4253-92f6-593ac3d32c58.h5ad
+AC_B_04	amacrine cell	CL:0000561	more specific term	https://doi.org/10.1016/j.cell.2020.08.013	https://datasets.cellxgene.cziscience.com/228fc052-e279-4253-92f6-593ac3d32c58.h5ad
+AC_B_06	amacrine cell	CL:0000561	more specific term	https://doi.org/10.1016/j.cell.2020.08.013	https://datasets.cellxgene.cziscience.com/228fc052-e279-4253-92f6-593ac3d32c58.h5ad
+AC_B_16	amacrine cell	CL:0000561	more specific term	https://doi.org/10.1016/j.cell.2020.08.013	https://datasets.cellxgene.cziscience.com/228fc052-e279-4253-92f6-593ac3d32c58.h5ad
+AC_B_12	amacrine cell	CL:0000561	more specific term	https://doi.org/10.1016/j.cell.2020.08.013	https://datasets.cellxgene.cziscience.com/228fc052-e279-4253-92f6-593ac3d32c58.h5ad
+AC_Y_01	amacrine cell	CL:0000561	more specific term	https://doi.org/10.1016/j.cell.2020.08.013	https://datasets.cellxgene.cziscience.com/228fc052-e279-4253-92f6-593ac3d32c58.h5ad
+AC_B_08	amacrine cell	CL:0000561	more specific term	https://doi.org/10.1016/j.cell.2020.08.013	https://datasets.cellxgene.cziscience.com/228fc052-e279-4253-92f6-593ac3d32c58.h5ad
+37-	unknown	unknown	more specific term	https://doi.org/10.1016/j.cell.2020.08.013	https://datasets.cellxgene.cziscience.com/228fc052-e279-4253-92f6-593ac3d32c58.h5ad
+38-	unknown	unknown	more specific term	https://doi.org/10.1016/j.cell.2020.08.013	https://datasets.cellxgene.cziscience.com/228fc052-e279-4253-92f6-593ac3d32c58.h5ad
+AC_B_11	amacrine cell	CL:0000561	more specific term	https://doi.org/10.1016/j.cell.2020.08.013	https://datasets.cellxgene.cziscience.com/228fc052-e279-4253-92f6-593ac3d32c58.h5ad
+AC_B_15	amacrine cell	CL:0000561	more specific term	https://doi.org/10.1016/j.cell.2020.08.013	https://datasets.cellxgene.cziscience.com/228fc052-e279-4253-92f6-593ac3d32c58.h5ad
+AC_B_09	amacrine cell	CL:0000561	more specific term	https://doi.org/10.1016/j.cell.2020.08.013	https://datasets.cellxgene.cziscience.com/228fc052-e279-4253-92f6-593ac3d32c58.h5ad
+rod	retinal rod cell	CL:0000604	exact	https://doi.org/10.1016/j.cell.2020.08.013	https://datasets.cellxgene.cziscience.com/228fc052-e279-4253-92f6-593ac3d32c58.h5ad
+L/M cone	retinal cone cell	CL:0000573	more specific term	https://doi.org/10.1016/j.cell.2020.08.013	https://datasets.cellxgene.cziscience.com/228fc052-e279-4253-92f6-593ac3d32c58.h5ad
+S cone	retinal cone cell	CL:0000573	more specific term	https://doi.org/10.1016/j.cell.2020.08.013	https://datasets.cellxgene.cziscience.com/228fc052-e279-4253-92f6-593ac3d32c58.h5ad
+HC_02	retina horizontal cell	CL:0000745	exact	https://doi.org/10.1016/j.cell.2020.08.013	https://datasets.cellxgene.cziscience.com/228fc052-e279-4253-92f6-593ac3d32c58.h5ad
+5-	unknown	unknown	more specific term	https://doi.org/10.1016/j.cell.2020.08.013	https://datasets.cellxgene.cziscience.com/228fc052-e279-4253-92f6-593ac3d32c58.h5ad
+CdBC_01	ON-bipolar cell	CL:0000749	more specific term	https://doi.org/10.1016/j.cell.2020.08.013	https://datasets.cellxgene.cziscience.com/228fc052-e279-4253-92f6-593ac3d32c58.h5ad
+CdBC_02	ON-bipolar cell	CL:0000749	more specific term	https://doi.org/10.1016/j.cell.2020.08.013	https://datasets.cellxgene.cziscience.com/228fc052-e279-4253-92f6-593ac3d32c58.h5ad
+ChBC_04	OFF-bipolar cell	CL:0000750	more specific term	https://doi.org/10.1016/j.cell.2020.08.013	https://datasets.cellxgene.cziscience.com/228fc052-e279-4253-92f6-593ac3d32c58.h5ad
+ChBC_01	OFF-bipolar cell	CL:0000750	more specific term	https://doi.org/10.1016/j.cell.2020.08.013	https://datasets.cellxgene.cziscience.com/228fc052-e279-4253-92f6-593ac3d32c58.h5ad
+ChBC_03	OFF-bipolar cell	CL:0000750	more specific term	https://doi.org/10.1016/j.cell.2020.08.013	https://datasets.cellxgene.cziscience.com/228fc052-e279-4253-92f6-593ac3d32c58.h5ad
+RBC	rod bipolar cell	CL:0000751	exact	https://doi.org/10.1016/j.cell.2020.08.013	https://datasets.cellxgene.cziscience.com/228fc052-e279-4253-92f6-593ac3d32c58.h5ad
+CdBC_03	ON-bipolar cell	CL:0000749	more specific term	https://doi.org/10.1016/j.cell.2020.08.013	https://datasets.cellxgene.cziscience.com/228fc052-e279-4253-92f6-593ac3d32c58.h5ad
+CdBC_05	ON-bipolar cell	CL:0000749	more specific term	https://doi.org/10.1016/j.cell.2020.08.013	https://datasets.cellxgene.cziscience.com/228fc052-e279-4253-92f6-593ac3d32c58.h5ad
+ChBC_02	OFF-bipolar cell	CL:0000750	more specific term	https://doi.org/10.1016/j.cell.2020.08.013	https://datasets.cellxgene.cziscience.com/228fc052-e279-4253-92f6-593ac3d32c58.h5ad
+CdBC_04	OFF-bipolar cell	CL:0000750	more specific term	https://doi.org/10.1016/j.cell.2020.08.013	https://datasets.cellxgene.cziscience.com/228fc052-e279-4253-92f6-593ac3d32c58.h5ad
+AC_B_18	amacrine cell	CL:0000561	more specific term	https://doi.org/10.1016/j.cell.2020.08.013	https://datasets.cellxgene.cziscience.com/228fc052-e279-4253-92f6-593ac3d32c58.h5ad
+AC_B_05	amacrine cell	CL:0000561	more specific term	https://doi.org/10.1016/j.cell.2020.08.013	https://datasets.cellxgene.cziscience.com/228fc052-e279-4253-92f6-593ac3d32c58.h5ad
+AC_B_13	amacrine cell	CL:0000561	more specific term	https://doi.org/10.1016/j.cell.2020.08.013	https://datasets.cellxgene.cziscience.com/228fc052-e279-4253-92f6-593ac3d32c58.h5ad
+MC_01	Mueller cell	CL:0000636	more specific term	https://doi.org/10.1016/j.cell.2020.08.013	https://datasets.cellxgene.cziscience.com/228fc052-e279-4253-92f6-593ac3d32c58.h5ad
+MC_02	Mueller cell	CL:0000636	more specific term	https://doi.org/10.1016/j.cell.2020.08.013	https://datasets.cellxgene.cziscience.com/228fc052-e279-4253-92f6-593ac3d32c58.h5ad
+MC_03	Mueller cell	CL:0000636	more specific term	https://doi.org/10.1016/j.cell.2020.08.013	https://datasets.cellxgene.cziscience.com/228fc052-e279-4253-92f6-593ac3d32c58.h5ad
+AC_B_10	amacrine cell	CL:0000561	more specific term	https://doi.org/10.1016/j.cell.2020.08.013	https://datasets.cellxgene.cziscience.com/228fc052-e279-4253-92f6-593ac3d32c58.h5ad
+AC_B_07	amacrine cell	CL:0000561	more specific term	https://doi.org/10.1016/j.cell.2020.08.013	https://datasets.cellxgene.cziscience.com/228fc052-e279-4253-92f6-593ac3d32c58.h5ad
+AC_B_02	amacrine cell	CL:0000561	more specific term	https://doi.org/10.1016/j.cell.2020.08.013	https://datasets.cellxgene.cziscience.com/228fc052-e279-4253-92f6-593ac3d32c58.h5ad
+Ast	astrocyte	CL:0000127	exact	https://doi.org/10.1016/j.cell.2020.08.013	https://datasets.cellxgene.cziscience.com/228fc052-e279-4253-92f6-593ac3d32c58.h5ad
+pigmented	retinal pigment epithelial cell	CL:0002586	exact	https://doi.org/10.1016/j.cell.2020.08.013	https://datasets.cellxgene.cziscience.com/228fc052-e279-4253-92f6-593ac3d32c58.h5ad
+amacrine	amacrine cell	CL:0000561	broad term	https://doi.org/10.1016/j.cell.2020.08.013	https://datasets.cellxgene.cziscience.com/228fc052-e279-4253-92f6-593ac3d32c58.h5ad
+amacrine	unknown	unknown		https://doi.org/10.1016/j.cell.2020.08.013	https://datasets.cellxgene.cziscience.com/228fc052-e279-4253-92f6-593ac3d32c58.h5ad
+cone	retinal cone cell	CL:0000573	exact	https://doi.org/10.1016/j.cell.2020.08.013	https://datasets.cellxgene.cziscience.com/228fc052-e279-4253-92f6-593ac3d32c58.h5ad
+horizontal	retina horizontal cell	CL:0000745	broad term	https://doi.org/10.1016/j.cell.2020.08.013	https://datasets.cellxgene.cziscience.com/228fc052-e279-4253-92f6-593ac3d32c58.h5ad
+horizontal	unknown	unknown		https://doi.org/10.1016/j.cell.2020.08.013	https://datasets.cellxgene.cziscience.com/228fc052-e279-4253-92f6-593ac3d32c58.h5ad
+bipolar	ON-bipolar cell	CL:0000749	broad term	https://doi.org/10.1016/j.cell.2020.08.013	https://datasets.cellxgene.cziscience.com/228fc052-e279-4253-92f6-593ac3d32c58.h5ad
+bipolar	OFF-bipolar cell	CL:0000750	broad term	https://doi.org/10.1016/j.cell.2020.08.013	https://datasets.cellxgene.cziscience.com/228fc052-e279-4253-92f6-593ac3d32c58.h5ad
+bipolar	rod bipolar cell	CL:0000751	broad term	https://doi.org/10.1016/j.cell.2020.08.013	https://datasets.cellxgene.cziscience.com/228fc052-e279-4253-92f6-593ac3d32c58.h5ad
+macroglia	Mueller cell	CL:0000636	broad term	https://doi.org/10.1016/j.cell.2020.08.013	https://datasets.cellxgene.cziscience.com/228fc052-e279-4253-92f6-593ac3d32c58.h5ad
+macroglia	astrocyte	CL:0000127	broad term	https://doi.org/10.1016/j.cell.2020.08.013	https://datasets.cellxgene.cziscience.com/228fc052-e279-4253-92f6-593ac3d32c58.h5ad

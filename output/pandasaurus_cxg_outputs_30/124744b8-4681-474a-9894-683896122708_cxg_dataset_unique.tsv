@@ -1,0 +1,14 @@
+author_cell_type	CL_label	CL_ID	match_type	reference	dataset_version
+T cells	T cell	CL:0000084	exact	https://doi.org/10.1038/s42003-020-0922-4	https://datasets.cellxgene.cziscience.com/ba0fb2d9-28c9-4149-8591-694e0b7d9c31.h5ad
+Diff. Keratinocytes	keratinocyte	CL:0000312	exact	https://doi.org/10.1038/s42003-020-0922-4	https://datasets.cellxgene.cziscience.com/ba0fb2d9-28c9-4149-8591-694e0b7d9c31.h5ad
+Macrophages+DC	macrophage	CL:0000235	exact	https://doi.org/10.1038/s42003-020-0922-4	https://datasets.cellxgene.cziscience.com/ba0fb2d9-28c9-4149-8591-694e0b7d9c31.h5ad
+EpSC and undiff. progenitors	stem cell of epidermis	CL:1000428	exact	https://doi.org/10.1038/s42003-020-0922-4	https://datasets.cellxgene.cziscience.com/ba0fb2d9-28c9-4149-8591-694e0b7d9c31.h5ad
+Secretory-reticular fibroblasts	skin fibroblast	CL:0002620	more specific term	https://doi.org/10.1038/s42003-020-0922-4	https://datasets.cellxgene.cziscience.com/ba0fb2d9-28c9-4149-8591-694e0b7d9c31.h5ad
+Pericytes	pericyte	CL:0000669	exact	https://doi.org/10.1038/s42003-020-0922-4	https://datasets.cellxgene.cziscience.com/ba0fb2d9-28c9-4149-8591-694e0b7d9c31.h5ad
+Pro-inflammatory fibroblasts	skin fibroblast	CL:0002620	more specific term	https://doi.org/10.1038/s42003-020-0922-4	https://datasets.cellxgene.cziscience.com/ba0fb2d9-28c9-4149-8591-694e0b7d9c31.h5ad
+Secretory-papillary fibroblasts	skin fibroblast	CL:0002620	more specific term	https://doi.org/10.1038/s42003-020-0922-4	https://datasets.cellxgene.cziscience.com/ba0fb2d9-28c9-4149-8591-694e0b7d9c31.h5ad
+Mesenchymal fibroblasts	skin fibroblast	CL:0002620	more specific term	https://doi.org/10.1038/s42003-020-0922-4	https://datasets.cellxgene.cziscience.com/ba0fb2d9-28c9-4149-8591-694e0b7d9c31.h5ad
+Vascular EC	endothelial cell of vascular tree	CL:0002139	exact	https://doi.org/10.1038/s42003-020-0922-4	https://datasets.cellxgene.cziscience.com/ba0fb2d9-28c9-4149-8591-694e0b7d9c31.h5ad
+Melanocytes	melanocyte	CL:0000148	exact	https://doi.org/10.1038/s42003-020-0922-4	https://datasets.cellxgene.cziscience.com/ba0fb2d9-28c9-4149-8591-694e0b7d9c31.h5ad
+Lymphatic EC	endothelial cell of lymphatic vessel	CL:0002138	exact	https://doi.org/10.1038/s42003-020-0922-4	https://datasets.cellxgene.cziscience.com/ba0fb2d9-28c9-4149-8591-694e0b7d9c31.h5ad
+Erythrocytes	erythrocyte	CL:0000232	exact	https://doi.org/10.1038/s42003-020-0922-4	https://datasets.cellxgene.cziscience.com/ba0fb2d9-28c9-4149-8591-694e0b7d9c31.h5ad
