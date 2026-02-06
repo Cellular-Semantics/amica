@@ -4,9 +4,17 @@ from __future__ import annotations
 
 import json
 import logging
+from dataclasses import asdict
 from pathlib import Path
+from typing import Any, Callable, Iterable
+
+# try:
+from tiktoken import encoding_for_model
+# except ImportError:  # pragma: no cover - tokenizer is optional
+# encoding_for_model = None  # type: ignore
 
 from pydantic_ai import Agent
+from pydantic_ai.agent import AgentRunResult
 
 from amica.agents.paper_celltype.paper_celltype_agent import (
     BiocurationOutput,
@@ -14,6 +22,7 @@ from amica.agents.paper_celltype.paper_celltype_agent import (
     celltype_agent,
 )
 from amica.agents.paper_celltype.paper_celltype_config import PaperCTDependencies
+from amica.services.vector_store import DocumentVectorStore
 from amica.utils.cxg import (
     AnnotationRecord,
     CxgPipelineSettings,
@@ -36,8 +45,8 @@ cell type entries. Each entry must follow the `CellTypeEntry` schema.
 --- JSON List Input Data:
 {cc_json}
 
---- Academic Paper Content (extracted from PDF):
-{paper_full_text}
+--- Article Context (retrieved excerpts or fallback text):
+{article_context}
 
 --- COLUMN DEFINITIONS AND LOGIC:
 - `name`: The exact `cc.label` from the input JSON.
@@ -64,10 +73,16 @@ class ExpansionService:
         layout: CxgResourceLayout,
         settings: CxgPipelineSettings | None = None,
         agent: Agent[PaperCTDependencies, BiocurationOutput] = celltype_agent,
+        vector_store: DocumentVectorStore | None = None,
+        retrieval_top_k: int = 2,
     ) -> None:
         self.layout = layout
         self.settings = settings or CxgPipelineSettings()
         self.agent = agent
+        self.vector_store = vector_store
+        self.retrieval_top_k = retrieval_top_k
+        self._snippet_cache: dict[tuple[str, str], list[str]] = {}
+        self._tokenize_cache: Callable[[str], int] | None = None
 
     async def expand_annotations(self, bundle: PreparedAnnotationBundle) -> None:
         """Populate enrichment metadata for each annotation in the bundle.
@@ -111,6 +126,8 @@ class ExpansionService:
             return
 
         article_text = article_path.read_text(encoding="utf-8")
+        if self.vector_store:
+            self.vector_store.ensure_index(article_id, article_text)
 
         batch_size = self.settings.annotations_batch_size
         for batch_index in range(0, len(article_annotations), batch_size):
@@ -129,11 +146,15 @@ class ExpansionService:
                 self._hydrate_from_cache(batch, cached_entries)
                 continue
 
+            article_context = self._build_article_context(
+                article_id, batch, article_text
+            )
+
             await self._generate_and_cache_expansions(
                 dataset_name,
                 article_id,
                 batch,
-                article_text,
+                article_context,
                 cache_file,
             )
 
@@ -154,13 +175,13 @@ class ExpansionService:
         dataset_name: str,
         article_id: str,
         batch: list[AnnotationRecord],
-        article_text: str,
+        article_context: str,
         cache_file: Path,
     ) -> None:
         cc_labels = [{"cc.label": ann.annotation_text} for ann in batch]
         prompt = PROMPT_TEMPLATE.format(
             cc_json=json.dumps(cc_labels, indent=2),
-            paper_full_text=article_text,
+            article_context=article_context,
         )
         logger.info(
             "[%s] Generating expansions for article %s (batch size %s)",
@@ -169,6 +190,13 @@ class ExpansionService:
             len(batch),
         )
         result = await self.agent.run(prompt)
+        self._log_agent_usage(
+            kind="expansion",
+            dataset_name=dataset_name,
+            article_id=article_id,
+            batch_size=len(batch),
+            run_result=result,
+        )
         annotations = result.output.cell_type_annotations
         by_name = {record.annotation_text: record for record in batch}
 
@@ -197,3 +225,104 @@ class ExpansionService:
                 dataset_articles = dataset_map.setdefault(record.dataset_name, {})
                 dataset_articles.setdefault(doi, []).append(record)
         return dataset_map
+
+    def _build_article_context(
+        self,
+        article_id: str,
+        batch: Iterable[AnnotationRecord],
+        fallback_text: str,
+    ) -> str:
+        if not self.vector_store:
+            return fallback_text
+
+        snippets: list[str] = []
+        seen: set[str] = set()
+        for record in batch:
+            query = (record.annotation_text or "").strip()
+            if not query:
+                continue
+            cache_key = (article_id, query)
+            cached = self._snippet_cache.get(cache_key)
+            if cached is None:
+                matches = self.vector_store.similarity_search(
+                    article_id,
+                    query,
+                    top_k=self.retrieval_top_k,
+                )
+                texts = [chunk.text.strip() for chunk in matches if chunk.text.strip()]
+                self._snippet_cache[cache_key] = texts
+            else:
+                texts = cached
+
+            for text in texts:
+                if text and text not in seen:
+                    seen.add(text)
+                    snippets.append(text)
+
+        if snippets:
+            context = "\n\n".join(snippets)
+            self._log_prompt_metrics(article_id, fallback_text, context)
+        else:
+            context = fallback_text
+
+        return context
+
+    def _log_prompt_metrics(
+        self,
+        article_id: str,
+        original_text: str,
+        context_text: str,
+    ) -> None:
+        original_chars = len(original_text)
+        context_chars = len(context_text)
+        payload = {
+            "article_id": article_id,
+            "original_chars": original_chars,
+            "context_chars": context_chars,
+        }
+        tokenizer = self._get_tokenizer()
+        if tokenizer:
+            payload["original_tokens"] = tokenizer(original_text)
+            payload["context_tokens"] = tokenizer(context_text)
+        logger.debug("prompt_metrics %s", json.dumps(payload))
+
+    def _log_agent_usage(
+        self,
+        *,
+        kind: str,
+        dataset_name: str,
+        article_id: str,
+        batch_size: int,
+        run_result: AgentRunResult[Any],
+    ) -> None:
+        usage = None
+        try:
+            usage = run_result.usage()
+        except Exception:  # pragma: no cover - defensive
+            usage = None
+        if not usage:
+            return
+        payload = {
+            "kind": kind,
+            "dataset": dataset_name,
+            "article_id": article_id,
+            "batch_size": batch_size,
+            "usage": asdict(usage),
+        }
+        logger.info("openai_usage %s", json.dumps(payload))
+
+    def _get_tokenizer(self) -> Callable[[str], int] | None:
+        if not getattr(self, "_tokenize_cache", None):
+            if encoding_for_model is None:
+                self._tokenize_cache = None
+            else:
+                try:
+                    encoding = encoding_for_model(self.settings.embedding_model)
+
+                    def _encode(text: str) -> int:
+                        return len(encoding.encode(text))
+
+                    self._tokenize_cache = _encode
+                except Exception:  # pragma: no cover - best effort
+                    self._tokenize_cache = None
+        return self._tokenize_cache

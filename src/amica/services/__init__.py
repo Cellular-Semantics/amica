@@ -13,6 +13,12 @@ from .dataset_loader import DatasetLoader
 from .expansion_service import ExpansionService
 from .grounding_service import GroundingService
 from .publication_fetcher import PublicationFetcher
+from .vector_store import (
+    DocumentChunk,
+    DocumentVectorStore,
+    EmbeddingBackend,
+    OpenAIEmbeddingBackend,
+)
 
 __all__ = [
     "AnnotationRecord",
@@ -23,4 +29,8 @@ __all__ = [
     "ExpansionService",
     "GroundingService",
     "PublicationFetcher",
+    "DocumentChunk",
+    "DocumentVectorStore",
+    "EmbeddingBackend",
+    "OpenAIEmbeddingBackend",
 ]

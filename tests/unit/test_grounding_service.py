@@ -20,9 +20,11 @@ from amica.utils.cxg import (
 class DummyGroundingAgent:
     def __init__(self) -> None:
         self.calls = 0
+        self.last_payload: str | None = None
 
     async def run(self, payload: str) -> SimpleNamespace:
         self.calls += 1
+        self.last_payload = payload
         annotation = TextAnnotation(
             input_name="test_cell",
             text="test_cell",
