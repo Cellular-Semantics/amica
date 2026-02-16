@@ -39,10 +39,9 @@ class ValidationPaths:
         )
         base_output: Path = base_output_override or layout.output_dir
         return cls(
-            raw_output=_resolve(raw_output_dir) or (base_output / "raw_output"),
-            match_type_inputs=_resolve(match_type_dir)
-            or (base_output / "pandasaurus_cxg_outputs_30"),
-            reports_dir=_resolve(reports_dir) or (base_output / "reports"),
+            raw_output=_resolve(raw_output_dir) or layout.output_dir,
+            match_type_inputs=_resolve(match_type_dir) or layout.match_type_dir,
+            reports_dir=_resolve(reports_dir) or layout.reports_dir,
         )
 
     def ensure_report_dir(self) -> None:

@@ -35,7 +35,7 @@ def parse_args(argv: Optional[list[str]] = None) -> argparse.Namespace:
     parser.add_argument(
         "--resources-dir",
         type=Path,
-        help="Override the base resources directory (default pulled from CXG_RESOURCES_DIR or resources/cxg).",
+        help="Override the base resources directory (default pulled from CXG_RESOURCES_DIR or resources/).",
     )
     parser.add_argument(
         "--batch-size",
@@ -76,6 +76,31 @@ def parse_args(argv: Optional[list[str]] = None) -> argparse.Namespace:
         "--retrieval-top-k",
         type=int,
         help="Number of retrieved snippets to inject into each prompt batch.",
+    )
+    parser.add_argument(
+        "--run-validation",
+        action="store_true",
+        help="Generate validation reports after the workflow completes.",
+    )
+    parser.add_argument(
+        "--skip-ontology",
+        action="store_true",
+        help="Skip ontology lookups during validation (faster/offline).",
+    )
+    parser.add_argument(
+        "--skip-filtered",
+        action="store_true",
+        help="Skip generating the filtered granularity report.",
+    )
+    parser.add_argument(
+        "--skip-examples",
+        action="store_true",
+        help="Skip generating the improved examples report.",
+    )
+    parser.add_argument(
+        "--skip-raw-stats",
+        action="store_true",
+        help="Skip generating the raw aggregate stats report.",
     )
     parser.add_argument(
         "--log-level",
@@ -124,7 +149,6 @@ async def _async_main(args: argparse.Namespace) -> None:
         settings.retrieval_top_k = args.retrieval_top_k
     if args.resources_dir is not None:
         layout = CxgResourceLayout(resources_dir=args.resources_dir)
-
     os.environ["CXG_RESOURCES_DIR"] = str(layout.resources_dir)
     os.environ["CXG_VECTOR_STORE_ENABLED"] = "1" if settings.vector_store_enabled else "0"
     os.environ["CXG_EMBEDDING_MODEL"] = settings.embedding_model
@@ -132,7 +156,17 @@ async def _async_main(args: argparse.Namespace) -> None:
     os.environ["CXG_CHUNK_OVERLAP"] = str(settings.chunk_overlap)
     os.environ["CXG_RETRIEVAL_TOP_K"] = str(settings.retrieval_top_k)
 
-    await run_cxg_workflow(settings=settings, layout=layout)
+    bundle = await run_cxg_workflow(settings=settings, layout=layout)
+
+    if args.run_validation:
+        from amica.validation_reporting import generate_reports
+
+        generate_reports(
+            include_filtered=not args.skip_filtered,
+            include_examples=not args.skip_examples,
+            include_raw_stats=not args.skip_raw_stats,
+            skip_ontology=args.skip_ontology,
+        )
 
 
 def main() -> None:

@@ -19,7 +19,7 @@ AMICA is a production-ready workflow that expands and grounds CXG cell-type anno
   ANTHROPIC_API_KEY=sk-ant-...
   ```
 
-- CXG dataset TSVs placed under a workspace directory (default `resources/cxg/input`).
+- CXG dataset TSVs placed under a workspace directory (default `resources/input`).
 
 ---
 
@@ -52,8 +52,8 @@ resources/
 Create the structure (or point `CXG_RESOURCES_DIR` elsewhere):
 
 ```bash
-mkdir -p resources/cxg/{input,output,cache,expansions,publications}
-export CXG_RESOURCES_DIR=$PWD/resources/cxg
+mkdir -p resources/{input,output,cache,expansions,publications}
+export CXG_RESOURCES_DIR=$PWD/resources
 ```
 
 Drop your CXG TSVs (columns: `author_cell_type`, `CL_ID`, `CL_label`, `reference`, etc.) into `input/`.
@@ -64,7 +64,7 @@ Drop your CXG TSVs (columns: `author_cell_type`, `CL_ID`, `CL_label`, `reference
 
 ```bash
 scripts/cxg_annotate.py \
-  --resources-dir resources/cxg \
+  --resources-dir resources \
   --batch-size 4 \
   --test-mode \
   --test-annotations-count 25
@@ -78,6 +78,8 @@ Key flags / env vars:
 | `--batch-size` / `CXG_ANNOTATIONS_BATCH_SIZE`             | Batch size used by expansion + grounding agents.          |
 | `--test-mode` / `CXG_TEST_MODE`                           | Enable truncated runs for smoke tests.                    |
 | `--test-annotations-count` / `CXG_TEST_ANNOTATIONS_COUNT` | Number of annotations preserved when test mode is active. |
+| `--run-validation`                                        | After grounding, generate markdown reports under `output/reports`. |
+| `--skip-filtered`, `--skip-examples`, `--skip-raw-stats`  | Toggle individual validation report sections.             |
 
 The CLI performs three orchestrated stages:
 
@@ -114,7 +116,7 @@ Expansion prompts can optionally use a local vector store to pull only the most 
 
 ```bash
 scripts/cxg_annotate.py \
-  --resources-dir resources/cxg \
+  --resources-dir resources \
   --enable-vector-store \
   --embedding-model text-embedding-3-small \
   --chunk-chars 1200 \
@@ -125,8 +127,20 @@ scripts/cxg_annotate.py \
 Internally this:
 
 - Sets `CxgPipelineSettings.vector_store_enabled = True`.
-- Builds a `DocumentVectorStore` (default cache under `resources/cxg/cache/vector_store/`) using the selected OpenAI embedding model.
+- Builds a `DocumentVectorStore` (default cache under `resources/cache/vector_store/`) using the selected OpenAI embedding model.
 - Reuses embeddings per DOI, so the first run incurs a one-time embedding cost and later runs simply load the cached JSON payloads.
+
+### Run Workflow + Validation Together
+
+To run the full pipeline on all TSVs in `resources/input`, enable the vector store, and emit validation reports (written to `resources/output/reports/`):
+
+```bash
+uv run python scripts/cxg_annotate.py \
+  --resources-dir resources \
+  --enable-vector-store \
+  --run-validation \
+  --log-level INFO
+```
 
 Programmatic equivalent:
 
