@@ -20,7 +20,7 @@ def parse_args(argv: Optional[list[str]] = None) -> argparse.Namespace:
     parser.add_argument(
         "--output-root",
         type=Path,
-        help="Base directory containing raw_output/, pandasaurus_cxg_outputs_30/, and reports/. Defaults to the CXG layout output directory.",
+        help="Base directory containing output/, input/, and reports/. Defaults to the CXG layout output directory.",
     )
     parser.add_argument(
         "--raw-output-dir",

@@ -17,7 +17,7 @@ def _default_resources_dir() -> Path:
     env_override = os.environ.get("CXG_RESOURCES_DIR")
     if env_override:
         return Path(env_override).expanduser()
-    return Path("resources") / "cxg"
+    return Path("resources")
 
 
 def _env_int(name: str, default: int) -> int:
@@ -77,6 +77,8 @@ class CxgResourceLayout:
     publications_dir: Path = field(init=False)
     input_dir: Path = field(init=False)
     output_dir: Path = field(init=False)
+    match_type_dir: Path = field(init=False)
+    reports_dir: Path = field(init=False)
 
     def __post_init__(self) -> None:
         base = Path(self.resources_dir).expanduser().resolve()
@@ -86,6 +88,9 @@ class CxgResourceLayout:
         self.publications_dir = base / "publications"
         self.input_dir = base / "input"
         self.output_dir = base / "output"
+        # Pandasaurus match-type inputs live alongside workflow inputs.
+        self.match_type_dir = self.input_dir
+        self.reports_dir = self.output_dir / "reports"
 
     @classmethod
     def from_env(cls) -> CxgResourceLayout:
@@ -103,6 +108,7 @@ class CxgResourceLayout:
             self.expansions_dir,
             self.publications_dir,
             self.output_dir,
+            self.reports_dir,
         ):
             path.mkdir(parents=True, exist_ok=True)
 

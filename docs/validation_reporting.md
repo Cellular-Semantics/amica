@@ -1,8 +1,8 @@
 # Validation & Reporting
 
 This add-on summarizes how the AMICA agent performed after a CXG run completes. It
-inspects the grounded outputs written under `output/raw_output/**/groundings.tsv`
-and the curated match-type tables from `output/pandasaurus_cxg_outputs_30/*.tsv`.
+inspects the grounded outputs written under `output/**/groundings.tsv`
+and the curated match-type tables from `input/*.tsv` (Pandasaurus match types).
 
 ## Usage
 
@@ -37,9 +37,9 @@ usage: scripts/generate_validation_reports.py [-h] [--output-root OUTPUT_ROOT]
 
 Key flags:
 
-- `--output-root`: base directory that contains `raw_output/`, `pandasaurus_cxg_outputs_30/`, and `reports/`. Defaults to `resources/cxg/output`. Set this when your outputs sit under a different base (e.g., top-level ./output)
+- `--output-root`: base directory containing `output/` (groundings), `input/`, and `reports/`. Defaults to `resources/output` (or `CXG_RESOURCES_DIR/output`).
 - `--raw-output-dir`: direct path to per-dataset `groundings.tsv` (AMICA raw outputs). Overrides `--output-root` for groundings. Use when groundings live outside the standard layout. **If missing:** script exits with `FileNotFoundError`.
-- `--match-type-dir`: direct path to the Pandasaurus match-type TSV/CSV files. Use when those files live elsewhere; overrides `--output-root` for match types only. **If missing:** script exits with `FileNotFoundError`; missing individual dataset files are tolerated (that dataset runs without Broad/Overlap filtering).
+- `--match-type-dir`: direct path to the Pandasaurus match-type TSV/CSV files. Defaults to the workflow input directory (`resources/input`). Overrides `--output-root` for match types only. **If missing:** script exits with `FileNotFoundError`; missing individual dataset files are tolerated (that dataset runs without Broad/Overlap filtering).
 - `--reports-dir`: output directory for markdown reports (auto-created if needed). Defaults to `<output-root>/reports`.
 
 ## Skip toggles
