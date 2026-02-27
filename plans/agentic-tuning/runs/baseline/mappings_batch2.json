@@ -1,0 +1,32 @@
+[
+  {
+    "input_name": "IC-B",
+    "cl_id": "CL:0002201",
+    "cl_label": "renal beta-intercalated cell",
+    "match_type": "exact"
+  },
+  {
+    "input_name": "Intercalated Cell Type B",
+    "cl_id": "CL:0002201",
+    "cl_label": "renal beta-intercalated cell",
+    "match_type": "exact"
+  },
+  {
+    "input_name": "M2 Macrophage",
+    "cl_id": "CL:0000890",
+    "cl_label": "M2 macrophage",
+    "match_type": "exact"
+  },
+  {
+    "input_name": "MAC-M2",
+    "cl_id": "CL:0000890",
+    "cl_label": "M2 macrophage",
+    "match_type": "exact"
+  },
+  {
+    "input_name": "Medullary Fibroblast",
+    "cl_id": "CL:4030022",
+    "cl_label": "renal medullary fibroblast",
+    "match_type": "exact"
+  }
+]

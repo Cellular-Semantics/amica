@@ -1,0 +1,42 @@
+author_cell_type	CL_label	CL_ID	reference	dataset_version	parent_cluster	tissue	gold_match_type
+Adaptive / Maladaptive / Repairing Fibroblast	kidney interstitial fibroblast	CL:1000692	DOI:10.1038/s41586-023-05769-3	0b75c598-0893-4216-afe8-5414cab7739d_cxg_dataset_unique	Interstitial	kidney	broad
+Degenerative Fibroblast	kidney interstitial fibroblast	CL:1000692	DOI:10.1038/s41586-023-05769-3	0b75c598-0893-4216-afe8-5414cab7739d_cxg_dataset_unique	Interstitial	kidney	broad
+FIB	kidney interstitial fibroblast	CL:1000692	DOI:10.1038/s41586-023-05769-3	0b75c598-0893-4216-afe8-5414cab7739d_cxg_dataset_unique	Interstitial	kidney	broad
+Fibroblast	kidney interstitial fibroblast	CL:1000692	DOI:10.1038/s41586-023-05769-3	0b75c598-0893-4216-afe8-5414cab7739d_cxg_dataset_unique	Interstitial	kidney	broad
+IC	kidney collecting duct intercalated cell	CL:1001432	DOI:10.1038/s41586-023-05769-3	0b75c598-0893-4216-afe8-5414cab7739d_cxg_dataset_unique	IC	kidney	direct
+IC-B	kidney collecting duct intercalated cell	CL:1001432	DOI:10.1038/s41586-023-05769-3	0b75c598-0893-4216-afe8-5414cab7739d_cxg_dataset_unique	IC	kidney	broad
+Intercalated Cell Type B	kidney collecting duct intercalated cell	CL:1001432	DOI:10.1038/s41586-023-05769-3	0b75c598-0893-4216-afe8-5414cab7739d_cxg_dataset_unique	IC	kidney	broad
+M2 Macrophage	kidney interstitial alternatively activated macrophage	CL:1000695	DOI:10.1038/s41586-023-05769-3	0b75c598-0893-4216-afe8-5414cab7739d_cxg_dataset_unique		kidney	broad
+MAC-M2	kidney interstitial alternatively activated macrophage	CL:1000695	DOI:10.1038/s41586-023-05769-3	0b75c598-0893-4216-afe8-5414cab7739d_cxg_dataset_unique		kidney	broad
+Medullary Fibroblast	kidney interstitial fibroblast	CL:1000692	DOI:10.1038/s41586-023-05769-3	0b75c598-0893-4216-afe8-5414cab7739d_cxg_dataset_unique	Interstitial	kidney	broad
+PC	kidney collecting duct principal cell	CL:1001431	DOI:10.1038/s41586-023-05769-3	0b75c598-0893-4216-afe8-5414cab7739d_cxg_dataset_unique	PC	kidney	direct
+Plasmacytoid Dendritic Cell	plasmacytoid dendritic cell, human	CL:0001058	DOI:10.1038/s41586-023-05769-3	0b75c598-0893-4216-afe8-5414cab7739d_cxg_dataset_unique		kidney	broad
+Transitional Principal-Intercalated Cell	kidney collecting duct intercalated cell	CL:1001432	DOI:10.1038/s41586-023-05769-3	0b75c598-0893-4216-afe8-5414cab7739d_cxg_dataset_unique	PC	kidney	broad
+VSM/P	renal interstitial pericyte	CL:1001318	DOI:10.1038/s41586-023-05769-3	0b75c598-0893-4216-afe8-5414cab7739d_cxg_dataset_unique	Interstitial	kidney	broad
+VSMC/P	renal interstitial pericyte	CL:1001318	DOI:10.1038/s41586-023-05769-3	0b75c598-0893-4216-afe8-5414cab7739d_cxg_dataset_unique	Interstitial	kidney	broad
+Vascular Smooth Muscle Cell / Pericyte	renal interstitial pericyte	CL:1001318	DOI:10.1038/s41586-023-05769-3	0b75c598-0893-4216-afe8-5414cab7739d_cxg_dataset_unique	Interstitial	kidney	broad
+aFIB	kidney interstitial fibroblast	CL:1000692	DOI:10.1038/s41586-023-05769-3	0b75c598-0893-4216-afe8-5414cab7739d_cxg_dataset_unique	Interstitial	kidney	broad
+dFIB	kidney interstitial fibroblast	CL:1000692	DOI:10.1038/s41586-023-05769-3	0b75c598-0893-4216-afe8-5414cab7739d_cxg_dataset_unique	Interstitial	kidney	broad
+pDC	plasmacytoid dendritic cell, human	CL:0001058	DOI:10.1038/s41586-023-05769-3	0b75c598-0893-4216-afe8-5414cab7739d_cxg_dataset_unique		kidney	broad
+tPC-IC	kidney collecting duct intercalated cell	CL:1001432	DOI:10.1038/s41586-023-05769-3	0b75c598-0893-4216-afe8-5414cab7739d_cxg_dataset_unique	PC	kidney	broad
+C-IC-A	kidney collecting duct intercalated cell	CL:1001432	DOI:10.1038/s41586-023-05769-3	0b75c598-0893-4216-afe8-5414cab7739d_cxg_dataset_unique	IC	kidney	broad
+CNT-IC-A	kidney collecting duct intercalated cell	CL:1001432	DOI:10.1038/s41586-023-05769-3	0b75c598-0893-4216-afe8-5414cab7739d_cxg_dataset_unique	IC	kidney	broad
+Connecting Tubule Intercalated Cell Type A	kidney collecting duct intercalated cell	CL:1001432	DOI:10.1038/s41586-023-05769-3	0b75c598-0893-4216-afe8-5414cab7739d_cxg_dataset_unique	IC	kidney	broad
+Cycling Myofibroblast	kidney interstitial fibroblast	CL:1000692	DOI:10.1038/s41586-023-05769-3	0b75c598-0893-4216-afe8-5414cab7739d_cxg_dataset_unique	Interstitial	kidney	broad
+Degenerative Inner Medullary Collecting Duct Cell	kidney collecting duct principal cell	CL:1001431	DOI:10.1038/s41586-023-05769-3	0b75c598-0893-4216-afe8-5414cab7739d_cxg_dataset_unique	PC	kidney	broad
+Degenerative Vascular Smooth Muscle Cell	renal interstitial pericyte	CL:1001318	DOI:10.1038/s41586-023-05769-3	0b75c598-0893-4216-afe8-5414cab7739d_cxg_dataset_unique	Interstitial	kidney	broad
+IMCD	kidney collecting duct principal cell	CL:1001431	DOI:10.1038/s41586-023-05769-3	0b75c598-0893-4216-afe8-5414cab7739d_cxg_dataset_unique	PC	kidney	broad
+Inner Medullary Collecting Duct Cell	kidney collecting duct principal cell	CL:1001431	DOI:10.1038/s41586-023-05769-3	0b75c598-0893-4216-afe8-5414cab7739d_cxg_dataset_unique	PC	kidney	broad
+MC	renal interstitial pericyte	CL:1001318	DOI:10.1038/s41586-023-05769-3	0b75c598-0893-4216-afe8-5414cab7739d_cxg_dataset_unique	Interstitial	kidney	broad
+MD	kidney loop of Henle thick ascending limb epithelial cell	CL:1001106	DOI:10.1038/s41586-023-05769-3	0b75c598-0893-4216-afe8-5414cab7739d_cxg_dataset_unique	TAL	kidney	broad
+MYOF	kidney interstitial fibroblast	CL:1000692	DOI:10.1038/s41586-023-05769-3	0b75c598-0893-4216-afe8-5414cab7739d_cxg_dataset_unique	Interstitial	kidney	broad
+Macula Densa Cell	kidney loop of Henle thick ascending limb epithelial cell	CL:1001106	DOI:10.1038/s41586-023-05769-3	0b75c598-0893-4216-afe8-5414cab7739d_cxg_dataset_unique	TAL	kidney	broad
+Myofibroblast	kidney interstitial fibroblast	CL:1000692	DOI:10.1038/s41586-023-05769-3	0b75c598-0893-4216-afe8-5414cab7739d_cxg_dataset_unique	Interstitial	kidney	broad
+REN	renal interstitial pericyte	CL:1001318	DOI:10.1038/s41586-023-05769-3	0b75c598-0893-4216-afe8-5414cab7739d_cxg_dataset_unique	Interstitial	kidney	broad
+Renin-positive Juxtaglomerular Granular Cell	renal interstitial pericyte	CL:1001318	DOI:10.1038/s41586-023-05769-3	0b75c598-0893-4216-afe8-5414cab7739d_cxg_dataset_unique	Interstitial	kidney	broad
+VSMC	renal interstitial pericyte	CL:1001318	DOI:10.1038/s41586-023-05769-3	0b75c598-0893-4216-afe8-5414cab7739d_cxg_dataset_unique	Interstitial	kidney	broad
+Vascular Smooth Muscle Cell	renal interstitial pericyte	CL:1001318	DOI:10.1038/s41586-023-05769-3	0b75c598-0893-4216-afe8-5414cab7739d_cxg_dataset_unique	Interstitial	kidney	broad
+cycMYOF	kidney interstitial fibroblast	CL:1000692	DOI:10.1038/s41586-023-05769-3	0b75c598-0893-4216-afe8-5414cab7739d_cxg_dataset_unique	Interstitial	kidney	broad
+dC-IC-A	kidney collecting duct intercalated cell	CL:1001432	DOI:10.1038/s41586-023-05769-3	0b75c598-0893-4216-afe8-5414cab7739d_cxg_dataset_unique	IC	kidney	broad
+dIMCD	kidney collecting duct principal cell	CL:1001431	DOI:10.1038/s41586-023-05769-3	0b75c598-0893-4216-afe8-5414cab7739d_cxg_dataset_unique	PC	kidney	broad
+dVSMC	renal interstitial pericyte	CL:1001318	DOI:10.1038/s41586-023-05769-3	0b75c598-0893-4216-afe8-5414cab7739d_cxg_dataset_unique	Interstitial	kidney	broad

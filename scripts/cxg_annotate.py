@@ -108,6 +108,14 @@ def parse_args(argv: Optional[list[str]] = None) -> argparse.Namespace:
         choices=["DEBUG", "INFO", "WARNING", "ERROR", "CRITICAL"],
         help="Logging verbosity.",
     )
+    parser.add_argument(
+        "--dry-run",
+        action="store_true",
+        help=(
+            "Print all pipeline steps, agent prompts, and output schemas "
+            "without making any API calls or modifying data."
+        ),
+    )
     return parser.parse_args(argv)
 
 
@@ -155,6 +163,12 @@ async def _async_main(args: argparse.Namespace) -> None:
     os.environ["CXG_CHUNK_CHARS"] = str(settings.chunk_chars)
     os.environ["CXG_CHUNK_OVERLAP"] = str(settings.chunk_overlap)
     os.environ["CXG_RETRIEVAL_TOP_K"] = str(settings.retrieval_top_k)
+
+    if args.dry_run:
+        from amica.dry_run import describe_pipeline
+
+        print(describe_pipeline(settings, layout))
+        return
 
     bundle = await run_cxg_workflow(settings=settings, layout=layout)
 

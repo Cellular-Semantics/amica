@@ -1,0 +1,69 @@
+Baseline Run Summary
+====================
+Date: 2026-02-21
+Dataset: 41 annotations from DOI:10.1038/s41586-023-05769-3 (kidney atlas)
+
+Expansion Results
+-----------------
+- Resolved: 34/41 (82.9%)
+- UNMAPPABLE: 7 (IC-B, Intercalated Cell Type B, Medullary Fibroblast,
+  C-IC-A, CNT-IC-A, Connecting Tubule Intercalated Cell Type A, dC-IC-A)
+
+Validation Results
+------------------
+| Category                 | Count | Percentage |
+|--------------------------|-------|------------|
+| Improved Granularity     |     8 |    19.51%  |
+| Identical Mapping        |    13 |    31.71%  |
+| Regression (less specific)|    2 |     4.88%  |
+| No Match Found           |     0 |     0.00%  |
+| Other / Different Branch |    18 |    43.90%  |
+
+Improved (8):
+- Medullary Fibroblast: kidney interstitial fibroblast → renal medullary fibroblast
+- C-IC-A: kidney collecting duct intercalated cell → kidney collecting duct alpha-intercalated cell
+- Degenerative Inner Medullary Collecting Duct Cell: kidney collecting duct principal cell → kidney inner medulla collecting duct principal cell
+- IMCD: kidney collecting duct principal cell → kidney inner medulla collecting duct principal cell
+- Inner Medullary Collecting Duct Cell: kidney collecting duct principal cell → kidney inner medulla collecting duct principal cell
+- MC: renal interstitial pericyte → glomerular mesangial cell
+- dC-IC-A: kidney collecting duct intercalated cell → kidney collecting duct alpha-intercalated cell
+- dIMCD: kidney collecting duct principal cell → kidney inner medulla collecting duct principal cell
+
+Other/Different Branch (18) — PRIMARY TUNING TARGET:
+These are likely cases where our grounding went to a different ontology branch
+than the gold standard. Key patterns:
+- VSM/P, VSMC/P, VSMC, Vascular Smooth Muscle Cell, dVSMC, Degenerative VSMC:
+  Gold = renal interstitial pericyte (CL:1001318), we mapped to vascular associated
+  smooth muscle cell (CL:0000359). These are on different branches.
+- REN, Renin-positive Juxtaglomerular Granular Cell:
+  Gold = renal interstitial pericyte (CL:1001318), we mapped to kidney granular cell
+  (CL:0000648). Different branch.
+- Macula Densa Cell, MD:
+  Gold = kidney loop of Henle thick ascending limb epithelial cell (CL:1001106),
+  we mapped to macula densa epithelial cell (CL:1000850). Different branch.
+- M2 Macrophage, MAC-M2:
+  Gold = kidney interstitial alternatively activated macrophage (CL:1000695),
+  we mapped to M2 macrophage (CL:0000890). Different branch (generic vs kidney-specific).
+- Cycling Myofibroblast, cycMYOF:
+  Gold = kidney interstitial fibroblast (CL:1000692),
+  we mapped to myofibroblast cell (CL:0000186). Different branch.
+- IC-B, Intercalated Cell Type B:
+  Gold = kidney collecting duct intercalated cell (CL:1001432),
+  we mapped to renal beta-intercalated cell (CL:0002201). Counted as "other"
+  but may actually be improved.
+
+Regression (2):
+- Need to identify which annotations regressed.
+
+Observations for Tuning
+------------------------
+1. The "Other/Different Branch" category (43.9%) is the biggest opportunity.
+   Many of these are actually reasonable mappings but on a different CL branch
+   than the gold standard expects.
+2. The mapping rules should prefer kidney-specific CL terms when tissue context
+   is "kidney" — e.g. CL:1000695 (kidney interstitial alternatively activated
+   macrophage) over CL:0000890 (M2 macrophage).
+3. For VSMC/pericyte entries, the gold maps to pericyte but we need to handle
+   the composite "VSMC or Pericyte" label better.
+4. REN/juxtaglomerular cells being mapped to CL:1001318 (pericyte) in gold
+   is surprising — this may be a CXG annotation convention.

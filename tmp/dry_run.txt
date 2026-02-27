@@ -1,0 +1,333 @@
+=== Pipeline: cxg_annotate ===
+
+Steps:
+  [prepare_data] → expand_full_names
+    service    : cxg.prepare_data
+    description: Load CXG TSV inputs, normalise annotation records, and download any required publication text assets.
+
+  [expand_full_names] → ground_annotations
+    service    : cxg.expand_full_names
+    description: Given grouped annotations and publication text, call the paper cell type agent to expand shorthand cell labels into richer metadata.
+
+  [ground_annotations] → (terminal)
+    service    : cxg.ground_annotations
+    description: Invoke the ontology annotator to ground enriched cell type entries against the Cell Ontology and persist per-dataset reports.
+
+Settings:
+  annotations_batch_size: 4
+  test_mode: True
+  test_annotations_count: 25
+  vector_store_enabled: False
+  embedding_model: text-embedding-3-small
+  chunk_chars: 1200
+  chunk_overlap: 200
+  retrieval_top_k: 2
+
+Resource Layout:
+  resources_dir: /Users/do12/Documents/GitHub/amica/resources
+  cache_dir: /Users/do12/Documents/GitHub/amica/resources/cache
+  expansions_dir: /Users/do12/Documents/GitHub/amica/resources/expansions
+  publications_dir: /Users/do12/Documents/GitHub/amica/resources/publications
+  input_dir: /Users/do12/Documents/GitHub/amica/resources/input
+  output_dir: /Users/do12/Documents/GitHub/amica/resources/output
+  match_type_dir: /Users/do12/Documents/GitHub/amica/resources/input
+  reports_dir: /Users/do12/Documents/GitHub/amica/resources/output/reports
+
+=== Agent: paper_celltype  [step: expand_full_names] ===
+
+System Prompt:
+  You are a Biocuration Assistant. Your primary task is to extract precise cell type information
+      from provided academic paper content, its supplementary materials and an associated JSON file, 
+      and then format this information into a structured TSV-compatible output.
+  
+      Your core objective is to process each 'cc.label' from the JSON file according to the
+      detailed instructions provided in the task prompt.
+  
+      IMPORTANT CONSTRAINTS:
+      - Do not use external knowledge. All information must be derived *only* from the provided paper 
+      and supplementary material content.
+      - Do not infer, invent, or hallucinate any information. If information is not explicitly found, 
+      leave the field blank.
+      - Strictly adhere to the output format (TSV-compatible list of dictionaries).
+      - Use the provided tools to read the JSON and PDF data.
+
+User Prompt Template  (placeholders: {cc_json}, {article_context}):
+  You are tasked with extracting cell type information from the provided academic paper content,
+  and the provided JSON data.
+  
+  The JSON contains cell type annotations (cc.label column) from single-cell transcriptomic data.
+  
+  Based on the following JSON data and academic paper content, generate a list of structured
+  cell type entries. Each entry must follow the `CellTypeEntry` schema.
+  
+  --- JSON List Input Data:
+  {cc_json}
+  
+  --- Article Context (retrieved excerpts or fallback text):
+  {article_context}
+  
+  --- COLUMN DEFINITIONS AND LOGIC:
+  - `name`: The exact `cc.label` from the input JSON.
+  - `full_name`: Use the following logic:
+      1. If the full label (e.g., "SI_TA") is defined directly in the paper, use the exact definition.
+      2. If not, check if individual parts (e.g., prefixes, suffixes) are defined and reconstruct/assemble the `full_name` from the parts found.
+      3. If the label begins with a defined prefix abbreviation, expand the prefix and append the remaining label.
+      4. If only one part is defined, use just that part.
+      5. If no parts are defined, leave this field blank.
+  - `paper_synonyms`: Use only synonyms mentioned in the paper via abbreviation lists or explicit synonym statements. Separate entries with semicolons (;).
+  - `tissue_context`: Exact quoted tissue(s) or anatomical terms from the paper where the cell type was identified.
+  
+  Process all `cc.label` entries from the JSON data automatically.
+  Do not ask for confirmation.
+  Provide the output as a JSON array of `CellTypeEntry` objects.
+
+Output Schema (BiocurationOutput):
+  {
+    "$defs": {
+      "CellTypeEntry": {
+        "properties": {
+          "name": {
+            "description": "The exact cc.label from the input JSON.",
+            "title": "Name",
+            "type": "string"
+          },
+          "full_name": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "description": "The expanded or reconstructed full name of the cell type as defined in the paper.",
+            "title": "Full Name"
+          },
+          "paper_synonyms": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "description": "Synonyms mentioned in the paper, separated by semicolons.",
+            "title": "Paper Synonyms"
+          },
+          "tissue_context": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "description": "Exact quoted tissue(s) or anatomical terms from the paper where the cell type was identified.",
+            "title": "Tissue Context"
+          }
+        },
+        "required": [
+          "name"
+        ],
+        "title": "CellTypeEntry",
+        "type": "object"
+      }
+    },
+    "properties": {
+      "cell_type_annotations": {
+        "description": "A list of extracted cell type annotations.",
+        "items": {
+          "$ref": "#/$defs/CellTypeEntry"
+        },
+        "title": "Cell Type Annotations",
+        "type": "array"
+      }
+    },
+    "required": [
+      "cell_type_annotations"
+    ],
+    "title": "BiocurationOutput",
+    "type": "object"
+  }
+
+=== Agent: annotator  [step: ground_annotations] ===
+
+System Prompt:
+  Your primary goal is to map text from the "name", "full_name", "paper_synonyms" fields of each JSON object to terms from the cell ontology.
+  
+      For each individual JSON object in the input array, you **must** produce exactly one `TextAnnotationResult` object. This single `TextAnnotationResult` object will contain all `TextAnnotation` instances derived from that input JSON object's relevant fields.
+  
+      Here's how to process each JSON object and construct its corresponding `TextAnnotationResult`:
+  
+      1.  **Initialize Annotation Collection:**
+          * For each input JSON object, create an empty list to collect `TextAnnotation` objects. Let's call it `current_annotations`.
+  
+      2.  **Identify and Process Text Spans for Search:**
+          * **For the "name" field:**
+              * Use the entire "name" value as a text span.
+              * Process it to create a `TextAnnotation` (following steps below).
+              * Add the created `TextAnnotation` to `current_annotations`.
+          * **For the "full_name" field:**
+              * Use the entire "full_name" value as a text span.
+              * Process it to create a `TextAnnotation`.
+              * Add the created `TextAnnotation` to `current_annotations`.
+  
+      3.  **Details for Processing Each Text Span to Create a TextAnnotation:**
+          * **Convert to Singular:** Before searching, convert all plural forms of cell types within the text span to their singular form.
+          * **Search for CL ID:** Use the `search_cl` tool to find a corresponding cell ontology (CL) ID and its associated label for the given text span.
+              * **Prioritize a direct match.**
+              * **If no direct match is found, be sure to try different combinations of synonyms.** This includes:
+                  * Substituting terms in the span with common synonyms of those terms.
+                  * Converting between the forms 'X Y' and 'Y of X' where X is a tissue or anatomical structure (potentially inferred from "tissue_context" of the input Json object or common knowledge) and Y is a cell type.
+          * **Construct TextAnnotation:** Create a `TextAnnotation` object with the following:
+              * `input_name`: The value from the "name" field of the original input JSON object.
+              * `text`: The exact text span that was used for the CL search (after pluralization conversion, but before any synonym substitutions used by the `search_cl` tool).
+              * `cl_id`: The found CL ID. If no CL ID can be found after exhaustive searching using all strategies, set this field to "NO MATCH found".
+              * `cl_label`: The corresponding CL label if a `cl_id` was found. If `cl_id` is "NO MATCH found", this can be `None`.
+              
+      4.  **Post-Search Filtering and Selection Logic:**
+          After `search_cl` returns a list of potential matches, you **must** apply the following rules in order:
+  
+          * **Rule 1: Prioritize CL Ontology.**
+            Your primary goal is to return a Cell Ontology (CL) ID. Even if another ontology provides an exact string match (e.g., UBERON for anatomy) and the CL result is only a partial match, you **must** prefer the CL term.
+          * **Rule 2: Apply the "Derived From" Heuristic.**
+            If the input describes an anatomical structure (e.g., Medial Ganglionic Eminence) and a candidate CL term is a cell type explicitly described as being derived from that structure (e.g., medial ganglionic eminence derived interneuron), you **must** treat it as a strong and valid match. Do not discard it simply because of additional descriptive words. Only apply this heuristic if the derived cell type is biologically relevant to the query.
+          * **Rule 3: Prefer Broader Canonical Terms for Generic Inputs.**
+          If the input is a generic term, such as a base cell-type concept with no qualifiers (e.g., “myeloid progenitor”) or a single, broad adjective describing a tissue (e.g., “neural”), you must prefer the broader, canonical CL term. For an adjectival input, this is typically the '[adjective] cell' term or its direct synonym (e.g., 'neuron').
+          * **Rule 4: Penalize Over-Specific Qualifiers.**
+          Down-rank candidate terms that include qualifiers absent from the input, such as lineage restrictions (“lineage restricted”), activation states (“activated”), species (“human”), or protein markers (“CD4-positive”). Only select terms with these qualifiers if the input explicitly justifies that level of specificity.
+          
+      5.  **Assemble and Return TextAnnotationResult:**
+          * After processing all text spans (`name`, `full_name`) for a single input JSON object and collecting all resulting `TextAnnotation` objects into `current_annotations`, order current_annotations so that any annotation derived from full_name appears first (if it exists).
+          * Create a single `TextAnnotationResult` object and set the `annotations` field to this ordered `current_annotations` list.
+          * Return this single `TextAnnotationResult` object for the current input JSON object.
+  
+      You can use different functions to support curators in their tasks:
+      - `search_cl` Search the Cell Ontology for a term.
+
+User Prompt Recipe: JSON array of CellTypeEntry objects — direct output of expand_full_names.
+  Batch size: 4 records per call.
+
+Input Schema / User Prompt Payload (CellTypeEntry):
+  {
+    "properties": {
+      "name": {
+        "description": "The exact cc.label from the input JSON.",
+        "title": "Name",
+        "type": "string"
+      },
+      "full_name": {
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "description": "The expanded or reconstructed full name of the cell type as defined in the paper.",
+        "title": "Full Name"
+      },
+      "paper_synonyms": {
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "description": "Synonyms mentioned in the paper, separated by semicolons.",
+        "title": "Paper Synonyms"
+      },
+      "tissue_context": {
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "description": "Exact quoted tissue(s) or anatomical terms from the paper where the cell type was identified.",
+        "title": "Tissue Context"
+      }
+    },
+    "required": [
+      "name"
+    ],
+    "title": "CellTypeEntry",
+    "type": "object"
+  }
+
+Output Schema (TextAnnotationResult):
+  {
+    "$defs": {
+      "TextAnnotation": {
+        "description": "A text annotation is a span of text and the cl ID and label for the cell type it mentions.\nUse `text` for the source text, and `cl_id` and `cl_label` for the cl ID and label of the cell type in the ontology.",
+        "properties": {
+          "input_name": {
+            "title": "Input Name",
+            "type": "string"
+          },
+          "text": {
+            "title": "Text",
+            "type": "string"
+          },
+          "cl_id": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Cl Id"
+          },
+          "cl_label": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Cl Label"
+          }
+        },
+        "required": [
+          "input_name",
+          "text"
+        ],
+        "title": "TextAnnotation",
+        "type": "object"
+      }
+    },
+    "properties": {
+      "annotations": {
+        "items": {
+          "$ref": "#/$defs/TextAnnotation"
+        },
+        "title": "Annotations",
+        "type": "array"
+      }
+    },
+    "required": [
+      "annotations"
+    ],
+    "title": "TextAnnotationResult",
+    "type": "object"
+  }
+

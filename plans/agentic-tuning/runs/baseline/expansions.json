@@ -1,0 +1,289 @@
+[
+  {
+    "name": "Adaptive / Maladaptive / Repairing Fibroblast",
+    "full_name": "Adaptive Fibroblast",
+    "paper_synonyms": "aFIB",
+    "tissue_context": "human kidney interstitium",
+    "unmappable_reason": null
+  },
+  {
+    "name": "Degenerative Fibroblast",
+    "full_name": "Degenerative Fibroblast",
+    "paper_synonyms": "dFIB",
+    "tissue_context": "human kidney interstitium",
+    "unmappable_reason": null
+  },
+  {
+    "name": "FIB",
+    "full_name": "Fibroblast",
+    "paper_synonyms": null,
+    "tissue_context": "human kidney interstitium",
+    "unmappable_reason": null
+  },
+  {
+    "name": "Fibroblast",
+    "full_name": "Fibroblast",
+    "paper_synonyms": "FIB",
+    "tissue_context": "human kidney interstitium",
+    "unmappable_reason": null
+  },
+  {
+    "name": "IC",
+    "full_name": "Intercalated Cell",
+    "paper_synonyms": "intercalated cells",
+    "tissue_context": "human kidney collecting duct; connecting tubule",
+    "unmappable_reason": null
+  },
+  {
+    "name": "IC-B",
+    "full_name": null,
+    "paper_synonyms": null,
+    "tissue_context": "human kidney collecting duct; connecting tubule",
+    "unmappable_reason": "UNMAPPABLE: The paper defines IC as intercalated cells but does not define the -B suffix or Intercalated Cell Type B."
+  },
+  {
+    "name": "Intercalated Cell Type B",
+    "full_name": null,
+    "paper_synonyms": null,
+    "tissue_context": "human kidney collecting duct; connecting tubule",
+    "unmappable_reason": "UNMAPPABLE: The paper defines IC as intercalated cells but does not mention Type B subtype."
+  },
+  {
+    "name": "M2 Macrophage",
+    "full_name": "M2 Macrophage",
+    "paper_synonyms": "MAC-M2",
+    "tissue_context": "human kidney",
+    "unmappable_reason": null
+  },
+  {
+    "name": "MAC-M2",
+    "full_name": "M2 Macrophage",
+    "paper_synonyms": null,
+    "tissue_context": "human kidney",
+    "unmappable_reason": null
+  },
+  {
+    "name": "Medullary Fibroblast",
+    "full_name": null,
+    "paper_synonyms": null,
+    "tissue_context": "human kidney medulla",
+    "unmappable_reason": "UNMAPPABLE: The paper mentions distinct fibroblast populations across the corticomedullary axis but does not explicitly define a cell type called Medullary Fibroblast."
+  },
+  {
+    "name": "PC",
+    "full_name": "Principal Cell",
+    "paper_synonyms": "principal cells",
+    "tissue_context": "human kidney collecting duct; connecting tubule",
+    "unmappable_reason": null
+  },
+  {
+    "name": "Plasmacytoid Dendritic Cell",
+    "full_name": "Plasmacytoid Dendritic Cell",
+    "paper_synonyms": "pDC",
+    "tissue_context": "human kidney",
+    "unmappable_reason": null
+  },
+  {
+    "name": "Transitional Principal-Intercalated Cell",
+    "full_name": "Transitioning Principal and Intercalated Cell",
+    "paper_synonyms": null,
+    "tissue_context": "human kidney medullary collecting duct",
+    "unmappable_reason": null
+  },
+  {
+    "name": "VSM/P",
+    "full_name": "Vascular Smooth Muscle Cell or Pericyte",
+    "paper_synonyms": "VSMC/P",
+    "tissue_context": "human kidney vasculature",
+    "unmappable_reason": null
+  },
+  {
+    "name": "VSMC/P",
+    "full_name": "Vascular Smooth Muscle Cell or Pericyte",
+    "paper_synonyms": "VSM/P",
+    "tissue_context": "human kidney vasculature",
+    "unmappable_reason": null
+  },
+  {
+    "name": "Vascular Smooth Muscle Cell / Pericyte",
+    "full_name": "Vascular Smooth Muscle Cell or Pericyte",
+    "paper_synonyms": "VSM/P; VSMC/P",
+    "tissue_context": "human kidney vasculature",
+    "unmappable_reason": null
+  },
+  {
+    "name": "aFIB",
+    "full_name": "Adaptive Fibroblast",
+    "paper_synonyms": null,
+    "tissue_context": "human kidney interstitium",
+    "unmappable_reason": null
+  },
+  {
+    "name": "dFIB",
+    "full_name": "Degenerative Fibroblast",
+    "paper_synonyms": null,
+    "tissue_context": "human kidney interstitium",
+    "unmappable_reason": null
+  },
+  {
+    "name": "pDC",
+    "full_name": "Plasmacytoid Dendritic Cell",
+    "paper_synonyms": null,
+    "tissue_context": "human kidney",
+    "unmappable_reason": null
+  },
+  {
+    "name": "tPC-IC",
+    "full_name": "Transitioning Principal and Intercalated Cell",
+    "paper_synonyms": null,
+    "tissue_context": "human kidney medullary collecting duct",
+    "unmappable_reason": null
+  },
+  {
+    "name": "C-IC-A",
+    "full_name": null,
+    "paper_synonyms": null,
+    "tissue_context": "human kidney cortex",
+    "unmappable_reason": "UNMAPPABLE: The paper uses the C- prefix for cortical (e.g. C-TAL) and defines IC as intercalated cells, but does not define the -A suffix or name C-IC-A as a cell type."
+  },
+  {
+    "name": "CNT-IC-A",
+    "full_name": null,
+    "paper_synonyms": null,
+    "tissue_context": "human kidney connecting tubule",
+    "unmappable_reason": "UNMAPPABLE: The paper defines CNT-IC as connecting tubule intercalated cells but does not define the -A suffix or name CNT-IC-A as a cell type."
+  },
+  {
+    "name": "Connecting Tubule Intercalated Cell Type A",
+    "full_name": null,
+    "paper_synonyms": null,
+    "tissue_context": "human kidney connecting tubule",
+    "unmappable_reason": "UNMAPPABLE: The paper mentions CNT-IC (connecting tubule intercalated cells) but does not define Type A subtype."
+  },
+  {
+    "name": "Cycling Myofibroblast",
+    "full_name": "Cycling Myofibroblast",
+    "paper_synonyms": "cycMyoF",
+    "tissue_context": "human kidney interstitium",
+    "unmappable_reason": null
+  },
+  {
+    "name": "Degenerative Inner Medullary Collecting Duct Cell",
+    "full_name": "Degenerative Inner Medullary Collecting Duct Cell",
+    "paper_synonyms": "dIMCD",
+    "tissue_context": "human kidney inner medulla",
+    "unmappable_reason": null
+  },
+  {
+    "name": "Degenerative Vascular Smooth Muscle Cell",
+    "full_name": "Degenerative Vascular Smooth Muscle Cell",
+    "paper_synonyms": "dVSMC",
+    "tissue_context": "human kidney vasculature",
+    "unmappable_reason": null
+  },
+  {
+    "name": "IMCD",
+    "full_name": "Inner Medullary Collecting Duct Cell",
+    "paper_synonyms": null,
+    "tissue_context": "human kidney inner medulla",
+    "unmappable_reason": null
+  },
+  {
+    "name": "Inner Medullary Collecting Duct Cell",
+    "full_name": "Inner Medullary Collecting Duct Cell",
+    "paper_synonyms": "IMCD",
+    "tissue_context": "human kidney inner medulla",
+    "unmappable_reason": null
+  },
+  {
+    "name": "MC",
+    "full_name": "Mesangial Cell",
+    "paper_synonyms": "mesangial cells",
+    "tissue_context": "human kidney renal corpuscle; glomerulus",
+    "unmappable_reason": null
+  },
+  {
+    "name": "MD",
+    "full_name": "Macula Densa Cell",
+    "paper_synonyms": "macula densa cells",
+    "tissue_context": "human kidney juxtaglomerular apparatus",
+    "unmappable_reason": null
+  },
+  {
+    "name": "MYOF",
+    "full_name": "Myofibroblast",
+    "paper_synonyms": "MyoF",
+    "tissue_context": "human kidney interstitium",
+    "unmappable_reason": null
+  },
+  {
+    "name": "Macula Densa Cell",
+    "full_name": "Macula Densa Cell",
+    "paper_synonyms": "MD",
+    "tissue_context": "human kidney juxtaglomerular apparatus",
+    "unmappable_reason": null
+  },
+  {
+    "name": "Myofibroblast",
+    "full_name": "Myofibroblast",
+    "paper_synonyms": "MyoF; MYOF",
+    "tissue_context": "human kidney interstitium",
+    "unmappable_reason": null
+  },
+  {
+    "name": "REN",
+    "full_name": "Renin-producing Juxtaglomerular Granular Cell",
+    "paper_synonyms": "juxtaglomerular renin-producing granular cells",
+    "tissue_context": "human kidney juxtaglomerular apparatus",
+    "unmappable_reason": null
+  },
+  {
+    "name": "Renin-positive Juxtaglomerular Granular Cell",
+    "full_name": "Renin-producing Juxtaglomerular Granular Cell",
+    "paper_synonyms": "REN; juxtaglomerular renin-producing granular cells",
+    "tissue_context": "human kidney juxtaglomerular apparatus",
+    "unmappable_reason": null
+  },
+  {
+    "name": "VSMC",
+    "full_name": "Vascular Smooth Muscle Cell",
+    "paper_synonyms": null,
+    "tissue_context": "human kidney vasculature; afferent/efferent arterioles",
+    "unmappable_reason": null
+  },
+  {
+    "name": "Vascular Smooth Muscle Cell",
+    "full_name": "Vascular Smooth Muscle Cell",
+    "paper_synonyms": "VSMC",
+    "tissue_context": "human kidney vasculature; afferent/efferent arterioles",
+    "unmappable_reason": null
+  },
+  {
+    "name": "cycMYOF",
+    "full_name": "Cycling Myofibroblast",
+    "paper_synonyms": "cycMyoF",
+    "tissue_context": "human kidney interstitium",
+    "unmappable_reason": null
+  },
+  {
+    "name": "dC-IC-A",
+    "full_name": null,
+    "paper_synonyms": null,
+    "tissue_context": "human kidney cortex",
+    "unmappable_reason": "UNMAPPABLE: The paper defines d- as degenerative, C- as cortical, and IC as intercalated cells, but does not define the -A suffix or name dC-IC-A as a cell type."
+  },
+  {
+    "name": "dIMCD",
+    "full_name": "Degenerative Inner Medullary Collecting Duct Cell",
+    "paper_synonyms": null,
+    "tissue_context": "human kidney inner medulla",
+    "unmappable_reason": null
+  },
+  {
+    "name": "dVSMC",
+    "full_name": "Degenerative Vascular Smooth Muscle Cell",
+    "paper_synonyms": null,
+    "tissue_context": "human kidney vasculature",
+    "unmappable_reason": null
+  }
+]

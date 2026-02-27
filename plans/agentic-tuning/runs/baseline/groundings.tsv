@@ -1,0 +1,42 @@
+dataset_name	annotation_text	article_id_doi	cl_id	cl_label	grounding_cl_id	grounding_cl_label	enrichment	result
+0b75c598-0893-4216-afe8-5414cab7739d_cxg_dataset_unique	Adaptive / Maladaptive / Repairing Fibroblast	DOI:10.1038/s41586-023-05769-3	CL:1000692	kidney interstitial fibroblast	CL:1000692	kidney interstitial fibroblast		
+0b75c598-0893-4216-afe8-5414cab7739d_cxg_dataset_unique	Degenerative Fibroblast	DOI:10.1038/s41586-023-05769-3	CL:1000692	kidney interstitial fibroblast	CL:1000692	kidney interstitial fibroblast		
+0b75c598-0893-4216-afe8-5414cab7739d_cxg_dataset_unique	FIB	DOI:10.1038/s41586-023-05769-3	CL:1000692	kidney interstitial fibroblast	CL:1000692	kidney interstitial fibroblast		
+0b75c598-0893-4216-afe8-5414cab7739d_cxg_dataset_unique	Fibroblast	DOI:10.1038/s41586-023-05769-3	CL:1000692	kidney interstitial fibroblast	CL:1000692	kidney interstitial fibroblast		
+0b75c598-0893-4216-afe8-5414cab7739d_cxg_dataset_unique	IC	DOI:10.1038/s41586-023-05769-3	CL:1001432	kidney collecting duct intercalated cell	CL:1001432	kidney collecting duct intercalated cell		
+0b75c598-0893-4216-afe8-5414cab7739d_cxg_dataset_unique	IC-B	DOI:10.1038/s41586-023-05769-3	CL:1001432	kidney collecting duct intercalated cell	CL:0002201	renal beta-intercalated cell		
+0b75c598-0893-4216-afe8-5414cab7739d_cxg_dataset_unique	Intercalated Cell Type B	DOI:10.1038/s41586-023-05769-3	CL:1001432	kidney collecting duct intercalated cell	CL:0002201	renal beta-intercalated cell		
+0b75c598-0893-4216-afe8-5414cab7739d_cxg_dataset_unique	M2 Macrophage	DOI:10.1038/s41586-023-05769-3	CL:1000695	kidney interstitial alternatively activated macrophage	CL:0000890	M2 macrophage		
+0b75c598-0893-4216-afe8-5414cab7739d_cxg_dataset_unique	MAC-M2	DOI:10.1038/s41586-023-05769-3	CL:1000695	kidney interstitial alternatively activated macrophage	CL:0000890	M2 macrophage		
+0b75c598-0893-4216-afe8-5414cab7739d_cxg_dataset_unique	Medullary Fibroblast	DOI:10.1038/s41586-023-05769-3	CL:1000692	kidney interstitial fibroblast	CL:4030022	renal medullary fibroblast		
+0b75c598-0893-4216-afe8-5414cab7739d_cxg_dataset_unique	PC	DOI:10.1038/s41586-023-05769-3	CL:1001431	kidney collecting duct principal cell	CL:1001431	kidney collecting duct principal cell		
+0b75c598-0893-4216-afe8-5414cab7739d_cxg_dataset_unique	Plasmacytoid Dendritic Cell	DOI:10.1038/s41586-023-05769-3	CL:0001058	plasmacytoid dendritic cell, human	CL:0001058	plasmacytoid dendritic cell, human		
+0b75c598-0893-4216-afe8-5414cab7739d_cxg_dataset_unique	Transitional Principal-Intercalated Cell	DOI:10.1038/s41586-023-05769-3	CL:1001432	kidney collecting duct intercalated cell	CL:0020015	transitional principal-intercalated cell of kidney collecting duct		
+0b75c598-0893-4216-afe8-5414cab7739d_cxg_dataset_unique	VSM/P	DOI:10.1038/s41586-023-05769-3	CL:1001318	renal interstitial pericyte	CL:1001318	renal interstitial pericyte		
+0b75c598-0893-4216-afe8-5414cab7739d_cxg_dataset_unique	VSMC/P	DOI:10.1038/s41586-023-05769-3	CL:1001318	renal interstitial pericyte	CL:1001318	renal interstitial pericyte		
+0b75c598-0893-4216-afe8-5414cab7739d_cxg_dataset_unique	Vascular Smooth Muscle Cell / Pericyte	DOI:10.1038/s41586-023-05769-3	CL:1001318	renal interstitial pericyte	CL:1001318	renal interstitial pericyte		
+0b75c598-0893-4216-afe8-5414cab7739d_cxg_dataset_unique	aFIB	DOI:10.1038/s41586-023-05769-3	CL:1000692	kidney interstitial fibroblast	CL:1000692	kidney interstitial fibroblast		
+0b75c598-0893-4216-afe8-5414cab7739d_cxg_dataset_unique	dFIB	DOI:10.1038/s41586-023-05769-3	CL:1000692	kidney interstitial fibroblast	CL:1000692	kidney interstitial fibroblast		
+0b75c598-0893-4216-afe8-5414cab7739d_cxg_dataset_unique	pDC	DOI:10.1038/s41586-023-05769-3	CL:0001058	plasmacytoid dendritic cell, human	CL:0001058	plasmacytoid dendritic cell, human		
+0b75c598-0893-4216-afe8-5414cab7739d_cxg_dataset_unique	tPC-IC	DOI:10.1038/s41586-023-05769-3	CL:1001432	kidney collecting duct intercalated cell	CL:0020015	transitional principal-intercalated cell of kidney collecting duct		
+0b75c598-0893-4216-afe8-5414cab7739d_cxg_dataset_unique	C-IC-A	DOI:10.1038/s41586-023-05769-3	CL:1001432	kidney collecting duct intercalated cell	CL:4030015	kidney collecting duct alpha-intercalated cell		
+0b75c598-0893-4216-afe8-5414cab7739d_cxg_dataset_unique	CNT-IC-A	DOI:10.1038/s41586-023-05769-3	CL:1001432	kidney collecting duct intercalated cell	CL:4030020	kidney connecting tubule alpha-intercalated cell		
+0b75c598-0893-4216-afe8-5414cab7739d_cxg_dataset_unique	Connecting Tubule Intercalated Cell Type A	DOI:10.1038/s41586-023-05769-3	CL:1001432	kidney collecting duct intercalated cell	CL:4030020	kidney connecting tubule alpha-intercalated cell		
+0b75c598-0893-4216-afe8-5414cab7739d_cxg_dataset_unique	Cycling Myofibroblast	DOI:10.1038/s41586-023-05769-3	CL:1000692	kidney interstitial fibroblast	CL:0000186	myofibroblast cell		
+0b75c598-0893-4216-afe8-5414cab7739d_cxg_dataset_unique	Degenerative Inner Medullary Collecting Duct Cell	DOI:10.1038/s41586-023-05769-3	CL:1001431	kidney collecting duct principal cell	CL:1000718	kidney inner medulla collecting duct principal cell		
+0b75c598-0893-4216-afe8-5414cab7739d_cxg_dataset_unique	Degenerative Vascular Smooth Muscle Cell	DOI:10.1038/s41586-023-05769-3	CL:1001318	renal interstitial pericyte	CL:0000359	vascular associated smooth muscle cell		
+0b75c598-0893-4216-afe8-5414cab7739d_cxg_dataset_unique	IMCD	DOI:10.1038/s41586-023-05769-3	CL:1001431	kidney collecting duct principal cell	CL:1000718	kidney inner medulla collecting duct principal cell		
+0b75c598-0893-4216-afe8-5414cab7739d_cxg_dataset_unique	Inner Medullary Collecting Duct Cell	DOI:10.1038/s41586-023-05769-3	CL:1001431	kidney collecting duct principal cell	CL:1000718	kidney inner medulla collecting duct principal cell		
+0b75c598-0893-4216-afe8-5414cab7739d_cxg_dataset_unique	MC	DOI:10.1038/s41586-023-05769-3	CL:1001318	renal interstitial pericyte	CL:1000742	glomerular mesangial cell		
+0b75c598-0893-4216-afe8-5414cab7739d_cxg_dataset_unique	MD	DOI:10.1038/s41586-023-05769-3	CL:1001106	kidney loop of Henle thick ascending limb epithelial cell	CL:1000850	macula densa epithelial cell		
+0b75c598-0893-4216-afe8-5414cab7739d_cxg_dataset_unique	MYOF	DOI:10.1038/s41586-023-05769-3	CL:1000692	kidney interstitial fibroblast	CL:0000186	myofibroblast cell		
+0b75c598-0893-4216-afe8-5414cab7739d_cxg_dataset_unique	Macula Densa Cell	DOI:10.1038/s41586-023-05769-3	CL:1001106	kidney loop of Henle thick ascending limb epithelial cell	CL:1000850	macula densa epithelial cell		
+0b75c598-0893-4216-afe8-5414cab7739d_cxg_dataset_unique	Myofibroblast	DOI:10.1038/s41586-023-05769-3	CL:1000692	kidney interstitial fibroblast	CL:0000186	myofibroblast cell		
+0b75c598-0893-4216-afe8-5414cab7739d_cxg_dataset_unique	REN	DOI:10.1038/s41586-023-05769-3	CL:1001318	renal interstitial pericyte	CL:0000648	kidney granular cell		
+0b75c598-0893-4216-afe8-5414cab7739d_cxg_dataset_unique	Renin-positive Juxtaglomerular Granular Cell	DOI:10.1038/s41586-023-05769-3	CL:1001318	renal interstitial pericyte	CL:0000648	kidney granular cell		
+0b75c598-0893-4216-afe8-5414cab7739d_cxg_dataset_unique	VSMC	DOI:10.1038/s41586-023-05769-3	CL:1001318	renal interstitial pericyte	CL:0000359	vascular associated smooth muscle cell		
+0b75c598-0893-4216-afe8-5414cab7739d_cxg_dataset_unique	Vascular Smooth Muscle Cell	DOI:10.1038/s41586-023-05769-3	CL:1001318	renal interstitial pericyte	CL:0000359	vascular associated smooth muscle cell		
+0b75c598-0893-4216-afe8-5414cab7739d_cxg_dataset_unique	cycMYOF	DOI:10.1038/s41586-023-05769-3	CL:1000692	kidney interstitial fibroblast	CL:0000186	myofibroblast cell		
+0b75c598-0893-4216-afe8-5414cab7739d_cxg_dataset_unique	dC-IC-A	DOI:10.1038/s41586-023-05769-3	CL:1001432	kidney collecting duct intercalated cell	CL:4030015	kidney collecting duct alpha-intercalated cell		
+0b75c598-0893-4216-afe8-5414cab7739d_cxg_dataset_unique	dIMCD	DOI:10.1038/s41586-023-05769-3	CL:1001431	kidney collecting duct principal cell	CL:1000718	kidney inner medulla collecting duct principal cell		
+0b75c598-0893-4216-afe8-5414cab7739d_cxg_dataset_unique	dVSMC	DOI:10.1038/s41586-023-05769-3	CL:1001318	renal interstitial pericyte	CL:0000359	vascular associated smooth muscle cell		
